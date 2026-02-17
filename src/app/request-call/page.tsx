@@ -1,5 +1,6 @@
-import { PlaceholderForm } from '@/components'
+import { PlaceholderForm } from '@/components/PlaceholderForm'
 import type { Metadata } from 'next'
+
 
 export const metadata: Metadata = {
   title: 'Request Strategy Call | Vantage Rock Financial',
