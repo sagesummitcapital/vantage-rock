@@ -1,6 +1,9 @@
 import { PlaceholderForm } from '@/components/PlaceholderForm'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 
 export const metadata: Metadata = {
   title: 'Request Strategy Call | Vantage Rock Financial',
