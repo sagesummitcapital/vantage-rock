@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand */
+  --navy: #0B1A2A;
+  --navy-deep: #081421;
+  --teal: #17A89A;
+  --teal-bright: #2EE6C9;
+  --teal-deep: #0E7C72;
+
+  /* Light surfaces */
+  --paper: #FAFBFC;
+  --paper-raised: #FFFFFF;
+  --paper-sunken: #F2F5F7;
+  --paper-contrast: #0B1A2A;
+
+  /* Semantic */
+  --bg: #FAFBFC;
+  --bg-raised: #FFFFFF;
+  --bg-sunken: #F2F5F7;
+  --ink: #0B1A2A;
+  --ink-muted: #56697A;
+  --ink-dim: #8597A6;
+  --ink-invert: #F0F4F8;
+  --line: rgba(11, 26, 42, 0.10);
+  --line-strong: rgba(11, 26, 42, 0.18);
+  --accent: #17A89A;
+  --accent-warn: #D6453F;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body copy: slightly open tracking at small sizes aids readability
+   and keeps the sans from feeling cramped next to a tight serif. */
+p {
+  letter-spacing: -0.003em;
+}
+
+::selection {
+  background: var(--teal);
+  color: #fff;
+}
+
+/* Mono label */
+.mono-label {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Serif display — Newsreader, display cut */
+.font-display {
+  font-family: var(--font-display), "Iowan Old Style", Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  /* Tighter, more deliberate spacing reads as considered rather than default */
+  letter-spacing: -0.021em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Italics in this face are genuinely drawn — give them a touch more room */
+.font-display em,
+.font-display i,
+.font-display .italic,
+.italic.font-display {
+  letter-spacing: -0.012em;
+}
+
+/* Financial data should always align in columns */
+.tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Animated gradient text — navy → teal for light bg */
+.gradient-text {
+  background: linear-gradient(
+    110deg,
+    #17A89A 0%,
+    #0E7C72 35%,
+    #17A89A 65%,
+    #2EE6C9 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient-text-teal {
+  background: linear-gradient(110deg, #17A89A 0%, #0E7C72 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Gradient text for use ON dark panels (brighter) */
+.gradient-text-bright {
+  background: linear-gradient(110deg, #F0F4F8 0%, #2EE6C9 60%, #F0F4F8 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+/* Grid backdrop — subtle navy lines on light */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(11, 26, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 26, 42, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
+}
+
+/* Aurora glow — soft teal tint on light */
+.aurora-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 30% 35%, rgba(23, 168, 154, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 35% at 72% 60%, rgba(46, 230, 201, 0.07) 0%, transparent 60%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* Ticker mask */
+.ticker-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 1px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease, background 0.4s ease,
+              box-shadow 0.4s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: 0 16px 40px -12px rgba(11, 26, 42, 0.12);
+}
+
+/* Teal glow */
+.teal-glow {
+  box-shadow: 0 0 24px rgba(23, 168, 154, 0.25);
+}
+
+/* Loader sweep */
+.loader-bar {
+  overflow: hidden;
+  position: relative;
+}
+.loader-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--teal-bright), transparent);
+  animation: loader-sweep 1.4s ease-in-out infinite;
+}
+@keyframes loader-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Subtle card shadow for light theme depth */
+.soft-shadow {
+  box-shadow: 0 1px 3px rgba(11, 26, 42, 0.04), 0 8px 24px -8px rgba(11, 26, 42, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
