@@ -13,7 +13,7 @@ const SPRITE = 12;
 const SCALE = 4;
 const SPRITE_PX = SPRITE * SCALE;
 const SPARK_MAX = 60;
-const STALE_MS = 90 * 60 * 1000;
+const STALE_MS = 5 * 60 * 1000;
 
 const ROOMS: Record<string, { x: number; y: number; w: number; h: number; label: string }> = {
   growth: { x: 8, y: 8, w: 24, h: 20, label: "GROWTH" },
@@ -38,9 +38,9 @@ const FRAME_A = [
   "001111111100",
   "000111111000",
   "000110011000",
-  "001100001100",
-  "001000000100",
-  "003000000300",
+  "001100000110",
+  "001000000010",
+  "003000000030",
 ];
 const FRAME_B = [
   "000011110000",
@@ -56,6 +56,37 @@ const FRAME_B = [
   "000100001000",
   "003300003300",
 ];
+/** Contact opposite: left foot forward. */
+const FRAME_C = [
+  "000011110000",
+  "000111111000",
+  "000121121000",
+  "000111111000",
+  "000011110000",
+  "000111111000",
+  "001111111100",
+  "000111111000",
+  "000110011000",
+  "011000001100",
+  "010000000100",
+  "030000000300",
+];
+/** Passing opposite: planted + lifted. */
+const FRAME_D = [
+  "000011110000",
+  "000111111000",
+  "000121121000",
+  "000111111000",
+  "000011110000",
+  "000111111000",
+  "001111111100",
+  "000111111000",
+  "000110011000",
+  "000111111000",
+  "000010001000",
+  "000300003300",
+];
+const FRAMES = [FRAME_A, FRAME_B, FRAME_C, FRAME_D];
 
 type Mission = "home" | "to-brief" | "brief" | "to-home" | "to-door";
 
@@ -116,6 +147,34 @@ function idPhase(id: string) {
   return (h % 1000) / 1000;
 }
 
+/** Vertical bob used by draw + click hit-test (must stay in sync). */
+function bobOffset(status: Seat["status"], t: number, phase: number) {
+  return Math.sin(t * (status === "watch" ? 1.4 : 2.2) + phase * 6) * (status === "idle" || status === "watch" ? 1.5 : 0.4);
+}
+
+function spriteOrigin(p: AgentPos, seat: Seat, now: number) {
+  const g = bobOffset(seat.status, now / 1000, idPhase(seat.id));
+  return { px: Math.round(p.x * CELL), py: Math.round(p.y * CELL + g), g };
+}
+
+function drawNameTag(ctx: CanvasRenderingContext2D, px: number, py: number, name: string) {
+  const label = name.slice(0, 12);
+  ctx.save();
+  ctx.font = "6px ui-monospace, SFMono-Regular, Menlo, monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  const x = px + SPRITE_PX / 2;
+  let y = py + SPRITE_PX + 1;
+  if (y > H - 8) y = py - 7;
+  ctx.fillStyle = "rgba(11,26,42,0.92)";
+  for (const [dx, dy] of [[-1, 0], [1, 0], [0, -1], [0, 1]] as const) {
+    ctx.fillText(label, x + dx, y + dy);
+  }
+  ctx.fillStyle = "#D9E1E8";
+  ctx.fillText(label, x, y);
+  ctx.restore();
+}
+
 function spawnInRoom(roomId: string): Pick<AgentPos, "x" | "y" | "vx" | "vy"> {
   const r = ROOMS[roomId];
   const margin = SPRITE_PX / CELL;
@@ -156,11 +215,11 @@ function drawSprite(
   px: number,
   py: number,
   color: string,
-  frame: 0 | 1,
+  frame: number,
   facing: 1 | -1,
   dim: number,
 ) {
-  const map = frame === 0 ? FRAME_A : FRAME_B;
+  const map = FRAMES[((frame % 4) + 4) % 4];
   const [r, g, b] = hexToRgb(color);
   const body = `rgba(${r},${g},${b},${dim})`;
   const eye = `rgba(11,26,42,${Math.min(1, dim + 0.15)})`;
@@ -210,6 +269,7 @@ export default function FloorClient() {
   const [state, setState] = useState<OpsState | null>(null);
   const [clock, setClock] = useState(phoenixNow);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [lastPullAt, setLastPullAt] = useState(0);
   const router = useRouter();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparkRef = useRef<HTMLCanvasElement>(null);
@@ -242,7 +302,10 @@ export default function FloorClient() {
       }
       if (!res.ok) return;
       const data = (await res.json()) as OpsState;
-      if (!cancelled) setState(data);
+      if (!cancelled) {
+        setState(data);
+        setLastPullAt(Date.now());
+      }
     }
     pull();
     const t = setInterval(pull, 8000);
@@ -451,13 +514,12 @@ export default function FloorClient() {
           p.bubbleAlpha = 0;
         }
 
-        const breath = Math.sin(t * (s.status === "watch" ? 1.4 : 2.2) + phase * 6) * (s.status === "idle" || s.status === "watch" ? 1.5 : 0.4);
         const fidgetFrame = !p.transitioning && (s.status === "idle" || s.status === "watch") && Math.sin(t * 1.15 + phase * 8) > 0.62;
-        const moving = p.transitioning;
-        const frame: 0 | 1 = moving ? ((Math.floor(p.walk) % 2) as 0 | 1) : fidgetFrame ? 1 : 0;
+        const moving = p.transitioning || Math.hypot(p.vx, p.vy) > 0.02;
+        if (moving && !p.transitioning) p.walk += 0.28;
+        const frame = moving ? Math.floor(p.walk) % 4 : fidgetFrame ? 1 : 0;
 
-        const px = Math.round(p.x * CELL);
-        const py = Math.round(p.y * CELL + breath);
+        const { px, py } = spriteOrigin(p, s, now);
         const glow = statusGlow(s.status, t);
         const seatStale = isStaleIso(seatStamp(s, state), now);
 
@@ -470,6 +532,7 @@ export default function FloorClient() {
         ctx.restore();
 
         drawSprite(ctx, px, py, s.color, frame, p.facing, glow.dim * (seatStale ? 0.65 : 1));
+        drawNameTag(ctx, px, py, s.name);
 
         if (selectedIdRef.current === s.id) {
           ctx.strokeStyle = TEAL;
@@ -536,7 +599,9 @@ export default function FloorClient() {
   const selected = state?.seats.find((s) => s.id === selectedId) ?? null;
   const nowMs = Date.now();
   const floorStale = state
-    ? isStaleIso(state.updatedAt, nowMs) || state.seats.every((s) => isStaleIso(seatStamp(s, state), nowMs))
+    ? isStaleIso(state.updatedAt, nowMs) ||
+      state.seats.every((s) => isStaleIso(seatStamp(s, state), nowMs)) ||
+      (lastPullAt > 0 && nowMs - lastPullAt > STALE_MS)
     : false;
 
   function onCanvasClick(e: React.MouseEvent<HTMLCanvasElement>) {
@@ -551,8 +616,7 @@ export default function FloorClient() {
     for (const s of sprites) {
       const p = pos.current[s.id];
       if (!p) continue;
-      const px = Math.round(p.x * CELL);
-      const py = Math.round(p.y * CELL);
+      const { px, py } = spriteOrigin(p, s, Date.now());
       if (x >= px && x < px + SPRITE_PX && y >= py && y < py + SPRITE_PX) {
         setSelectedId(s.id);
         return;
@@ -575,8 +639,9 @@ export default function FloorClient() {
         for (const s of occ) {
           const p = pos.current[s.id];
           if (!p) continue;
-          const cx = p.x * CELL + SPRITE_PX / 2;
-          const cy = p.y * CELL + SPRITE_PX / 2;
+          const { px, py } = spriteOrigin(p, s, Date.now());
+          const cx = px + SPRITE_PX / 2;
+          const cy = py + SPRITE_PX / 2;
           const d = Math.hypot(x - cx, y - cy);
           if (d < bestD) {
             bestD = d;
