@@ -23,6 +23,14 @@ export type RoomId =
   | "finance"
   | "lounge";
 
+export type TaskStatus = "doing" | "queued" | "blocked" | "done";
+
+export interface SeatTask {
+  id: string;
+  title: string;
+  status: TaskStatus;
+}
+
 export interface Seat {
   id: SeatId;
   name: string;
@@ -33,6 +41,8 @@ export interface Seat {
   line?: string;
   wander: boolean;
   blocker?: string;
+  tasks?: SeatTask[];
+  updatedAt?: string;
 }
 
 export interface RoomState {
@@ -88,4 +98,6 @@ export interface SeatPatch {
   wander?: boolean;
   blocker?: string | null;
   dialogue?: { who: string; text: string };
+  tasks?: SeatTask[];
+  updatedAt?: string;
 }
