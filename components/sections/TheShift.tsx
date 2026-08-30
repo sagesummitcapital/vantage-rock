@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
@@ -27,12 +28,15 @@ export default function TheShift() {
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_0.8fr]">
           {/* AI-enabled finance */}
           <Reveal delay={0.05}>
-            <div className="card-lift h-full rounded-xl border border-line bg-bg-raised p-7 soft-shadow">
+            <Link
+              href="/ai-enabled-finance"
+              className="card-lift block h-full rounded-xl border border-line bg-bg-raised p-7 soft-shadow"
+            >
               <div className="mono-label mb-6">AI-enabled finance</div>
               <p className="text-[15px] leading-[1.6] text-ink">
                 A function that can actually lead. Not a dashboard with a prompt box.
               </p>
-            </div>
+            </Link>
           </Reveal>
 
           {/* AI-native financial leadership */}
