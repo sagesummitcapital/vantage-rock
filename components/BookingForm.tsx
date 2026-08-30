@@ -222,7 +222,7 @@ export default function BookingForm() {
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
           className="group relative inline-flex items-center justify-center gap-2 rounded-md bg-navy px-6 py-3 text-[13px] font-medium text-ink-invert transition-all duration-300 hover:bg-teal hover:text-white hover:shadow-[0_8px_24px_-6px_rgba(23,168,154,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Submitting…" : "Request strategy call"}
+          {status === "submitting" ? "Submitting…" : "Request the 30-minute Review"}
           {status !== "submitting" && (
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path

@@ -33,15 +33,15 @@ export default function FinalCTA() {
 
           <Reveal delay={0.1}>
             <h2 className="mx-auto mt-6 max-w-[900px] font-display text-display-2xl">
-              <span className="text-ink">Stop flying </span>
-              <span className="gradient-text italic">blind.</span>
+              <span className="text-ink">30 minutes. We see if it&apos;s a </span>
+              <span className="gradient-text italic">fit.</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-[520px] text-[17px] leading-[1.5] text-ink-muted">
-              30 minutes. We walk your finance function and show you where
-              we&apos;d start. Fit or not, you leave with a plan.
+              We don&apos;t diagnose on the call. No plan to take home. Fit or
+              not, you leave knowing whether the seat is the next move.
             </p>
 
             <div className="mx-auto mt-8 flex max-w-[640px] flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[13px] text-ink-muted">

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
 
@@ -18,7 +17,7 @@ type Pkg = {
 const packages: Pkg[] = [
   {
     name: "Essentials",
-    tagline: "Financial clarity. Better decisions.",
+    tagline: "Books exist. The seat isn't in the decisions yet.",
     inheritsLabel: "What's included",
     features: [
       "Monthly financial review",
@@ -28,12 +27,12 @@ const packages: Pkg[] = [
       "Email support",
     ],
     idealFor: "Businesses that need clear financials and visibility.",
-    pricingApproach: "Best for companies needing foundational visibility. Scoped as a lighter monthly engagement after the Diagnostic.",
+    pricingApproach: "Quoted after Review, from scope. No list prices.",
     iconPath: "M4 20V10M10 20V4M16 20v-7M22 20H2",
   },
   {
     name: "Growth",
-    tagline: "Plan ahead. Drive growth.",
+    tagline: "Cash and forecast have to lead, not trail.",
     popular: true,
     inheritsLabel: "Everything in Essentials, plus",
     features: [
@@ -45,12 +44,12 @@ const packages: Pkg[] = [
       "Priority email & chat support",
     ],
     idealFor: "Growing businesses ready to improve performance and profitability.",
-    pricingApproach: "Best for companies ready to improve forecasting and profitability. Scope expands with systems and reporting needs.",
+    pricingApproach: "Quoted after Review, from scope. No list prices.",
     iconPath: "M3 16l5-5 4 4 8-8M20 7v4h-4",
   },
   {
     name: "Scale",
-    tagline: "Strategic leadership. Scalable systems.",
+    tagline: "Multi-entity, board pack, the operator needs a CFO in the room.",
     inheritsLabel: "Everything in Growth, plus",
     features: [
       "Full fractional CFO support",
@@ -61,7 +60,7 @@ const packages: Pkg[] = [
       "Strategic planning & scenario modeling",
     ],
     idealFor: "Scaling companies that need executive-level financial leadership.",
-    pricingApproach: "Best for companies needing executive-level finance leadership. Scope is custom based on complexity and cadence.",
+    pricingApproach: "Quoted after Review, from scope. No list prices.",
     iconPath: "M3 21h18M5 21V10M12 21V10M19 21V10M3 10l9-6 9 6",
   },
 ];
@@ -82,14 +81,14 @@ export default function Packages() {
         <SectionHead
           number="04"
           label="Fractional CFO + AI automation"
-          heading="Packages that meet you"
-          dim="where you are."
+          heading="Fractional CFO."
+          dim="Scoped to the shop, not a menu of dollars."
         />
 
         <Reveal>
           <p className="-mt-6 mb-12 max-w-[560px] text-[16px] leading-[1.6] text-ink-muted">
-            Every engagement starts with the Diagnostic, then scales to the
-            level of support the business actually needs.
+            Every engagement starts with fit. Then a diagnostic if it&apos;s a
+            fit. Then the retainer.
           </p>
         </Reveal>
 
@@ -157,9 +156,9 @@ export default function Packages() {
             <div>
               <p className="text-[15px] leading-[1.55] text-ink">
                 <span className="font-medium text-teal">How pricing works:</span>{" "}
-                set by scope, complexity, and reporting cadence after the
-                Diagnostic — not published, because the work is built around
-                your systems.
+                after Review, from scope. No list prices. Every engagement
+                starts with fit. Then a diagnostic if it&apos;s a fit. Then the
+                retainer.
               </p>
             </div>
           </div>
@@ -172,19 +171,17 @@ export default function Packages() {
               <div>
                 <span className="mono-label">Who we work with</span>
                 <p className="mt-3 max-w-[440px] text-[16px] leading-[1.55] text-ink">
-                  Founder-led and PE-backed companies that have outgrown basic
-                  accounting. We go deepest where financial complexity is
-                  highest — and where we&apos;ve operated.
+                  Founder-led services, healthcare, multi-entity, roughly $2–20M.
+                  PE-backed if the operator is still in the seat. No PE sprint SKU.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2 md:max-w-[440px] md:justify-end">
                 {[
-                  { x: "Healthcare & medtech", core: true },
-                  { x: "Technology & SaaS", core: true },
-                  { x: "PE-backed portfolio cos.", core: true },
-                  { x: "Multi-entity groups", core: true },
-                  { x: "Professional services", core: false },
-                  { x: "Founder-led services", core: false },
+                  { x: "Founder-led services", core: true },
+                  { x: "Healthcare", core: true },
+                  { x: "Multi-entity", core: true },
+                  { x: "Roughly $2–20M", core: true },
+                  { x: "PE-backed if operator in the seat", core: false },
                 ].map(({ x, core }) => (
                   <span
                     key={x}

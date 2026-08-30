@@ -6,5 +6,11 @@ export const SITE_URL =
 
 export const SITE_NAME = "Vantage Rock Financial";
 export const SITE_DESCRIPTION =
-  "Fractional CFO leadership + finance automation for founder-led companies that need faster reporting, better cash visibility, and a finance function built to scale.";
+  "Fractional CFO. AI-native financial leadership. 30-minute Finance Systems Review — fit-check. We don't diagnose on the call.";
 export const CONTACT_EMAIL = "info@vantagerockfinancial.com";
+export const FOUNDER_NAME = "Stavros Christas";
+export const SAME_AS = [
+  "https://www.linkedin.com/in/stavros-christias-4863b211a/",
+  "https://x.com/VantageRock",
+  "https://www.youtube.com/@VantageRockFinancial",
+];

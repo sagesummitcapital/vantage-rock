@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Reveal from "../Reveal";
-
-/**
- * ABOUT — update the name below to your own before launch.
- */
-const FOUNDER_NAME = "Founder & Principal";
+import { CONTACT_EMAIL, FOUNDER_NAME } from "@/lib/site";
 
 const domains = [
   "FP&A and controllership",
@@ -45,17 +41,33 @@ export default function About() {
           <Reveal delay={0.12}>
             <span className="mono-label">05 — Who you&apos;re working with</span>
             <h2 className="mt-6 font-display text-display-lg">
-              <span className="text-ink">CFO-level judgment, </span>
-              <span className="gradient-text-teal">without the full-time hire.</span>
+              <span className="text-ink">You talk to the </span>
+              <span className="gradient-text-teal">operator.</span>
             </h2>
 
             <p className="mt-6 max-w-[540px] text-[16px] leading-[1.65] text-ink-muted">
-              Led by a finance and operations leader with 10+ years across
-              healthcare, technology, startups, and private-equity-backed
-              businesses. Engagements are scoped and led at that level, then
-              delivered by a small senior team — your numbers never go to a
-              junior analyst.
+              {FOUNDER_NAME}. Finance and operations, 10+ years across
+              healthcare, technology, startups, and PE-backed shops.
+              Engagements are scoped and led at that level. Your numbers
+              don&apos;t go to a junior analyst.
             </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
+              <a
+                href="https://www.linkedin.com/in/stavros-christias-4863b211a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-teal transition-colors hover:text-ink"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="font-medium text-teal transition-colors hover:text-ink"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </div>
 
             <div className="mt-8">
               <div className="mono-label mb-3 !text-[10px]">Depth across</div>

@@ -6,8 +6,8 @@ import ScorecardPanel from "../ScorecardPanel";
 
 const steps = [
   {
-    title: "Diagnose",
-    desc: "We score your finance function across seven critical areas.",
+    title: "Score",
+    desc: "Seven areas. Sample only.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
         <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.4" />
@@ -17,8 +17,8 @@ const steps = [
     ),
   },
   {
-    title: "Prioritize",
-    desc: "We identify the highest-impact gaps and build the roadmap.",
+    title: "Fit-check",
+    desc: "30 minutes. We don't diagnose on the call.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
         <rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" strokeWidth="1.4" />
@@ -27,8 +27,8 @@ const steps = [
     ),
   },
   {
-    title: "Implement",
-    desc: "We build the systems, automation, and controls that hold up.",
+    title: "The seat",
+    desc: "Diagnostic and the work only after fit. Quoted from scope.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
         <path d="M12 3c3 2.5 4.5 6 4.5 9.5L12 17l-4.5-4.5C7.5 9 9 5.5 12 3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
@@ -40,10 +40,10 @@ const steps = [
 ];
 
 const outcomes = [
-  { title: "Faster close", desc: "Close with confidence, every month." },
-  { title: "Cash visibility", desc: "See your cash position weeks ahead." },
-  { title: "Better forecasting", desc: "Forecasts you can actually act on." },
-  { title: "Operational leverage", desc: "A finance function that scales." },
+  { title: "A finance function that leads" },
+  { title: "Cash that isn't the bank balance" },
+  { title: "Forecasts that survive Q2" },
+  { title: "Reporting that isn't a Monday rebuild" },
 ];
 
 export default function Hero() {
@@ -80,29 +80,22 @@ export default function Hero() {
           {/* Left — copy */}
           <div className="max-w-[600px]">
             <motion.h1 variants={item} className="font-display text-display-2xl">
-              <span className="block text-ink">Your finance team</span>
-              <span className="block text-ink">doesn&apos;t need more</span>
-              <span className="block text-ink">reports. It needs a</span>
-              <span className="gradient-text block italic">better system.</span>
+              <span className="block text-ink">AI-enabled finance.</span>
+              <span className="gradient-text block italic">Not a chatbot on last month&apos;s file.</span>
             </motion.h1>
 
             <motion.p
               variants={item}
               className="mt-7 max-w-[500px] text-[17px] leading-[1.6] text-ink-muted"
             >
-              Fractional CFO leadership and finance automation for founder-led
-              companies that need faster reporting, real cash visibility, and
-              numbers they can run the business on.
+              Most shops using that phrase are running a prompt box on a
+              spreadsheet nobody trusts. Vantage Rock Financial is a fractional
+              CFO seat. AI-native financial leadership means a human on the
+              decisions and a system on the rest.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
-              <CTAButton href="#book">Book a Finance Systems Review</CTAButton>
-              <a
-                href="#diagnostic"
-                className="inline-flex items-center gap-2 rounded-md border border-line-strong bg-bg-raised px-[18px] py-[12px] text-[13px] font-medium text-ink transition-all duration-200 hover:border-teal hover:text-teal"
-              >
-                See the Diagnostic
-              </a>
+              <CTAButton href="#book">30-minute Finance Systems Review</CTAButton>
             </motion.div>
 
             <motion.div
@@ -111,15 +104,15 @@ export default function Hero() {
             >
               <span>30 minutes</span>
               <span className="text-teal">•</span>
-              <span>no pitch</span>
+              <span>we see if it&apos;s a fit</span>
               <span className="text-teal">•</span>
-              <span>leave with a plan</span>
+              <span>we don&apos;t diagnose on the call</span>
             </motion.div>
           </div>
 
           {/* Right — scorecard with floating callout cards */}
           <motion.div variants={item} className="relative">
-            {/* Floating card: automation */}
+            {/* Floating card: a system that holds */}
             <motion.div
               {...float(0)}
               className="absolute -left-4 top-[14%] z-20 hidden w-[186px] rounded-xl border border-line bg-bg-raised p-3.5 soft-shadow lg:block"
@@ -132,23 +125,17 @@ export default function Hero() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-[11px] font-medium text-ink">Automation</div>
-                  <div className="mt-0.5 text-[10.5px] leading-[1.35] text-ink-dim">
-                    Manual → Automated
-                  </div>
-                  <div className="tabular mt-1 font-mono text-[11px] font-medium text-teal">+28 pts</div>
+                  <div className="text-[11px] font-medium leading-[1.35] text-ink">A system that holds</div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Floating card: cash visibility */}
+            {/* Floating card: cash you can actually see */}
             <motion.div
               {...float(1.6)}
               className="absolute -left-2 bottom-[13%] z-20 hidden w-[172px] rounded-xl border border-line bg-bg-raised p-3.5 soft-shadow lg:block"
             >
-              <div className="text-[11px] font-medium text-ink">Cash visibility</div>
-              <div className="tabular mt-1 font-display text-[22px] leading-none text-teal">13 weeks</div>
-              <div className="mt-1 text-[10.5px] text-ink-dim">Rolling forecast</div>
+              <div className="text-[11px] font-medium text-ink">Cash you can actually see</div>
               <svg viewBox="0 0 120 26" className="mt-2 w-full" aria-hidden>
                 <path
                   d="M0 22 L20 18 L40 20 L60 12 L80 14 L100 6 L120 3"
@@ -161,18 +148,12 @@ export default function Hero() {
               </svg>
             </motion.div>
 
-            {/* Floating card: close cycle */}
+            {/* Floating card: a human on the decisions */}
             <motion.div
               {...float(0.8)}
               className="absolute -right-3 top-[30%] z-20 hidden w-[160px] rounded-xl border border-line bg-bg-raised p-3.5 soft-shadow lg:block"
             >
-              <div className="text-[11px] font-medium text-ink">Close cycle</div>
-              <div className="tabular mt-1 flex items-baseline gap-1.5 font-display text-[22px] leading-none text-ink">
-                15 <span className="text-[13px] text-ink-dim">→</span>{" "}
-                <span className="text-teal">3</span>
-                <span className="text-[11px] text-ink-dim">days</span>
-              </div>
-              <div className="mt-1 text-[10.5px] text-ink-dim">Sample engagement</div>
+              <div className="text-[11px] font-medium leading-[1.35] text-ink">A human on the decisions</div>
             </motion.div>
 
             <div className="relative z-10 lg:px-8">
@@ -221,7 +202,6 @@ export default function Hero() {
               <span className="h-8 w-[2px] flex-shrink-0 rounded-full bg-teal/50" aria-hidden />
               <div>
                 <div className="text-[13.5px] font-medium text-ink">{o.title}</div>
-                <div className="mt-0.5 text-[12px] leading-[1.4] text-ink-muted">{o.desc}</div>
               </div>
             </motion.div>
           ))}

@@ -5,10 +5,9 @@ import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
 
 const caseResults = [
-  "Monthly close cut from 15 days to 3",
-  "Recurring manual reporting work substantially reduced",
-  "Consistent KPI view available to leadership every week",
-  "Cash position visible weeks ahead instead of days",
+  "Close that holds",
+  "Weekly KPI pack",
+  "Cash visible weeks ahead",
 ];
 
 export default function Impact() {
@@ -19,7 +18,7 @@ export default function Impact() {
           number="07"
           label="Proof"
           heading="What this looks like"
-          dim="in practice."
+          dim="when the seat is in the room."
         />
 
         <Reveal>
@@ -46,19 +45,15 @@ export default function Impact() {
                       Before
                     </div>
                     <p className="text-[15px] leading-[1.55]" style={{ color: "#C5D2DD" }}>
-                      A 15-day close, fragmented reports pulled by hand, and no
-                      forward view of cash. Leadership was reviewing last
-                      month&apos;s performance halfway through the current one.
+                      15-day close, reports pulled by hand, no forward cash.
                     </p>
                   </div>
                   <div>
                     <div className="mono-label mb-2 !text-[10px]" style={{ color: "#8FA3B5" }}>
-                      What we built
+                      After
                     </div>
                     <p className="text-[15px] leading-[1.55]" style={{ color: "#C5D2DD" }}>
-                      A standardized close process, a management reporting pack,
-                      rolling cash forecasting, and automation across the
-                      recurring KPI work.
+                      Close that holds, weekly KPI pack, cash visible weeks ahead.
                     </p>
                   </div>
                 </div>
@@ -92,9 +87,8 @@ export default function Impact() {
                   className="mt-8 border-t pt-5 text-[13px] leading-[1.5]"
                   style={{ color: "#8FA3B5", borderColor: "rgba(240,244,248,0.1)" }}
                 >
-                  The point isn&apos;t the days saved. It&apos;s that leadership
-                  started making decisions on current information instead of
-                  assembling data.
+                  The days aren&apos;t the product. Leadership started deciding
+                  on current information.
                 </p>
               </div>
             </div>
@@ -104,10 +98,10 @@ export default function Impact() {
         {/* Stat cards — scoped to this engagement */}
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { stat: "15 → 3", label: "Day close", icon: "M12 7v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-            { stat: "Weekly", label: "KPI visibility", icon: "M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z M12 14a2 2 0 100-4 2 2 0 000 4z" },
-            { stat: "Weeks", label: "Of forward cash view", icon: "M4 20V10M10 20V4M16 20v-7M22 20H2" },
-            { stat: "Faster", label: "Decisions, monthly", icon: "M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z" },
+            { stat: "Close", label: "that holds", icon: "M12 7v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+            { stat: "Weekly", label: "KPI pack", icon: "M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z M12 14a2 2 0 100-4 2 2 0 000 4z" },
+            { stat: "Weeks", label: "Cash visible ahead", icon: "M4 20V10M10 20V4M16 20v-7M22 20H2" },
+            { stat: "Current", label: "information, not a rebuild", icon: "M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z" },
           ].map((c, i) => (
             <Reveal key={c.label} delay={i * 0.06}>
               <div className="card-lift flex items-center gap-4 rounded-xl border border-line bg-bg-raised px-6 py-5 soft-shadow">
@@ -129,8 +123,8 @@ export default function Impact() {
 
         <Reveal delay={0.15}>
           <p className="mt-6 text-[12px] leading-[1.5] text-ink-dim">
-            Anonymized at the client&apos;s request. Results reflect a specific
-            engagement and are not a promise of comparable outcomes.
+            Anonymized at the client&apos;s request. Not a promise of comparable
+            outcomes.
           </p>
         </Reveal>
       </div>
