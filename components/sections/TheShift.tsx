@@ -4,41 +4,6 @@ import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
 
-const traditional = [
-  "Manual reporting & data pulls",
-  "Reactive forecasting",
-  "Siloed systems",
-  "High operational overhead",
-  "Limited real-time visibility",
-  "Spreadsheets & manual models",
-];
-
-const aiNative = [
-  "AI-assisted reporting, human-reviewed",
-  "AI-driven forecasting",
-  "Integrated intelligent systems",
-  "Scalable operational infrastructure",
-  "Real-time visibility & insights",
-  "AI-supervised workflows",
-];
-
-const oversight = [
-  "AI Monitoring",
-  "Anomaly Detection",
-  "Workflow Intelligence",
-  "Decision Support",
-  "Outcome Optimization",
-];
-
-function XIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="flex-shrink-0" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
-      <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function CheckIcon({ bright = false }: { bright?: boolean }) {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="flex-shrink-0" aria-hidden>
@@ -55,47 +20,33 @@ export default function TheShift() {
         <SectionHead
           number="02"
           label="The shift"
-          heading="The CFO role"
-          dim="is evolving."
+          heading="The finance function either leads or it files."
+          dim="Most file."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_0.8fr]">
-          {/* Traditional */}
+          {/* AI-enabled finance */}
           <Reveal delay={0.05}>
             <div className="card-lift h-full rounded-xl border border-line bg-bg-raised p-7 soft-shadow">
-              <div className="mono-label mb-6">Traditional finance model</div>
-              <ul className="space-y-4">
-                {traditional.map((t) => (
-                  <li key={t} className="flex items-center gap-3 text-[14px] text-ink-muted">
-                    <span className="text-ink-dim">
-                      <XIcon />
-                    </span>
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              <div className="mono-label mb-6">AI-enabled finance</div>
+              <p className="text-[15px] leading-[1.6] text-ink">
+                A function that can actually lead. Not a dashboard with a prompt box.
+              </p>
             </div>
           </Reveal>
 
-          {/* AI-Native */}
+          {/* AI-native financial leadership */}
           <Reveal delay={0.12}>
             <div className="card-lift relative h-full rounded-xl border border-teal/30 bg-bg-raised p-7 soft-shadow">
               <span className="absolute right-6 top-7 h-px w-8 bg-teal/40" />
-              <div className="mono-label mb-6 !text-teal">AI-native finance model</div>
-              <ul className="space-y-4">
-                {aiNative.map((t) => (
-                  <li key={t} className="flex items-center gap-3 text-[14px] text-ink">
-                    <span className="text-teal">
-                      <CheckIcon />
-                    </span>
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              <div className="mono-label mb-6 !text-teal">AI-native financial leadership</div>
+              <p className="text-[15px] leading-[1.6] text-ink">
+                Humans on the decisions, systems on the rest. We build finance systems that think.
+              </p>
             </div>
           </Reveal>
 
-          {/* AI Oversight Layer — dark panel */}
+          {/* Fractional CFO — dark panel */}
           <Reveal delay={0.19}>
             <div
               className="relative h-full overflow-hidden rounded-xl p-7 shadow-[0_24px_60px_-20px_rgba(11,26,42,0.4)]"
@@ -113,7 +64,7 @@ export default function TheShift() {
                 className="mono-label mb-6"
                 style={{ color: "#2EE6C9" }}
               >
-                AI oversight layer
+                Fractional CFO
               </div>
 
               {/* Stacked layers visual */}
@@ -137,18 +88,10 @@ export default function TheShift() {
                 ))}
               </div>
 
-              <ul className="space-y-3">
-                {oversight.map((o) => (
-                  <li
-                    key={o}
-                    className="flex items-center gap-3 text-[13px]"
-                    style={{ color: "#C5D2DD" }}
-                  >
-                    <CheckIcon bright />
-                    {o}
-                  </li>
-                ))}
-              </ul>
+              <p className="flex items-start gap-3 text-[13px]" style={{ color: "#C5D2DD" }}>
+                <span className="mt-0.5"><CheckIcon bright /></span>
+                The seat. Score first. Then a Review.
+              </p>
             </div>
           </Reveal>
         </div>

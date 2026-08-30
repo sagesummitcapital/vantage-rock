@@ -1,11 +1,11 @@
 import Reveal from "../Reveal";
 
 const problems = [
-  { t: "Slow close", d: "10–20 days to see last month." },
-  { t: "No cash view", d: "Decisions made off the bank balance." },
-  { t: "Stale forecast", d: "Built once, abandoned by Q2." },
-  { t: "Blind margins", d: "No profit view by service or location." },
-  { t: "Manual reporting", d: "Hours rebuilding the same file." },
+  { t: "The system is slow.", d: "Close is usually how you can tell." },
+  { t: "Cash is the bank balance.", d: "Rear-view, not a decision." },
+  { t: "The forecast died in Q2.", d: "" },
+  { t: "Margins are a rebuild", d: "every time someone asks." },
+  { t: "Reporting is a Monday file.", d: "" },
 ];
 
 export default function FiveProblems() {
@@ -15,14 +15,9 @@ export default function FiveProblems() {
         <Reveal>
           <span className="mono-label">01 — The real problem</span>
           <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <h2 className="max-w-[660px] font-display text-display-lg">
-              <span className="text-ink">You don&apos;t need another dashboard. You need these five </span>
-              <span className="gradient-text-teal">problems fixed.</span>
+            <h2 className="max-w-[720px] font-display text-display-lg">
+              <span className="text-ink">Two or more sound familiar? You don&apos;t have an accounting problem. You have a finance seat that isn&apos;t in the room.</span>
             </h2>
-            <p className="max-w-[280px] text-[14px] leading-[1.55] text-ink-muted">
-              Two or more sound familiar? Your accounting isn&apos;t the
-              problem — the system around it is.
-            </p>
           </div>
         </Reveal>
 
@@ -34,7 +29,9 @@ export default function FiveProblems() {
                 <h3 className="mt-3 font-display text-[19px] leading-tight text-ink">
                   {p.t}
                 </h3>
-                <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">{p.d}</p>
+                {p.d ? (
+                  <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">{p.d}</p>
+                ) : null}
               </div>
             </Reveal>
           ))}

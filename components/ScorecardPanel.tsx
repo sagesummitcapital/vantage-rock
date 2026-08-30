@@ -3,10 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Hero graphic: a sample Finance Maturity Scorecard.
- * This is the actual deliverable from the Diagnostic — showing it does two
- * jobs at once: it demonstrates the product, and it's honest (clearly a
- * sample, not invented client data).
+ * Hero graphic: a SAMPLE Finance Maturity Scorecard.
+ * Sample only — not the visitor's score, not a form.
  */
 
 const areas = [
@@ -48,10 +46,10 @@ export default function ScorecardPanel() {
             className="font-mono text-[10px] uppercase tracking-[0.14em]"
             style={{ color: "#2EE6C9" }}
           >
-            Finance Maturity Scorecard
+            SAMPLE
           </div>
           <div className="mt-1 text-[12px]" style={{ color: "#8FA3B5" }}>
-            Sample output · Finance + AI Diagnostic
+            Not your score · not a form
           </div>
         </div>
 

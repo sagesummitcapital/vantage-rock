@@ -8,27 +8,27 @@ import SectionHead from "../SectionHead";
 const faqs = [
   {
     q: "Do you replace my CPA or bookkeeper?",
-    a: "No. They handle accounting, tax, and compliance — we make the finance function useful for management. We build the reporting, forecasting, cash visibility, and automation layer on top of the accounting, and we keep your CPA in the loop.",
+    a: "No. They handle accounting, tax, compliance. We make finance useful for management. CPA stays in the loop.",
   },
   {
     q: "What does it cost?",
-    a: "The Diagnostic is a fixed fee, credited toward your engagement if you move forward within 30 days. Ongoing work is a monthly retainer scoped to the complexity of your business — number of entities, systems, reporting cadence, and how much building is involved. We give you exact numbers on the call once we understand the scope, and there is no obligation attached to that conversation.",
+    a: "Quoted after the Review, from scope. No list prices. If it's a fit, next paid step is a diagnostic. Then a retainer. Cash in before work.",
   },
   {
     q: "How do you use AI — and is it safe?",
-    a: "AI stays where it improves accuracy, speed, or visibility — and always under controls. Automation is supervised and reviewable, a human owns every output that reaches management, and nothing runs unsupervised in your books. We document which tools are approved and what data they can touch.",
+    a: "AI-enabled finance is not unsupervised books. A human owns every number that reaches management. Tools named, scoped, reviewable.",
   },
   {
     q: "What about confidentiality?",
-    a: "Client data is handled under a signed engagement agreement with confidentiality terms. Restricted data is never uploaded to AI tools without an approved handling process, and access is limited to what the work requires.",
+    a: "Signed engagement. Restricted data doesn't go into tools without an approved process.",
   },
   {
     q: "What does onboarding look like?",
-    a: "Kickoff within days of signing: we confirm objectives and decision owners, collect system access, and baseline your numbers. You see a first visible win — a cash forecast, KPI pack, or close acceleration — inside the first 30 days.",
+    a: "Kickoff after cash clears. Objectives, decision owners, system access, baseline. First visible win inside 30 days — cash view, KPI pack, or a close that holds.",
   },
   {
     q: "We're not ready for a CFO. Is this still for us?",
-    a: "That's usually exactly when fractional works best. The question isn't headcount — it's whether the decisions you're making have outgrown the visibility you have. The diagnostic will tell you precisely where you stand.",
+    a: "That's usually when fractional works. The Review is the fit-check. It is not a diagnostic and it does not leave you with a plan.",
   },
 ];
 

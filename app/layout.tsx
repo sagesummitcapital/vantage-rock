@@ -2,7 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, CONTACT_EMAIL } from "@/lib/site";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  CONTACT_EMAIL,
+  FOUNDER_NAME,
+  SAME_AS,
+} from "@/lib/site";
 import "./globals.css";
 
 // Self-hosted Newsreader — a transitional serif with true optical sizing,
@@ -17,7 +24,7 @@ const display = localFont({
   ],
 });
 
-const TITLE = "Vantage Rock Financial — AI-Native Financial Leadership";
+const TITLE = "Vantage Rock Financial — AI-enabled finance";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,16 +34,17 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
+    "AI-enabled finance",
+    "AI-native financial leadership",
     "fractional CFO",
-    "AI finance automation",
     "financial reporting",
     "cash flow forecasting",
     "founder-led business finance",
     "outsourced CFO",
     "finance systems",
   ],
-  authors: [{ name: SITE_NAME }],
-  creator: SITE_NAME,
+  authors: [{ name: FOUNDER_NAME }, { name: SITE_NAME }],
+  creator: FOUNDER_NAME,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -71,17 +79,31 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: SITE_NAME,
   description: SITE_DESCRIPTION,
-  url: SITE_URL,
+  url: "https://www.vantagerockfinancial.com",
   email: CONTACT_EMAIL,
   areaServed: "US",
+  founder: {
+    "@type": "Person",
+    name: FOUNDER_NAME,
+    jobTitle: "Founder",
+    url: "https://www.vantagerockfinancial.com",
+    email: CONTACT_EMAIL,
+    sameAs: SAME_AS,
+  },
+  sameAs: SAME_AS,
   serviceType: [
     "Fractional CFO Services",
+    "AI-enabled finance",
+    "AI-native financial leadership",
     "Financial Reporting & Dashboards",
     "Cash Flow Forecasting",
     "Finance Automation",
     "Strategic Financial Planning",
   ],
   knowsAbout: [
+    "AI-enabled finance",
+    "AI-native financial leadership",
+    "fractional CFO",
     "Financial reporting",
     "Cash flow forecasting",
     "FP&A",
@@ -99,6 +121,9 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${display.variable}`}
     >
+      <head>
+        <link rel="describedby" href="/llms.txt" />
+      </head>
       <body className="bg-bg text-ink antialiased">
         {/* Accessibility: lets keyboard users skip the nav */}
         <a

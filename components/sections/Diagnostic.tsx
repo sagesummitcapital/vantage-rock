@@ -3,22 +3,16 @@
 import { motion } from "framer-motion";
 import CTAButton from "../CTAButton";
 import Reveal from "../Reveal";
-
-const deliverables = [
-  "Finance Maturity Score (0–100) with risk heatmap",
-  "Your five highest-value fixes, prioritized",
-  "Quick wins you can implement immediately",
-  "Automation opportunity map with estimated time savings",
-  "90-day roadmap with recommended scope & investment",
-];
+import { CONTACT_EMAIL } from "@/lib/site";
 
 const assessed = [
-  "Close speed & accuracy",
-  "Cash & 13-week visibility",
-  "Forecast maturity",
-  "Margin & profitability reporting",
-  "KPIs & management reporting",
-  "Manual work & automation readiness",
+  "close and accuracy",
+  "cash and treasury",
+  "forecasting",
+  "profitability",
+  "KPIs and reporting",
+  "process and controls",
+  "automation",
 ];
 
 export default function Diagnostic() {
@@ -30,25 +24,16 @@ export default function Diagnostic() {
           <Reveal>
             <span className="mono-label">03 — Where every engagement starts</span>
             <h2 className="mt-6 font-display text-display-lg">
-              <span className="text-ink">Finance + AI </span>
-              <span className="gradient-text-teal italic">Diagnostic</span>
+              <span className="text-ink">Wrong first ask is a dashboard. Right first ask is a </span>
+              <span className="gradient-text-teal italic">score</span>
               <span className="text-ink">.</span>
             </h2>
-            <p className="mt-3 text-[14px] font-medium uppercase tracking-[0.08em] text-teal">
-              See the opportunity. Then automate it.
-            </p>
             <p className="mt-6 max-w-[460px] text-[16px] leading-[1.55] text-ink-muted">
-              A fixed-scope assessment of your finance function — close, cash,
-              forecasting, margins, reporting, workflows. You get a scored,
-              prioritized roadmap in one to two weeks.
-            </p>
-            <p className="mt-4 max-w-[460px] text-[14px] leading-[1.55] text-ink-muted">
-              Yours to keep either way. Credited toward the work if you engage
-              within 30 days.
+              This is a sample. Not your score. Not a form.
             </p>
 
             <div className="mt-8 rounded-lg border border-line bg-bg-raised p-4">
-              <div className="mono-label mb-3 !text-[10px]">What we assess</div>
+              <div className="mono-label mb-3 !text-[10px]">Seven areas</div>
               <div className="flex flex-wrap gap-2">
                 {assessed.map((a) => (
                   <span
@@ -61,12 +46,22 @@ export default function Diagnostic() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-5">
-              <CTAButton href="#book">Book a Finance Systems Review</CTAButton>
+            <div className="mt-8 flex flex-col items-start gap-4">
+              <p className="max-w-[460px] text-[15px] leading-[1.55] text-ink-muted">
+                Want the sample?{" "}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}?subject=SCORECARD`}
+                  className="font-medium text-teal transition-colors hover:text-ink"
+                >
+                  Reply SCORECARD
+                </a>
+                . Want 30 minutes?
+              </p>
+              <CTAButton href="#book">Request the Review</CTAButton>
             </div>
           </Reveal>
 
-          {/* Right — product card */}
+          {/* Right — sample score */}
           <Reveal delay={0.15}>
             <motion.div
               whileHover={{ y: -3 }}
@@ -81,24 +76,25 @@ export default function Diagnostic() {
 
               <div className="relative">
                 <div className="mb-6 flex items-center justify-between border-b border-line pb-4">
-                  <span className="mono-label !text-teal">
-                    Finance + AI Diagnostic
-                  </span>
+                  <span className="mono-label !text-teal">SAMPLE</span>
                   <span className="font-mono text-[11px] tracking-[0.05em] text-ink-dim">
-                    1–2 weeks
+                    Not your score
                   </span>
                 </div>
 
                 <div className="mb-8">
-                  <div className="font-display text-[30px] leading-[1.15] tracking-[-0.02em] text-ink">
-                    Fixed fee, credited toward
-                    <br />your engagement.
+                  <div className="tabular font-display text-[48px] leading-none tracking-[-0.02em] text-ink">
+                    36
+                    <span className="text-[22px] text-ink-dim">/100</span>
                   </div>
+                  <p className="mt-3 text-[14px] leading-[1.5] text-ink-muted">
+                    This is a sample. Not your score. Not a form.
+                  </p>
                 </div>
 
-                <div className="mono-label mb-4 !text-[10px]">You receive</div>
-                <ul className="space-y-4">
-                  {deliverables.map((d, i) => (
+                <div className="mono-label mb-4 !text-[10px]">Seven areas</div>
+                <ul className="space-y-3">
+                  {assessed.map((d, i) => (
                     <motion.li
                       key={d}
                       initial={{ opacity: 0, x: -8 }}
@@ -115,14 +111,6 @@ export default function Diagnostic() {
                     </motion.li>
                   ))}
                 </ul>
-
-                <div className="mt-8 rounded-lg bg-bg-sunken p-4">
-                  <p className="text-[13px] leading-[1.5] text-ink-muted">
-                    <span className="text-ink">What we need:</span> recent
-                    financials, your current forecast, a systems list, and one
-                    60-minute management interview.
-                  </p>
-                </div>
               </div>
             </motion.div>
           </Reveal>
