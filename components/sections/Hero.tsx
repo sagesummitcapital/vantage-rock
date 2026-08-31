@@ -28,7 +28,7 @@ const steps = [
   },
   {
     title: "The seat",
-    desc: "Diagnostic and the work only after fit. Quoted from scope.",
+    desc: "Named agents on close, cash, expense, flux, and the day. After fit, from scope.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
         <path d="M12 3c3 2.5 4.5 6 4.5 9.5L12 17l-4.5-4.5C7.5 9 9 5.5 12 3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
@@ -89,9 +89,10 @@ export default function Hero() {
               className="mt-7 max-w-[500px] text-[17px] leading-[1.6] text-ink-muted"
             >
               Most shops using that phrase are running a prompt box on a
-              spreadsheet nobody trusts. Vantage Rock Financial is a fractional
-              CFO seat. AI-native financial leadership means a human on the
-              decisions and a system on the rest.
+              spreadsheet nobody trusts. We run this firm with AI on the
+              operating work so the operator stays on clients. Then we put the
+              same idea in your finance seat. Human on the decisions. Agents on
+              the rest.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
