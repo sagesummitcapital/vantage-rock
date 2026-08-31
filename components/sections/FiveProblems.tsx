@@ -16,7 +16,7 @@ export default function FiveProblems() {
           <span className="mono-label">01 — The real problem</span>
           <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <h2 className="max-w-[720px] font-display text-display-lg">
-              <span className="text-ink">Two or more sound familiar? You don&apos;t have an accounting problem. Finance isn&apos;t in the room.</span>
+              <span className="text-ink">If two or more of these sound familiar, that&apos;s not an accounting problem. Finance isn&apos;t in the room.</span>
             </h2>
           </div>
         </Reveal>

@@ -88,10 +88,9 @@ export default function Hero() {
               variants={item}
               className="mt-7 max-w-[500px] text-[17px] leading-[1.6] text-ink-muted"
             >
-              Most shops using that phrase are running a prompt box on a
-              spreadsheet nobody trusts. Vantage Rock Financial is a fractional
-              CFO firm. AI-native financial leadership means a human on the
-              decisions and a system on the rest.
+              Most shops calling it that are running a prompt on a
+              spreadsheet nobody trusts. We&apos;re a fractional CFO firm.
+              Human on the decisions. System on the rest.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">

@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 /**
  * Hero graphic: a SAMPLE Finance Maturity Scorecard.
- * Sample only — not the visitor's score, not a form.
+ * Sample only — not a form.
  */
 
 const areas = [
@@ -49,7 +49,7 @@ export default function ScorecardPanel() {
             SAMPLE
           </div>
           <div className="mt-1 text-[12px]" style={{ color: "#8FA3B5" }}>
-            Not your score · not a form
+            not a form
           </div>
         </div>
 

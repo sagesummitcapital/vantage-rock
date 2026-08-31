@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "../Reveal";
-import { CONTACT_EMAIL, FOUNDER_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, FOUNDER_NAME, FOUNDER_LINKEDIN, X_URL } from "@/lib/site";
 
 const domains = [
   "FP&A and controllership",
@@ -48,8 +48,7 @@ export default function About() {
             <p className="mt-6 max-w-[540px] text-[16px] leading-[1.65] text-ink-muted">
               {FOUNDER_NAME}. Finance and operations, 10+ years across
               healthcare, technology, startups, and PE-backed shops.
-              Engagements are scoped and led at that level. Your numbers
-              don&apos;t go to a junior analyst.
+              Engagements are scoped and led at that level.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
@@ -59,6 +58,8 @@ export default function About() {
               >
                 {CONTACT_EMAIL}
               </a>
+              <a href={FOUNDER_LINKEDIN} target="_blank" rel="noopener noreferrer" className="font-medium text-teal transition-colors hover:text-ink">LinkedIn</a>
+              <a href={X_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-teal transition-colors hover:text-ink">@VantageRock</a>
             </div>
 
             <div className="mt-8">

@@ -29,7 +29,7 @@ export default function Diagnostic() {
               <span className="text-ink"> looks like.</span>
             </h2>
             <p className="mt-6 max-w-[460px] text-[16px] leading-[1.55] text-ink-muted">
-              This is a sample. Not your score. Not a form.
+              This is a sample. Not a form.
             </p>
 
             <div className="mt-8 rounded-lg border border-line bg-bg-raised p-4">
@@ -49,14 +49,14 @@ export default function Diagnostic() {
             <div className="mt-8 flex flex-col items-start gap-4">
               <CTAButton href="#book">Request the Review</CTAButton>
               <p className="max-w-[460px] text-[15px] leading-[1.55] text-ink-muted">
-                Want the sample? Email{" "}
+                Want more?{" "}
                 <a
-                  href={`mailto:${CONTACT_EMAIL}?subject=SCORECARD`}
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="font-medium text-teal transition-colors hover:text-ink"
                 >
-                  {CONTACT_EMAIL}
-                </a>{" "}
-                with SCORECARD. It&apos;s a sample, not a form.
+                  Get in touch
+                </a>
+                .
               </p>
             </div>
           </Reveal>
@@ -77,9 +77,6 @@ export default function Diagnostic() {
               <div className="relative">
                 <div className="mb-6 flex items-center justify-between border-b border-line pb-4">
                   <span className="mono-label !text-teal">SAMPLE</span>
-                  <span className="font-mono text-[11px] tracking-[0.05em] text-ink-dim">
-                    Not your score
-                  </span>
                 </div>
 
                 <div className="mb-8">
@@ -88,7 +85,7 @@ export default function Diagnostic() {
                     <span className="text-[22px] text-ink-dim">/100</span>
                   </div>
                   <p className="mt-3 text-[14px] leading-[1.5] text-ink-muted">
-                    This is a sample. Not your score. Not a form.
+                    This is a sample. Not a form.
                   </p>
                 </div>
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FOUNDER_LINKEDIN, X_URL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -50,6 +51,24 @@ export default function Footer() {
                 style={{ color: "#F0F4F8" }}
               >
                 info@vantagerockfinancial.com
+              </a>
+              <a
+                href={FOUNDER_LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                style={{ color: "#F0F4F8" }}
+              >
+                LinkedIn
+              </a>
+              <a
+                href={X_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                style={{ color: "#F0F4F8" }}
+              >
+                @VantageRock
               </a>
               <span className="font-mono text-[12px] tracking-[0.04em]" style={{ color: "#8FA3B5" }}>
                 vantagerockfinancial.com

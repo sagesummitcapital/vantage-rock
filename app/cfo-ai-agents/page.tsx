@@ -268,14 +268,14 @@ export default function CfoAiAgentsPage() {
                 .
               </p>
               <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                Sample SCORECARD on request. Email{" "}
+                Want more on SCORECARD?{" "}
                 <a
-                  href="mailto:info@vantagerockfinancial.com?subject=SCORECARD"
+                  href="mailto:info@vantagerockfinancial.com"
                   className="text-teal underline decoration-teal/30 underline-offset-2 hover:text-teal-deep"
                 >
-                  info@vantagerockfinancial.com
-                </a>{" "}
-                with SCORECARD. It&apos;s a sample, not your score, not a form.
+                  Get in touch
+                </a>
+                .
               </p>
             </section>
 

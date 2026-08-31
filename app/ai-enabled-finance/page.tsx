@@ -111,7 +111,7 @@ export default function AiEnabledFinancePage() {
 
             <div className="mt-12 space-y-6 text-[17px] leading-[1.7] text-ink">
               <p>
-                Most shops using that phrase are running a prompt box on a
+                Most shops calling it that are running a prompt on a
                 spreadsheet nobody trusts.
               </p>
               <p>
@@ -157,8 +157,7 @@ export default function AiEnabledFinancePage() {
               </p>
               <p>
                 Vantage Rock Financial is the fractional CFO firm built around
-                that. AI-native financial leadership means humans on the
-                decisions and systems on the rest.
+                that. Human on the decisions. System on the rest.
               </p>
               <p>
                 The 30-minute Finance Systems Review is a fit-check. We
@@ -172,14 +171,14 @@ export default function AiEnabledFinancePage() {
                 .
               </p>
               <p>
-                Sample SCORECARD on request — email{" "}
+                Want more on SCORECARD?{" "}
                 <a
-                  href="mailto:info@vantagerockfinancial.com?subject=SCORECARD"
+                  href="mailto:info@vantagerockfinancial.com"
                   className="text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-deep"
                 >
-                  info@vantagerockfinancial.com
-                </a>{" "}
-                with SCORECARD. It&apos;s a sample, not your score, not a form.
+                  Get in touch
+                </a>
+                .
               </p>
             </div>
 

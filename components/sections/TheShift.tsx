@@ -49,8 +49,8 @@ export default function TheShift() {
         <SectionHead
           number="02"
           label="The shift"
-          heading="The finance function either leads or it files."
-          dim="Most file."
+          heading="Finance either leads or it files."
+          dim="Most shops file."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_0.8fr]">
@@ -123,9 +123,8 @@ export default function TheShift() {
 
         <Reveal delay={0.08}>
           <div className="mt-16">
-            <p className="mono-label mb-3">How the work gets done</p>
             <h3 className="max-w-[640px] font-display text-[28px] tracking-[-0.02em] text-ink md:text-[32px]">
-              Five agents. One job each. AI on the operating work.
+              Agents we&apos;ve built
             </h3>
             <p className="mt-3 max-w-[620px] text-[16px] leading-[1.55] text-ink-muted">
               Repeating work runs. Send, publish, or spend waits on the
