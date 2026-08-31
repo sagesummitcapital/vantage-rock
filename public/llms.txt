@@ -11,16 +11,17 @@ Vantage Rock Financial is a fractional CFO seat, not a chatbot on last month's f
 - Score first (sample only). Then a Review. Diagnostic and the work only after fit, quoted from scope. No list prices.
 - Founder: Stavros Christas. You talk to the operator. Engagements are scoped and led at that level.
 - Email: info@vantagerockfinancial.com
+- Five CFO AI agents in the seat: Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent. Human on the decisions. Agents on the rest.
 
 ## Pages
 
 - [What AI-enabled finance actually means](https://www.vantagerockfinancial.com/ai-enabled-finance)
+- [CFO AI agents](https://www.vantagerockfinancial.com/cfo-ai-agents): Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent
 
 ## Contact
 
 - [Homepage](https://www.vantagerockfinancial.com): Public site
 - [Email](mailto:info@vantagerockfinancial.com): info@vantagerockfinancial.com
-- [LinkedIn](https://www.linkedin.com/in/stavros-christias-4863b211a/): Stavros Christas
 - [X](https://x.com/VantageRock): @VantageRock
 - [YouTube](https://www.youtube.com/@VantageRockFinancial): Vantage Rock Financial
 - [Full context](https://www.vantagerockfinancial.com/llms-full.txt): Expanded locked facts for agents

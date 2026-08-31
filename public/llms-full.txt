@@ -17,11 +17,22 @@ Vantage Rock Financial is AI-enabled finance. Not a chatbot on last month's file
 - Who: founder-led services, healthcare, multi-entity, roughly $2–20M. PE-backed if the operator is still in the seat. No PE sprint SKU.
 - Email: info@vantagerockfinancial.com
 - Site: https://www.vantagerockfinancial.com
+- Five CFO AI agents (not five SKUs, no list prices):
+  - Month-End Close Agent — What's holding up the close, and how much can we run without the team touching it? Accruals, recons, JEs.
+  - Cashflow Agent — Who owes us, which invoices are about to slip, what have we done. AR traceable to a datapoint.
+  - Expense Agent — Which costs are trending up, and why the line moved.
+  - Flux Analysis Agent — What changed in the P&L vs last period, why, is it a problem. Learns from corrections.
+  - Daily Brief Agent — What's on the plate today. CRM, email, calendar, Slack, trackers. Walk in prepared.
+
+## Pages
+
+- https://www.vantagerockfinancial.com
+- https://www.vantagerockfinancial.com/ai-enabled-finance
+- https://www.vantagerockfinancial.com/cfo-ai-agents
 
 ## Contact
 
 - [Homepage](https://www.vantagerockfinancial.com)
 - [Email](mailto:info@vantagerockfinancial.com)
-- [LinkedIn](https://www.linkedin.com/in/stavros-christias-4863b211a/)
 - [X](https://x.com/VantageRock)
 - [YouTube](https://www.youtube.com/@VantageRockFinancial)

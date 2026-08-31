@@ -108,6 +108,17 @@ export default function AiEnabledFinancePage() {
             <p className="mt-5 font-display text-[22px] italic leading-[1.35] tracking-[-0.02em] text-ink-muted md:text-[24px]">
               Not a chatbot on last month&apos;s file.
             </p>
+            <p className="mt-6 text-[17px] leading-[1.7] text-ink">
+              Five named agents sit in that seat.{" "}
+              <a
+                href="/cfo-ai-agents"
+                className="text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-deep"
+              >
+                Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis
+                Agent, Daily Brief Agent
+              </a>
+              — what each one actually does.
+            </p>
 
             <div className="mt-12 space-y-6 text-[17px] leading-[1.7] text-ink">
               <p>
