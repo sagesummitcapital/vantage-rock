@@ -27,7 +27,7 @@ const steps = [
     ),
   },
   {
-    title: "The seat",
+    title: "The work",
     desc: "Diagnostic and the work only after fit. Quoted from scope.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -90,7 +90,7 @@ export default function Hero() {
             >
               Most shops using that phrase are running a prompt box on a
               spreadsheet nobody trusts. Vantage Rock Financial is a fractional
-              CFO seat. AI-native financial leadership means a human on the
+              CFO firm. AI-native financial leadership means a human on the
               decisions and a system on the rest.
             </motion.p>
 

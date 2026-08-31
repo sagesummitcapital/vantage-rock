@@ -18,7 +18,7 @@ export default function Impact() {
           number="07"
           label="Proof"
           heading="What this looks like"
-          dim="when the seat is in the room."
+          dim="when a fractional CFO is in the room."
         />
 
         <Reveal>
@@ -45,7 +45,7 @@ export default function Impact() {
                       Before
                     </div>
                     <p className="text-[15px] leading-[1.55]" style={{ color: "#C5D2DD" }}>
-                      15-day close, reports pulled by hand, no forward cash.
+                      Reports pulled by hand. No forward cash.
                     </p>
                   </div>
                   <div>

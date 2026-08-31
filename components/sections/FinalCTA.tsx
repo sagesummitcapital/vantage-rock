@@ -41,7 +41,7 @@ export default function FinalCTA() {
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-[520px] text-[17px] leading-[1.5] text-ink-muted">
               We don&apos;t diagnose on the call. No plan to take home. Fit or
-              not, you leave knowing whether the seat is the next move.
+              not, you leave knowing whether a fractional CFO is the next move.
             </p>
 
             <div className="mx-auto mt-8 flex max-w-[640px] flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[13px] text-ink-muted">

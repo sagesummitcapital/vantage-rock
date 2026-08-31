@@ -24,9 +24,9 @@ export default function Diagnostic() {
           <Reveal>
             <span className="mono-label">03 — Where every engagement starts</span>
             <h2 className="mt-6 font-display text-display-lg">
-              <span className="text-ink">Wrong first ask is a dashboard. Right first ask is a </span>
+              <span className="text-ink">Here&apos;s what a </span>
               <span className="gradient-text-teal italic">score</span>
-              <span className="text-ink">.</span>
+              <span className="text-ink"> looks like.</span>
             </h2>
             <p className="mt-6 max-w-[460px] text-[16px] leading-[1.55] text-ink-muted">
               This is a sample. Not your score. Not a form.
@@ -47,17 +47,17 @@ export default function Diagnostic() {
             </div>
 
             <div className="mt-8 flex flex-col items-start gap-4">
+              <CTAButton href="#book">Request the Review</CTAButton>
               <p className="max-w-[460px] text-[15px] leading-[1.55] text-ink-muted">
-                Want the sample?{" "}
+                Want the sample? Email{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}?subject=SCORECARD`}
                   className="font-medium text-teal transition-colors hover:text-ink"
                 >
-                  Reply SCORECARD
-                </a>
-                . Want 30 minutes?
+                  {CONTACT_EMAIL}
+                </a>{" "}
+                with SCORECARD. It&apos;s a sample, not a form.
               </p>
-              <CTAButton href="#book">Request the Review</CTAButton>
             </div>
           </Reveal>
 

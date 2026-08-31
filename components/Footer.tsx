@@ -9,22 +9,16 @@ export default function Footer() {
       }}
     >
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10">
-        {/* Tagline band */}
+        {/* Identity band */}
         <div
           className="mb-12 border-b pb-10"
           style={{ borderColor: "rgba(240,244,248,0.1)" }}
         >
           <p
-            className="font-mono text-[12px] uppercase tracking-[0.2em]"
-            style={{ color: "#2EE6C9" }}
-          >
-            Clarity · Insight · Automation
-          </p>
-          <p
-            className="mt-3 max-w-[640px] font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] tracking-[-0.02em]"
+            className="max-w-[720px] font-display text-[clamp(1.25rem,2.6vw,1.85rem)] leading-[1.25] tracking-[-0.02em]"
             style={{ color: "#F0F4F8" }}
           >
-            Financial leadership that drives growth.
+            AI-enabled finance. AI-native financial leadership. Fractional CFO.
           </p>
         </div>
 

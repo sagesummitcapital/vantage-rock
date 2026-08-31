@@ -115,7 +115,7 @@ export default function TheShift() {
                 <span className="mt-0.5">
                   <CheckIcon bright />
                 </span>
-                The seat. Score first. Then a Review.
+                Fractional CFO. Then a Review.
               </p>
             </div>
           </Reveal>
@@ -123,15 +123,18 @@ export default function TheShift() {
 
         <Reveal delay={0.08}>
           <div className="mt-16">
-            <p className="mono-label mb-3">How we run the seat</p>
+            <p className="mono-label mb-3">How the work gets done</p>
             <h3 className="max-w-[640px] font-display text-[28px] tracking-[-0.02em] text-ink md:text-[32px]">
-              AI on the operating work. Named agents in the function. SCORECARD first.
+              Five agents. One job each. AI on the operating work.
             </h3>
             <p className="mt-3 max-w-[620px] text-[16px] leading-[1.55] text-ink-muted">
+              Repeating work runs. Send, publish, or spend waits on the
+              operator.
+            </p>
+            <p className="mt-3 max-w-[620px] text-[16px] leading-[1.55] text-ink-muted">
               We run Vantage Rock with AI on the shop so the operator stays on
-              clients. Same rule in your finance seat. Five agents today. The
-              SCORECARD says which to turn on first. We add to this list as the
-              shop grows.
+              clients. Same rule on the books. Five agents today. We add to this
+              list as the shop grows.
             </p>
 
             <ol className="mt-8 divide-y divide-line border-y border-line">
@@ -168,12 +171,7 @@ export default function TheShift() {
                   />
                 </svg>
               </Link>
-              <a
-                href="#diagnostic"
-                className="inline-flex items-center gap-2 text-[13px] font-medium text-ink-muted transition-colors hover:text-ink"
-              >
-                SCORECARD is how we start
-              </a>
+
             </div>
           </div>
         </Reveal>

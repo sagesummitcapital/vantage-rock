@@ -11,7 +11,7 @@ const PATH = "/cfo-ai-agents";
 const CANONICAL = `${SITE_URL}${PATH}`;
 const TITLE = "CFO AI agents: close, cash, expense, flux, daily brief";
 const DESCRIPTION =
-  "Five CFO AI agents in a fractional CFO seat. Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent. Human on the decisions. Agents on the rest. Not a chatbot on last month's file.";
+  "Five CFO AI agents. Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent. Human on the decisions. Agents on the rest. Not a chatbot on last month's file.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -82,14 +82,14 @@ const agents = [
     name: "Daily Brief Agent",
     q: "What's actually on my plate today, and am I walking into every meeting prepared?",
     does: "The agent pulls CRM, email, calendar, call transcripts, Slack, and project trackers into today's priorities and a brief for each meeting on the calendar.",
-    area: "AI-native financial leadership — the day the seat runs",
+    area: "KPIs and reporting",
   },
 ];
 
 const faqs = [
   {
     q: "What is a Month-End Close Agent?",
-    a: "A Month-End Close Agent is software that answers what is holding up close and how much can run without the team touching it. It works accruals, reconciliations, and journal entries so controllers are not stuck on button-clicking.",
+    a: "A Month-End Close Agent answers what is holding up close and how much can run without the team touching it. It works accruals, reconciliations, and journal entries so controllers are not stuck on button-clicking.",
   },
   {
     q: "What is a Cashflow Agent for a CFO?",
@@ -105,11 +105,11 @@ const faqs = [
   },
   {
     q: "How is this different from a chatbot on Excel?",
-    a: "A chatbot on last month's file still needs a spreadsheet somebody trusts. These agents sit in a fractional CFO seat. The human is on the decisions. The agents run the repeating work: close, cash, expense, flux, and the day.",
+    a: "A chatbot on last month's file still needs a spreadsheet somebody trusts. These agents run the repeating finance work. The human is on the decisions. Close, cash, expense, flux, and the day.",
   },
   {
     q: "Do these replace a controller?",
-    a: "No. The Month-End Close Agent takes the clicking off the controller. Judgment stays with the seat. The CPA and bookkeeper stay in their lanes.",
+    a: "No. The Month-End Close Agent takes the clicking off the controller. Judgment stays with the fractional CFO. The CPA and bookkeeper stay in their lanes.",
   },
 ];
 
@@ -201,19 +201,18 @@ export default function CfoAiAgentsPage() {
               AI-enabled finance
             </p>
             <h1 className="mt-3 font-display text-display-xl text-ink">
-              Five CFO AI agents. One fractional CFO seat.
+              Fractional CFO. Five agents on the work.
             </h1>
             <p className="mt-5 font-display text-[22px] italic leading-[1.35] tracking-[-0.02em] text-ink-muted md:text-[24px]">
-              Human on the decisions. Agents on the rest. Not a chatbot on last
-              month&apos;s file.
+              Close, cash, expenses, flux, the daily brief. Not five products.
             </p>
 
             <div className="mt-12 space-y-6 text-[17px] leading-[1.7] text-ink">
               <p>
                 AI-enabled finance is a finance function that can actually lead.
-                These five agents are the work: close, cash, expense, flux, and
-                the day. They sit inside a fractional CFO seat. They are not five
-                SKUs with list prices.
+                These five agents run the repeating finance work: close, cash,
+                expense, flux, and the day. They are not five SKUs with list
+                prices.
               </p>
               <p>
                 AI-native financial leadership means the operator stays on
@@ -257,22 +256,9 @@ export default function CfoAiAgentsPage() {
                 How this starts
               </h2>
               <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                We score seven areas first: close and accuracy, cash and treasury,
-                forecasting, profitability, KPIs and reporting, process and
-                controls, automation. The SCORECARD is a sample, not your score,
-                not a form. Email{" "}
-                <a
-                  href="mailto:info@vantagerockfinancial.com?subject=SCORECARD"
-                  className="text-teal underline decoration-teal/30 underline-offset-2 hover:text-teal-deep"
-                >
-                  info@vantagerockfinancial.com
-                </a>{" "}
-                with SCORECARD.
-              </p>
-              <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                The 30-minute Finance Systems Review is a fit-check. We don&apos;t
-                diagnose on the call. Diagnostic and the work only after fit,
-                quoted from scope. No list prices. Read{" "}
+                The 30-minute Finance Systems Review is the door. It is a
+                fit-check. We don&apos;t diagnose on the call. Diagnostic and the
+                work only after fit, quoted from scope. No list prices. Read{" "}
                 <a
                   href="/ai-enabled-finance"
                   className="text-teal underline decoration-teal/30 underline-offset-2 hover:text-teal-deep"
@@ -280,6 +266,16 @@ export default function CfoAiAgentsPage() {
                   what AI-enabled finance actually means
                 </a>
                 .
+              </p>
+              <p className="mt-4 text-[17px] leading-[1.7] text-ink">
+                Sample SCORECARD on request. Email{" "}
+                <a
+                  href="mailto:info@vantagerockfinancial.com?subject=SCORECARD"
+                  className="text-teal underline decoration-teal/30 underline-offset-2 hover:text-teal-deep"
+                >
+                  info@vantagerockfinancial.com
+                </a>{" "}
+                with SCORECARD. It&apos;s a sample, not your score, not a form.
               </p>
             </section>
 
@@ -302,7 +298,10 @@ export default function CfoAiAgentsPage() {
               </dl>
             </section>
 
-            <div className="mt-12">
+            <p className="mt-12 font-display text-[22px] leading-[1.35] tracking-[-0.02em] text-ink">
+              Five jobs. One fractional CFO. Not five products.
+            </p>
+            <div className="mt-8">
               <a
                 href="/#book"
                 className="inline-flex items-center gap-2 rounded-md bg-navy px-[20px] py-[12px] text-[13px] font-medium text-ink-invert transition-colors hover:bg-teal hover:text-white"

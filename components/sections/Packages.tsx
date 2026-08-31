@@ -17,7 +17,7 @@ type Pkg = {
 const packages: Pkg[] = [
   {
     name: "Essentials",
-    tagline: "Books exist. The seat isn't in the decisions yet.",
+    tagline: "Books exist. Finance isn't in the decisions yet.",
     inheritsLabel: "What's included",
     features: [
       "Monthly financial review",
@@ -172,7 +172,7 @@ export default function Packages() {
                 <span className="mono-label">Who we work with</span>
                 <p className="mt-3 max-w-[440px] text-[16px] leading-[1.55] text-ink">
                   Founder-led services, healthcare, multi-entity, roughly $2–20M.
-                  PE-backed if the operator is still in the seat. No PE sprint SKU.
+                  PE-backed if the founder is still running it. No PE sprint SKU.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2 md:max-w-[440px] md:justify-end">
@@ -181,7 +181,7 @@ export default function Packages() {
                   { x: "Healthcare", core: true },
                   { x: "Multi-entity", core: true },
                   { x: "Roughly $2–20M", core: true },
-                  { x: "PE-backed if operator in the seat", core: false },
+                  { x: "PE-backed if the founder is still running it", core: false },
                 ].map(({ x, core }) => (
                   <span
                     key={x}
