@@ -10,7 +10,6 @@ export const SITE_DESCRIPTION =
 export const CONTACT_EMAIL = "info@vantagerockfinancial.com";
 export const FOUNDER_NAME = "Stavros Christas";
 export const SAME_AS = [
-  "https://www.linkedin.com/in/stavros-christias-4863b211a/",
   "https://x.com/VantageRock",
   "https://www.youtube.com/@VantageRockFinancial",
 ];

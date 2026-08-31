@@ -54,14 +54,6 @@ export default function About() {
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
               <a
-                href="https://www.linkedin.com/in/stavros-christias-4863b211a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-teal transition-colors hover:text-ink"
-              >
-                LinkedIn
-              </a>
-              <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="font-medium text-teal transition-colors hover:text-ink"
               >
