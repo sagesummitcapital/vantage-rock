@@ -107,9 +107,9 @@ export default function BookingForm() {
       className="relative z-10 mx-auto max-w-[760px] rounded-xl border border-line bg-bg-raised p-7 soft-shadow md:p-10"
     >
       <div className="mb-8 flex items-center justify-between border-b border-line pb-5">
-        <span className="mono-label !text-teal">Finance Systems Review</span>
+        <span className="mono-label !text-teal">Book a 30-minute call</span>
         <span className="font-mono text-[11px] tracking-[0.06em] text-ink-dim">
-          Reply within 24h
+          Reply within 1 business day
         </span>
       </div>
 
@@ -222,7 +222,7 @@ export default function BookingForm() {
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
           className="group relative inline-flex items-center justify-center gap-2 rounded-md bg-navy px-6 py-3 text-[13px] font-medium text-ink-invert transition-all duration-300 hover:bg-teal hover:text-white hover:shadow-[0_8px_24px_-6px_rgba(23,168,154,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Submitting…" : "Request the 30-minute Review"}
+          {status === "submitting" ? "Submitting…" : "Book the call"}
           {status !== "submitting" && (
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path

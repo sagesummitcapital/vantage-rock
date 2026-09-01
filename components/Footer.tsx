@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FOUNDER_LINKEDIN, X_URL } from "@/lib/site";
+import { FOUNDER_LINKEDIN, COMPANY_LINKEDIN, X_URL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
             className="max-w-[720px] font-display text-[clamp(1.25rem,2.6vw,1.85rem)] leading-[1.25] tracking-[-0.02em]"
             style={{ color: "#F0F4F8" }}
           >
-            AI-enabled finance. AI-native financial leadership. Fractional CFO.
+            AI-enabled finance. A human between the systems and the decisions.
           </p>
         </div>
 
@@ -39,11 +39,12 @@ export default function Footer() {
           {/* Right column */}
           <div className="flex flex-col gap-6 md:items-end">
             <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "#C5D2DD" }}>
-              <a href="/#diagnostic" className="transition-colors hover:text-[#2EE6C9]">Diagnostic</a>
-              <a href="/#packages" className="transition-colors hover:text-[#2EE6C9]">Packages</a>
+              <a href="/#services" className="transition-colors hover:text-[#2EE6C9]">Services</a>
+              <a href="/#how" className="transition-colors hover:text-[#2EE6C9]">How it works</a>
+              <a href="/#engagements" className="transition-colors hover:text-[#2EE6C9]">Engagements</a>
               <a href="/insights" className="transition-colors hover:text-[#2EE6C9]">Insights</a>
               <a href="/#about" className="transition-colors hover:text-[#2EE6C9]">About</a>
-              <a href="/#book" className="transition-colors hover:text-[#2EE6C9]">Book</a>
+              <a href="/#book" className="transition-colors hover:text-[#2EE6C9]">Book a call</a>
             </div>
             <div className="flex flex-col gap-2 md:items-end">
               <a
@@ -60,7 +61,16 @@ export default function Footer() {
                 className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
                 style={{ color: "#F0F4F8" }}
               >
-                LinkedIn
+                LinkedIn — Stavros
+              </a>
+              <a
+                href={COMPANY_LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                style={{ color: "#F0F4F8" }}
+              >
+                LinkedIn — Vantage Rock
               </a>
               <a
                 href={X_URL}

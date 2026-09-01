@@ -8,6 +8,8 @@ import {
   SITE_DESCRIPTION,
   CONTACT_EMAIL,
   FOUNDER_NAME,
+  FOUNDER_TITLE,
+  LOCATION,
   SAME_AS,
 } from "@/lib/site";
 import "./globals.css";
@@ -24,7 +26,8 @@ const display = localFont({
   ],
 });
 
-const TITLE = "Vantage Rock Financial — AI-enabled finance";
+const TITLE =
+  "Fractional CFO & AI-Enabled Finance | Vantage Rock Financial";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,14 +37,18 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
+    "fractional CFO",
     "AI-enabled finance",
     "AI-native financial leadership",
-    "fractional CFO",
-    "financial reporting",
-    "cash flow forecasting",
-    "founder-led business finance",
+    "fractional CFO services",
     "outsourced CFO",
-    "finance systems",
+    "FP&A consultant",
+    "AI implementation for finance",
+    "month-end close automation",
+    "cash flow forecasting",
+    "multi-entity finance",
+    "founder-led business finance",
+    "private equity portfolio CFO",
   ],
   authors: [{ name: FOUNDER_NAME }, { name: SITE_NAME }],
   creator: FOUNDER_NAME,
@@ -73,41 +80,61 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// Structured data helps Google understand the business.
+// Organization-level structured data. Page-level schema (FAQ, Person, Services)
+// lives in app/page.tsx and references the @id declared here.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
+  legalName: SITE_NAME,
   description: SITE_DESCRIPTION,
-  url: "https://www.vantagerockfinancial.com",
+  url: SITE_URL,
   email: CONTACT_EMAIL,
-  areaServed: "US",
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/logo.png`,
+  priceRange: "$$$",
+  areaServed: { "@type": "Country", name: "United States" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: LOCATION.city,
+    addressRegion: LOCATION.region,
+    addressCountry: LOCATION.country,
+  },
   founder: {
     "@type": "Person",
+    "@id": `${SITE_URL}/#founder`,
     name: FOUNDER_NAME,
-    jobTitle: "Founder",
-    url: "https://www.vantagerockfinancial.com",
+    jobTitle: FOUNDER_TITLE,
+    url: SITE_URL,
     email: CONTACT_EMAIL,
     sameAs: SAME_AS,
   },
   sameAs: SAME_AS,
+  slogan: "AI-enabled finance. A human between the systems and the decisions.",
   serviceType: [
     "Fractional CFO Services",
-    "AI-enabled finance",
-    "AI-native financial leadership",
-    "Financial Reporting & Dashboards",
+    "AI-Enabled Finance",
+    "AI-Native Financial Leadership",
+    "FP&A",
+    "AI Implementation",
+    "Financial Reporting and Dashboards",
     "Cash Flow Forecasting",
-    "Finance Automation",
-    "Strategic Financial Planning",
+    "Month-End Close Automation",
+    "Multi-Entity Financial Consolidation",
   ],
   knowsAbout: [
+    "Fractional CFO",
     "AI-enabled finance",
     "AI-native financial leadership",
-    "fractional CFO",
+    "AI agents in finance",
     "Financial reporting",
+    "Month-end close acceleration",
     "Cash flow forecasting",
     "FP&A",
     "Finance process automation",
+    "Multi-entity finance",
+    "M&A due diligence and integration",
   ],
 };
 
