@@ -1,23 +1,23 @@
 # Vantage Rock Financial
 
-> Fractional CFO. AI-native financial leadership. The single public offer is a 30-minute Finance Systems Review — a fit-check. We don't diagnose on the call.
+> Fractional CFO. AI-native financial leadership. The single public offer is a 30-minute call. Nothing to prepare, no pitch.
 
 Vantage Rock Financial is AI-enabled finance. Not a chatbot on last month's file. Most shops calling it that are running a prompt on a spreadsheet nobody trusts. This is a fractional CFO firm. Human on the decisions. System on the rest.
 
 ## Locked facts
 
-- 30-minute Finance Systems Review: a fit-check. We cover where the finance function is now and what's slow. We don't diagnose on the call and you don't leave with a plan. Fit or not, you leave knowing whether there's work here worth doing.
-- The Review is not a diagnostic. A short diagnostic follows only if it's a fit, then the engagement scoped from it. Fees are scoped, never listed, because they move with entity count, systems, and how much needs rebuilding rather than running.
+- 30-minute call: we cover where the finance function is now, what's slow, and what you're deciding without the numbers you'd want. Fit or not, you leave knowing whether a fractional CFO is the next move.
+- The call is not a diagnostic. A short diagnostic follows only if it's a fit, then the engagement scoped from it. Fees are scoped, never listed, because they move with entity count, systems, and how much needs rebuilding rather than running.
 - Three pillars:
   - AI-enabled finance — a function that can actually lead. Not a dashboard with a prompt box.
   - AI-native financial leadership — humans on the decisions, systems on the rest. We build finance systems that think.
-  - Fractional CFO Services, AI-Enabled Finance, and AI-Native Financial Leadership are three angles on one engagement, not separate products. The 30-minute Finance Systems Review is the only public door.
-- SCORECARD is a high-ticket sample, not a form and not an email subject. Want more on SCORECARD? Get in touch at info@vantagerockfinancial.com. Seven areas: close and accuracy, cash and treasury, forecasting, profitability, KPIs and reporting, process and controls, automation.
+  - Fractional CFO Services, AI-Enabled Finance, and AI-Native Financial Leadership are three angles on one engagement, not separate products. The 30-minute call is the only public door.
+- Sample scorecard on the homepage is a sample. Not a form. Seven areas: close and accuracy, cash and treasury, forecasting, profitability, KPIs and reporting, process and controls, automation.
 - Founder: Stavros Christias. Finance and operations, 10+ years across healthcare, technology, startups, and PE-backed shops. You talk to the operator.
 - Who: founder-led and sponsor-backed companies from $1M in revenue, typically alongside an existing bookkeeper or controller. Strongest in healthcare, professional services, technology and SaaS, and multi-entity groups.
 - Email: info@vantagerockfinancial.com
 - Site: https://www.vantagerockfinancial.com
-- Agents we've built (not five SKUs, no list prices):
+- Five CFO AI agents (not five SKUs, no list prices):
   - Month-End Close Agent — What's holding up the close, and how much can we run without the team touching it? Accruals, recons, JEs.
   - Cashflow Agent — Who owes us, which invoices are about to slip, what have we done. AR traceable to a datapoint.
   - Expense Agent — Which costs are trending up, and why the line moved.
@@ -29,12 +29,17 @@ Vantage Rock Financial is AI-enabled finance. Not a chatbot on last month's file
 - https://www.vantagerockfinancial.com
 - https://www.vantagerockfinancial.com/ai-enabled-finance
 - https://www.vantagerockfinancial.com/cfo-ai-agents
+- https://www.vantagerockfinancial.com/insights
+- https://www.vantagerockfinancial.com/insights/bookkeeper-vs-controller-vs-cfo
+- https://www.vantagerockfinancial.com/insights/why-month-end-close-is-late
+- https://www.vantagerockfinancial.com/insights/pnl-profit-bank-empty
+- https://www.vantagerockfinancial.com/insights/ai-agents-in-finance
+- https://www.vantagerockfinancial.com/insights/month-end-close-agent-architecture
 
 ## Contact
 
 - [Homepage](https://www.vantagerockfinancial.com)
 - [Email](mailto:info@vantagerockfinancial.com)
-- [LinkedIn — Stavros Christias](https://www.linkedin.com/in/stavros-christias-4863b211a/)
-- [LinkedIn — Vantage Rock Financial](https://www.linkedin.com/company/vantagerock/)
+- [LinkedIn](https://www.linkedin.com/in/stavros-christias-4863b211a/)
 - [X](https://x.com/VantageRock)
 - [YouTube](https://www.youtube.com/@VantageRockFinancial)
