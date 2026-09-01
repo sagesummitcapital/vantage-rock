@@ -14,43 +14,35 @@ type Engagement = {
 const engagements: Engagement[] = [
   {
     name: "Essentials",
-    stage: "The books exist. Finance isn't in the decisions yet.",
-    lead: "Clear financials, on a schedule, that you can trust enough to act on.",
-    inherits: "What's included",
+    stage: "A lighter cadence. The books exist; finance is not in the decisions yet.",
+    lead: "Monthly time with the founder on the numbers you need to run the business.",
+    inherits: "Involvement",
     features: [
-      "Monthly financial review",
-      "KPI dashboard, up to ten measures",
-      "Monthly executive summary",
-      "Monthly strategy call",
-      "Email support",
+      "Monthly review and working session",
+      "A short set of measures leadership actually uses",
+      "Email between sessions",
     ],
   },
   {
     name: "Growth",
-    stage: "Cash and forecast need to lead, not trail.",
-    lead: "Forward visibility, and the analysis to act on it before the quarter closes.",
-    inherits: "Everything in Essentials, plus",
+    stage: "More time in the work. Cash and forecast need to lead.",
+    lead: "Deeper involvement so cash, forecast, and reporting stay current as you grow.",
+    inherits: "Essentials, plus more time",
     features: [
-      "Cash flow forecasting",
-      "Budget versus actual analysis",
-      "AI opportunity assessment",
-      "Process improvement recommendations",
-      "Two strategy calls per month",
-      "Priority email and chat support",
+      "Two working sessions a month",
+      "Forward cash and forecast",
+      "Priority access between sessions",
     ],
   },
   {
     name: "Scale",
-    stage: "Multi-entity, a board pack, a CFO needed in the room.",
-    lead: "Executive finance leadership and the systems to support it across entities.",
-    inherits: "Everything in Growth, plus",
+    stage: "In the room. Multi-entity, a board, or a lender who needs a CFO.",
+    lead: "The most involved engagement: weekly or on-demand, across entities.",
+    inherits: "Growth, plus more access",
     features: [
-      "Full fractional CFO leadership",
-      "AI implementation roadmap",
-      "Advanced KPI dashboards",
-      "Board and investor reporting",
       "Weekly or on-demand availability",
-      "Strategic planning and scenario modeling",
+      "Board and investor reporting",
+      "Work across entities",
     ],
   },
 ];
@@ -82,18 +74,16 @@ export default function Engagements() {
     <section id="engagements" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="05"
+          number="07"
           label="Engagements"
-          heading="Scoped to the business,"
-          dim="not to a package."
+          heading="How involved we are."
+          dim="Not a product list."
         />
 
         <Reveal>
           <p className="-mt-6 mb-14 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            Three shapes of engagement. Which one fits depends on where the finance
-            function is today — not on a menu. Fees are scoped after we talk, because
-            they move with entity count, systems, and how much needs rebuilding rather
-            than running.
+            Different companies need different depth. These are levels of involvement,
+            not a menu of products. Fees are scoped after we talk.
           </p>
         </Reveal>
 

@@ -38,14 +38,15 @@ export default function Agents() {
           number="04"
           label="The agents"
           heading="Agents we've built."
-          dim="Not five products."
+          dim="This is the result."
         />
 
         <Reveal>
           <p className="-mt-6 mb-12 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            Five pieces of one job that used to be done by hand every month. They run on
-            your data, in your systems, under review. We run Vantage Rock this way first,
-            which is how we know what actually holds.
+            These agents increase revenue, reduce manual work, automate reporting,
+            watch costs, support sales with calculators, and run FP&A. They are not
+            five products. They are how the fractional CFO work gets done, on your
+            data, under review.
           </p>
         </Reveal>
 

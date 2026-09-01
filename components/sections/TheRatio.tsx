@@ -89,27 +89,28 @@ export default function TheRatio() {
         <SectionHead
           number="01"
           label="The problem"
-          heading="Finance teams spend most of their time producing numbers"
-          dim="and very little interpreting them."
+          heading="Finance is not keeping up"
+          dim="with the business."
         />
 
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
             <div className="max-w-[540px] space-y-6 text-[16.5px] leading-[1.7] text-ink-muted">
               <p>
-                That ratio is the problem, and it is almost never a talent problem or
-                an effort problem. It is a systems problem.
+                Companies look for a fractional CFO for a lot of reasons. The numbers
+                are not trusted, or they arrive too late to use. Cash is this
+                morning&apos;s bank balance. Growth has outrun the finance team. A new
+                product is launching with no model. There is revenue in the existing
+                customer base that nobody has captured. Margin is hard to find.
               </p>
               <p>
-                When the close takes fifteen days, when the forecast is rebuilt by hand
-                each quarter, when margin analysis starts from scratch every time
-                someone asks — the mechanical work crowds out the thinking. Leadership
-                ends up deciding on information that describes a month already over.
+                Board, bank, or investor reporting takes a week to pull together. A
+                full-time CFO is not justified yet, but the gap is visible. Multi-entity
+                or post-acquisition work has made the books harder, not clearer.
               </p>
               <p className="text-ink">
-                Vantage Rock exists to change that ratio. AI compresses the mechanical
-                work — the close, the reconciliation, the assembly of the report — so
-                the output arrives while it can still influence a decision.
+                The common thread is the same. Finance is not keeping up with the
+                business.
               </p>
             </div>
           </Reveal>

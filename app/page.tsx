@@ -121,9 +121,9 @@ export default function Home() {
         <Pillars />
         <HowItWorks />
         <Agents />
-        <Engagements />
         <Proof />
         <About />
+        <Engagements />
         <FAQ />
         <FinalCTA />
         <Footer />

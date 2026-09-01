@@ -33,7 +33,7 @@ export default function About() {
     <section id="about" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="07"
+          number="06"
           label="Who you're working with"
           heading="You talk to the"
           dim="operator."
@@ -69,26 +69,13 @@ export default function About() {
           <Reveal delay={0.12}>
             <div className="max-w-[600px] space-y-5 text-[16.5px] leading-[1.7] text-ink-muted">
               <p>
-                I&apos;m a finance and operations leader with over a decade across
-                healthcare, technology and SaaS, startups, and private-equity-backed
-                businesses — from early-stage companies through acquisition and
-                post-acquisition integration, to multi-entity portfolio groups.
-              </p>
-              <p>
-                I&apos;ve built finance and operations functions from the ground up,
-                supported fundraising and due diligence, led accounting-system
-                migrations, and taken a month-end close from fifteen days to three.
+                Stavros Christias has spent a decade in healthcare, SaaS through
+                acquisition, startups, and PE-backed groups — close, cash, and
+                reporting, including a month-end that moved from fifteen days to three.
               </p>
               <p className="text-ink">
-                The focus of my work now is the practical application of AI inside
-                finance: cutting repetitive work, sharpening reporting and analysis,
-                surfacing risk sooner, and giving leadership faster and clearer answers
-                — without adding complexity nobody asked for.
-              </p>
-              <p>
-                The strongest finance organizations combine sound controls, operational
-                discipline, business judgment, and modern technology. Most firms bring
-                one or two. The whole premise of Vantage Rock is bringing all four.
+                Vantage Rock is that work with AI on it. When you reach out, you talk
+                to him. Not a sales team.
               </p>
             </div>
 

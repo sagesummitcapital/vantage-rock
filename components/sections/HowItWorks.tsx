@@ -82,16 +82,16 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
           number="03"
-          label="How the work gets done"
-          heading="A human sits between the systems"
-          dim="and the decisions."
+          label="How we do it"
+          heading="We come in as the fractional CFO."
+          dim="Then we find where AI belongs."
         />
 
         <Reveal>
           <p className="-mt-6 mb-14 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            Agents handle what repeats. Judgment, context and accountability stay with a
-            person — and every number that reaches leadership passes through one. That
-            hinge in the middle is the entire architecture, and it is deliberate.
+            We identify where AI should be implemented so the company can report and
+            scale without adding headcount. Agents draft. A person reviews, posts, and
+            owns the number.
           </p>
         </Reveal>
 
@@ -158,7 +158,7 @@ export default function HowItWorks() {
               The three rules that don&apos;t move
             </h3>
             <p className="mt-3 max-w-[600px] text-[15.5px] leading-[1.6] text-ink-muted">
-              This is the first question any serious operator asks, and it should be.
+              These three do not move.
             </p>
           </Reveal>
 
