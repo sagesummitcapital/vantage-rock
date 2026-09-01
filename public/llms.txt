@@ -1,6 +1,6 @@
 # Vantage Rock Financial
 
-> Fractional CFO firm delivering AI-enabled finance, FP&A, and AI implementation for founder-led and sponsor-backed companies from $1M in revenue. The single public offer is a 30-minute call.
+> Fractional CFO firm delivering AI-enabled finance, FP&A, and AI implementation for founder-led and sponsor-backed companies from $1M in revenue. The single public offer is a 30-minute Finance Systems Review — a fit-check. We don't diagnose on the call.
 
 Vantage Rock Financial provides fractional CFO leadership, FP&A, and AI implementation for the finance function. Most finance teams spend the bulk of their time producing numbers and only a fraction of it interpreting them. Vantage Rock exists to change that ratio: AI compresses the mechanical work — the close, the reconciliation, the assembly of the report — so the output arrives while it can still influence a decision.
 
@@ -8,12 +8,12 @@ The AI is not the product. It is how the work gets delivered. A human sits betwe
 
 ## Locked facts
 
-- The only public offer is a 30-minute call. There is nothing to prepare and no pitch. Fees are scoped after that conversation; there are no list prices, because scope moves with entity count, systems, and how much of the function needs rebuilding rather than running.
+- The only public offer is a 30-minute Finance Systems Review. It is a fit-check, not a sales call. We don't diagnose on the call and you don't leave with a plan. Fees are scoped after fit; there are no list prices, because scope moves with entity count, systems, and how much of the function needs rebuilding rather than running.
 - Three services, describing one engagement from three angles: Fractional CFO Services; AI-Enabled Finance; AI-Native Financial Leadership.
 - Founder: Stavros Christias, Founder & Fractional CFO. Over a decade across healthcare, technology and SaaS, startups, and private-equity-backed businesses. You talk to the operator — there is no sales team and no account manager.
 - Who it is for: founder-led and sponsor-backed companies from $1M in revenue, typically alongside an existing bookkeeper or controller. Strongest in healthcare, professional services, technology and SaaS, and multi-entity groups.
 - What Vantage Rock does not do: tax, audit, and bookkeeping. Existing CPAs and bookkeepers stay in place; the fractional CFO works above that layer.
-- Five agents run the repeating finance work: Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent. Not five products — five pieces of one job.
+- Agents we've built, five of them, run the repeating finance work: Month-End Close Agent, Cashflow Agent, Expense Agent, Flux Analysis Agent, Daily Brief Agent. Not five products — five pieces of one job.
 - Three control rules never move: every figure traces to a source record; nothing posts to the ledger unreviewed; a person signs anything that leaves the building.
 - Documented result, one anonymized healthcare and wellness engagement: month-end close reduced from 15 days to 3, manual reporting work down roughly 60%, real-time KPI visibility, and cash visible weeks ahead. Not a promise of comparable outcomes.
 - Location: Scottsdale, Arizona. Works with clients across the United States.
@@ -21,7 +21,7 @@ The AI is not the product. It is how the work gets delivered. A human sits betwe
 
 ## Pages
 
-- [Homepage](https://www.vantagerockfinancial.com): Fractional CFO and AI-enabled finance. Services, how the work gets done, the agents, engagements, and the 30-minute call.
+- [Homepage](https://www.vantagerockfinancial.com): Fractional CFO and AI-enabled finance. Services, how the work gets done, agents we've built, engagements, and the 30-minute Finance Systems Review.
 - [What AI-enabled finance actually means](https://www.vantagerockfinancial.com/ai-enabled-finance)
 - [Fractional CFO. Five agents on the work.](https://www.vantagerockfinancial.com/cfo-ai-agents): Close, cash, expenses, flux, the daily brief.
 

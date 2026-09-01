@@ -33,7 +33,7 @@ const pillars = [
     n: "03",
     name: "AI-Native Financial Leadership",
     lead: "The function rebuilt for how work actually gets done now.",
-    body: "Not automation bolted onto a manual process. A finance function designed from the start around the assumption that systems do the mechanical work and people do the judgment — with the controls that makes necessary.",
+    body: "Not automation bolted onto a manual process. A finance function designed from the start around the assumption that systems do the mechanical work and people do the judgment — with the controls that this requires.",
     points: [
       "Agent-supervised workflows with review gates",
       "Every figure traceable to a source record",

@@ -134,7 +134,7 @@ export default function Engagements() {
               <div className="mono-label mb-4">How it starts</div>
               <ol className="space-y-4">
                 {[
-                  "A 30-minute call. We talk about where the finance function is now and what's slow. No pitch, nothing to prepare.",
+                  "A 30-minute Finance Systems Review. Fit-check — we don't diagnose on the call. Nothing to prepare.",
                   "If it's a fit, a short diagnostic — what to fix, in what order, and what it's worth fixing.",
                   "Then the engagement, scoped from that. You always know what you're buying before you buy it.",
                 ].map((s, i) => (

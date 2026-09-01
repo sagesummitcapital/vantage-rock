@@ -9,8 +9,8 @@ import {
 
 const assurances = [
   "You talk to the founder, not a salesperson",
+  "It is a fit-check. We don't diagnose on the call",
   "Reply within one business day",
-  "Nothing to prepare",
 ];
 
 export default function FinalCTA() {
@@ -28,18 +28,17 @@ export default function FinalCTA() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h2 className="mt-6 max-w-[520px] font-display text-display-xl">
-                <span className="text-ink">Book a </span>
-                <span className="gradient-text">30-minute call.</span>
+              <h2 className="mt-6 max-w-[560px] font-display text-display-xl">
+                <span className="text-ink">Book a 30-minute </span>
+                <span className="gradient-text">Finance Systems Review.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.14}>
               <p className="mt-7 max-w-[480px] text-[17px] leading-[1.7] text-ink-muted">
-                We&apos;ll cover where your finance function is now, what&apos;s slow,
-                and what you&apos;re deciding without the numbers you&apos;d want. If
-                it&apos;s a fit, I&apos;ll tell you what I&apos;d do first. If it
-                isn&apos;t, I&apos;ll tell you that too.
+                It is a fit-check, not a sales call. We don&apos;t diagnose on the
+                call and you don&apos;t leave with a plan. Thirty minutes tells us
+                both whether there&apos;s work here worth doing.
               </p>
             </Reveal>
 

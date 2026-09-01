@@ -30,8 +30,8 @@ export const FAQS: { q: string; a: string }[] = [
     a: "AI runs the repeating mechanical work: pulling and reconciling data, drafting accruals, tracking receivables, writing the first version of the variance narrative. It does not run your books unsupervised. Three rules never move — every figure has to trace back to a source record, nothing posts to the ledger without a person reviewing it, and a person signs anything that leaves the building. Restricted data doesn't go into any tool without an approved process, and every tool in use is named and reviewable.",
   },
   {
-    q: "What happens on the 30-minute call?",
-    a: "We talk about where your finance function is now, what's slow or unreliable, and what decisions you're making without the information you'd want. There's nothing to prepare and no pitch deck. By the end we'll both know whether there's work here worth doing — and if there isn't, I'll say so.",
+    q: "What happens on the 30-minute Finance Systems Review?",
+    a: "It is a fit-check, not a sales call. We talk about where your finance function is now, what's slow or unreliable, and what decisions you're making without the information you'd want. We don't diagnose on the call and you don't leave with a plan. Thirty minutes tells us both whether there's work here worth doing — and if there isn't, I'll say so.",
   },
   {
     q: "How quickly would we see something change?",
@@ -39,6 +39,6 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "We're not ready for a CFO. Is this still worth a conversation?",
-    a: "That's usually the exact moment fractional makes sense. The alternative most companies reach for is hiring a controller to solve what is really a systems problem — twelve months and a six-figure salary before the reporting changes. A 30-minute call costs you nothing and will tell you which problem you actually have.",
+    a: "That's usually the exact moment fractional makes sense. The alternative most companies reach for is hiring a controller to solve what is really a systems problem — twelve months and a six-figure salary before the reporting changes. A 30-minute Review costs you nothing and will tell you which problem you actually have.",
   },
 ];

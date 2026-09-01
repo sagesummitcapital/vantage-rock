@@ -37,7 +37,7 @@ export default function Agents() {
         <SectionHead
           number="04"
           label="The agents"
-          heading="Five agents on the repeating work."
+          heading="Agents we've built."
           dim="Not five products."
         />
 
