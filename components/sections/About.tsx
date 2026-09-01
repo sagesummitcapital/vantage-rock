@@ -69,26 +69,13 @@ export default function About() {
           <Reveal delay={0.12}>
             <div className="max-w-[600px] space-y-5 text-[16.5px] leading-[1.7] text-ink-muted">
               <p>
-                I&apos;m a finance and operations leader with over a decade across
-                healthcare, technology and SaaS, startups, and private-equity-backed
-                businesses — from early-stage companies through acquisition and
-                post-acquisition integration, to multi-entity portfolio groups.
-              </p>
-              <p>
-                I&apos;ve built finance and operations functions from the ground up,
-                supported fundraising and due diligence, led accounting-system
-                migrations, and taken a month-end close from fifteen days to three.
+                Over a decade in healthcare, SaaS, startups, and PE-backed groups —
+                close, cash, and reporting. A month-end that moved from fifteen days
+                to three. A SaaS company through acquisition.
               </p>
               <p className="text-ink">
-                The focus of my work now is the practical application of AI inside
-                finance: cutting repetitive work, sharpening reporting and analysis,
-                surfacing risk sooner, and giving leadership faster and clearer answers
-                — without adding complexity nobody asked for.
-              </p>
-              <p>
-                The strongest finance organizations combine sound controls, operational
-                discipline, business judgment, and modern technology. Most firms bring
-                one or two. The whole premise of Vantage Rock is bringing all four.
+                Vantage Rock is that work, with AI on it. You talk to Stavros. Not a
+                sales team.
               </p>
             </div>
 

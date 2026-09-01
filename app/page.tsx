@@ -119,9 +119,9 @@ export default function Home() {
         <Hero />
         <TheRatio />
         <Pillars />
+        <Engagements />
         <HowItWorks />
         <Agents />
-        <Engagements />
         <Proof />
         <About />
         <FAQ />

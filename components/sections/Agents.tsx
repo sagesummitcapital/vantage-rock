@@ -35,17 +35,16 @@ export default function Agents() {
     <section id="agents" className="border-b border-line">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="04"
-          label="The agents"
+          number="05"
+          label="AI agents"
           heading="Agents we've built."
-          dim="Not five products."
+          dim="This is how finance will work."
         />
 
         <Reveal>
           <p className="-mt-6 mb-12 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            Five pieces of one job that used to be done by hand every month. They run on
-            your data, in your systems, under review. We run Vantage Rock this way first,
-            which is how we know what actually holds.
+            A CFO that uses AI on the month. Not five products. Five pieces of one
+            job — on your data, under review.
           </p>
         </Reveal>
 

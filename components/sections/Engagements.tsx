@@ -82,7 +82,7 @@ export default function Engagements() {
     <section id="engagements" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="05"
+          number="03"
           label="Engagements"
           heading="Scoped to the business,"
           dim="not to a package."
@@ -90,10 +90,8 @@ export default function Engagements() {
 
         <Reveal>
           <p className="-mt-6 mb-14 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            Three shapes of engagement. Which one fits depends on where the finance
-            function is today — not on a menu. Fees are scoped after we talk, because
-            they move with entity count, systems, and how much needs rebuilding rather
-            than running.
+            Three shapes of the same work. Fees are scoped after we talk — entity
+            count, systems, and how much needs rebuilding versus running.
           </p>
         </Reveal>
 

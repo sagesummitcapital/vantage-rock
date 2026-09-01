@@ -6,8 +6,8 @@ const pillars = [
   {
     n: "01",
     name: "Fractional CFO Services",
-    lead: "A CFO's judgment without a full-time hire.",
-    body: "Capital planning, unit economics, pricing, lender and investor relationships, board and investor reporting, and the operating discipline that comes with them. Engagements are scoped and led by me — there is no account manager between you and the work.",
+    lead: "Senior finance leadership without a full-time hire.",
+    body: "Cash, forecast, and the pack. Board, bank, and investor reporting. Pricing, margin, and the decisions those numbers change.",
     points: [
       "Board- and investor-ready reporting",
       "Rolling forecasts, cash plans, scenario models",
@@ -19,8 +19,8 @@ const pillars = [
   {
     n: "02",
     name: "AI-Enabled Finance",
-    lead: "Automation built into the function and left there.",
-    body: "Faster closes. Forecasts that update continuously instead of quarterly. Analysis that doesn't take a week of preparation. The AI is not the product — it is how the work gets delivered, which is why clients get answers in days rather than weeks.",
+    lead: "Close, cash, and reporting that keep up.",
+    body: "AI is how the work gets delivered — not a separate product. Faster close. A cash view that updates. Reporting that does not take a week.",
     points: [
       "Close acceleration and reconciliation workflows",
       "Continuously updated forecasting and cash visibility",
@@ -32,8 +32,8 @@ const pillars = [
   {
     n: "03",
     name: "AI-Native Financial Leadership",
-    lead: "The function rebuilt for how work actually gets done now.",
-    body: "Not automation bolted onto a manual process. A finance function designed from the start around the assumption that systems do the mechanical work and people do the judgment — with the controls that this requires.",
+    lead: "A CFO that uses AI on the work.",
+    body: "Not a chatbot on a slow close. Agents on the parts of the month that used to be done by hand. A person still signs what leaves.",
     points: [
       "Agent-supervised workflows with review gates",
       "Every figure traceable to a source record",
@@ -51,15 +51,14 @@ export default function Pillars() {
         <SectionHead
           number="02"
           label="What we do"
-          heading="Three services."
-          dim="One finance function."
+          heading="Three names."
+          dim="Same work."
         />
 
         <Reveal>
           <p className="-mt-6 mb-14 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            These are not separate offerings you choose between. They describe the same
-            engagement from three angles: who is accountable, how the work gets done,
-            and what the function looks like when it is finished.
+            Typically the bookkeeper or controller stays. Same engagement — who is
+            accountable, how the work gets done, and how the shop is built.
           </p>
         </Reveal>
 
