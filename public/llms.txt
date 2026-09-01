@@ -18,6 +18,12 @@ Vantage Rock Financial is a fractional CFO firm, not a chatbot on last month's f
 - [What AI-enabled finance actually means](https://www.vantagerockfinancial.com/ai-enabled-finance)
 - [Fractional CFO. Five agents on the work.](https://www.vantagerockfinancial.com/cfo-ai-agents): Close, cash, expenses, flux, the daily brief. Not five products.
 
+## Insights
+
+- [Insights index](https://www.vantagerockfinancial.com/insights): Field reports on AI agents in finance, the problems that lead to a fractional CFO, and the workflows worth rebuilding.
+- [AI agents in finance: a field report from a real close](https://www.vantagerockfinancial.com/insights/ai-agents-in-finance): Five agents in production. What worked, what failed, and the control layer.
+- [The architecture of a month-end close agent](https://www.vantagerockfinancial.com/insights/month-end-close-agent-architecture): What it reads, how it decides, where the review gates sit.
+
 ## Contact
 
 - [Homepage](https://www.vantagerockfinancial.com): Public site

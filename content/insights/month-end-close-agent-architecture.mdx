@@ -1,0 +1,101 @@
+---
+title: "The architecture of a month-end close agent"
+description: "A teardown of the close agent we run in production: what it reads, how it decides what to do next, where the review gates sit, what broke, and what a 15-day close actually costs while you leave it."
+cluster: "C"
+stage: "MOF"
+keyword: "month end close automation ai agent / close automation architecture"
+publishedAt: "2026-08-31"
+featured: true
+related:
+  - "ai-agents-in-finance"
+---
+
+Most close automation content stops at "it automates your close." That sentence is doing an enormous amount of hiding. So here is the actual shape of the thing — what it reads, what it decides, and where a person still has to sign.
+
+## Start with what a 15-day close costs
+
+Not in dollars. In decisions.
+
+A 15-day close means you spend the first three weeks of every month operating on information from a month ago. By the time April's numbers land, May is more than half spent. You make May's decisions on March's information and you find out in June whether they were right.
+
+<KeyNumber
+  value="~11 of 15 days"
+  label="Typical split in the closes we've rebuilt: roughly four days of actual accounting work, and the rest waiting, chasing, and finding out what has already been done."
+  source="Vantage Rock, across client engagements"
+/>
+
+That ratio is the whole opportunity. Most of a slow close is not accounting. It is coordination overhead — and coordination overhead is exactly what software is good at and people are bad at.
+
+## What the agent reads
+
+The agent has read access to four things and no more:
+
+- **The general ledger** — current period and trailing twelve, for pattern comparison
+- **Sub-ledgers** — AR, AP, payroll, and the bank feeds
+- **The close checklist itself**, as structured state rather than a spreadsheet someone colors in
+- **Prior-period close artifacts** — what was accrued last month, at what amount, on what basis
+
+That fourth one does more work than the other three combined. Most recurring accruals are recurring. An agent that can see what you did last month and what has changed since is right far more often than one reasoning from first principles about your business.
+
+## How it decides what to do next
+
+This is the part that makes it an agent rather than an automation. There is no fixed sequence. Each cycle it does four things:
+
+1. **Reads current state.** What is open, what is closed, what is blocked and on whom.
+2. **Identifies the constraint.** Not everything that is open matters equally. Bank rec blocks the P&L review; a nagging immaterial reclass does not.
+3. **Acts on what it can.** Drafts the accrual, prepares the reconciliation, assembles the variance pack, or writes the follow-up to the person holding it up.
+4. **Re-reads state and repeats.** Including checking whether its own last action produced what it expected.
+
+Step four is where most naive implementations fall down. An agent that acts without verifying its own output is a very fast way to produce a large volume of confident garbage.
+
+## Where the gates are
+
+Three hard stops. These are not configurable and that is deliberate.
+
+**Gate one — nothing posts unreviewed.** The agent proposes journal entries with the calculation and the supporting records attached. A human posts them. Every time, including the recurring ones, including month eleven when it has been right every time.
+
+**Gate two — untraceable numbers are not produced.** If a figure cannot be tied to a source record, the agent does not surface it with a caveat. It does not surface it. A flagged uncertain number still ends up in a deck; an absent one prompts a question.
+
+**Gate three — anything leaving the building is signed.** Board commentary, lender packages, investor reporting. The agent drafts. A person owns it.
+
+<Callout label="Your auditor will ask about this">
+Expect four questions: how the process is documented, what the audit trail captures, where the human review sits, and how you know the agent did what it claims. Have the answers written down before you are asked. A control you can only describe verbally is not a control.
+</Callout>
+
+## The build
+
+Honest sequencing, because "we automated the close" implies a single project and it was not.
+
+**State tracking came first**, and it was roughly a weekend of work. Converting the close checklist from a spreadsheet into structured state that something could query. Unglamorous, and it produced the largest single improvement of anything on this list — because it removed the finding-out, which was most of the elapsed time.
+
+**Accrual drafting came second**, and it took considerably longer than expected. Not because the reasoning was hard, but because the underlying data was inconsistent. Which brings us to the thing that actually determines whether any of this works.
+
+**Reconciliation exception handling came third**, and it is still the piece with the most human involvement, correctly.
+
+{/* TODO(Stavros): drop in real build hours + monthly run cost here if you're comfortable publishing them. Nobody else publishes real numbers and it would make this the reference article on the topic. */}
+
+## What broke
+
+**The chart of accounts, immediately.** Accounts used inconsistently across periods. Two accounts that should have been one. One account doing the work of three. The agent surfaced years of accumulated drift in about a week, which was useful and deeply annoying in equal measure. There is no version of this project where you skip that cleanup — an agent inherits your data hygiene and then scales it.
+
+**Cutoff discipline.** The agent assumed the period boundary meant something. It did not, consistently. Invoices dated in one period, received in another, coded on the day someone got to them.
+
+**A silent failure after an upstream change.** A bank feed changed shape and a piece of the process stopped producing without announcing that it had stopped. Nothing errored. It just quietly did less. The fix was a heartbeat check — the agent now reports what it did *not* do, not only what it did. An agent that only reports successes will eventually report nothing and look healthy doing it.
+
+## What I would build differently
+
+**Verification before capability.** I built the ability to draft accruals before building the ability to check whether a draft was right. That order should be reversed. Verification is not a polish step; it is the thing that makes the capability safe to use.
+
+**Heartbeat from day one.** See above. Silence should be an alarm, not a default.
+
+**The chart of accounts before anything.** Every time I have been tempted to skip this, it has cost more than doing it would have.
+
+<Takeaway>
+The architecture is not the hard part, and neither is the model. A close agent is four inputs, a decide-act-verify loop, and three review gates that never move.
+
+What determines whether it works is upstream of all of it: whether your chart of accounts is consistent, whether your cutoff means anything, and whether one named person owns the thing after it ships.
+
+Get those three right and the close compresses. Skip them and you have bought a faster way to be wrong.
+</Takeaway>
+
+If your close is running long and you want to know which of these applies to you, that is what the [Finance Systems Review](/#book) is for. Thirty minutes, fit-check, no diagnosis on the call.

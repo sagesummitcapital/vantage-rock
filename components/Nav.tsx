@@ -5,11 +5,14 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import CTAButton from "./CTAButton";
 
+// Root-relative so the nav also works from /insights and other subpages.
+// On the homepage the browser still treats these as same-page anchors.
 const links = [
-  { href: "#diagnostic", label: "Diagnostic" },
-  { href: "#packages", label: "Engagements" },
-  { href: "#about", label: "About" },
-  { href: "#impact", label: "Results" },
+  { href: "/#diagnostic", label: "Diagnostic" },
+  { href: "/#packages", label: "Engagements" },
+  { href: "/insights", label: "Insights" },
+  { href: "/#about", label: "About" },
+  { href: "/#impact", label: "Results" },
 ];
 
 export default function Nav() {
@@ -38,7 +41,7 @@ export default function Nav() {
       />
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 md:px-10">
         <a
-          href="#top"
+          href="/#top"
           className="group flex items-center"
           aria-label="Vantage Rock Financial — home"
         >
@@ -64,7 +67,7 @@ export default function Nav() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
-            <CTAButton variant="ghost" href="#book">
+            <CTAButton variant="ghost" href="/#book">
               Book a call
             </CTAButton>
           </div>
@@ -133,7 +136,7 @@ export default function Nav() {
                 </motion.a>
               ))}
               <a
-                href="#book"
+                href="/#book"
                 onClick={() => setOpen(false)}
                 className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-navy px-5 py-3 text-[14px] font-medium text-ink-invert transition-colors hover:bg-teal hover:text-white"
               >

@@ -39,10 +39,11 @@ export default function Footer() {
           {/* Right column */}
           <div className="flex flex-col gap-6 md:items-end">
             <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "#C5D2DD" }}>
-              <a href="#diagnostic" className="transition-colors hover:text-[#2EE6C9]">Diagnostic</a>
-              <a href="#packages" className="transition-colors hover:text-[#2EE6C9]">Packages</a>
-              <a href="#about" className="transition-colors hover:text-[#2EE6C9]">About</a>
-              <a href="#book" className="transition-colors hover:text-[#2EE6C9]">Book</a>
+              <a href="/#diagnostic" className="transition-colors hover:text-[#2EE6C9]">Diagnostic</a>
+              <a href="/#packages" className="transition-colors hover:text-[#2EE6C9]">Packages</a>
+              <a href="/insights" className="transition-colors hover:text-[#2EE6C9]">Insights</a>
+              <a href="/#about" className="transition-colors hover:text-[#2EE6C9]">About</a>
+              <a href="/#book" className="transition-colors hover:text-[#2EE6C9]">Book</a>
             </div>
             <div className="flex flex-col gap-2 md:items-end">
               <a

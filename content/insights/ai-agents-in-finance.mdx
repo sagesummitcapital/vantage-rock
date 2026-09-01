@@ -1,0 +1,105 @@
+---
+title: "AI agents in finance: a field report from a real close"
+description: "Five agents running against a live finance function. What each one owns, what it cost to build, three things that worked better than expected, and three that failed. Written from inside the close, not from a product roadmap."
+cluster: "C"
+stage: "MOF"
+keyword: "ai agents in finance / finance ai agents"
+publishedAt: "2026-08-31"
+featured: true
+related:
+  - "month-end-close-agent-architecture"
+---
+
+Almost everything written about AI agents in finance is written by someone selling software. The rest is written by people who have never closed a month. Both produce the same article: a definition, a list of benefits, a diagram with arrows, and a closing paragraph about the future of the finance function.
+
+This is not that. This is what happened when we put five agents against a live finance function and ran them through real closes, with real ledgers, under a real deadline.
+
+Some of it worked better than I expected. Some of it failed in ways that were expensive to find out about.
+
+## First, definitions that hold up
+
+The word "agent" has been stretched until it means nothing. Four things get called AI in finance, and they are not the same thing. Knowing which one you are being sold determines the cost, the risk, and who has to maintain it.
+
+**A prompt** is a question you type. You paste in a trial balance, you ask what moved, you read the answer. Nothing persists. Nothing runs when you are asleep. Value is real but it is capped at your own typing speed.
+
+**An automation** is a fixed sequence. When the bank feed updates, run this rule, write to that field. It has been in finance for twenty years under other names. It is reliable and it is dumb — it does exactly what it was told and nothing else, and it breaks silently when the input shape changes.
+
+**A workflow** chains automations together with branching. More capable, same fundamental character: someone specified every path in advance.
+
+**An agent** is given an objective, a set of tools, and permission to decide the order of operations. It reads state, decides what to do next, does it, checks the result, and continues until the objective is met or it gets stuck. That last part is the whole difference. Nobody wrote down the sequence. The agent works it out each time from what it finds.
+
+That is genuinely useful in a close, because a close is never the same twice. It is also exactly why a close is a dangerous place to put one, and why most of this article is about constraints rather than capabilities.
+
+## The five agents, and what each one actually owns
+
+<KeyNumber
+  value="5"
+  label="Agents in production against a live finance function. Not five products — five pieces of one job that used to be done by hand every month."
+/>
+
+**The Month-End Close Agent** works accruals, reconciliations, and journal entries. Its real job is not doing the close — it is knowing the state of the close. At any hour it can tell you what is open, what is blocking, and what can finish without a person clicking through a workflow. The controller keeps every judgment call. The agent removes the part where someone spends two days finding out where things stand.
+
+**The Cashflow Agent** maps AR by client and by invoice, flags what is about to slip, and tracks what has been done about it. Every figure traces to a datapoint. That constraint matters more than it sounds — it is the difference between a cash position and a summary someone assembled the morning it was asked for.
+
+**The Expense Agent** runs cost lines month over month and pairs each movement with why the line moved. Trend plus reason, in one pass.
+
+**The Flux Analysis Agent** produces P&L variance with the explanation attached rather than a column of deltas. When a human corrects an explanation, the correction improves the next month's version.
+
+**The Daily Brief Agent** pulls CRM, email, calendar, call transcripts, Slack and project trackers into today's priorities and a brief for each meeting on the calendar. It is the least "finance" of the five and the one an operator would fight hardest to keep.
+
+## Three things that worked better than expected
+
+**State-tracking beat task-doing.** I built the close agent expecting the win to be automated journal entries. The actual win was that nobody had to ask where the close stood. In a manual close, a meaningful share of the elapsed time is not work — it is people finding out what has and hasn't happened. Remove that and the calendar compresses before you have automated a single entry.
+
+<KeyNumber
+  value="15 days → 3"
+  label="Close cycle at a multi-site healthcare operator, after rebuilding the close around a state-aware agent. No new headcount."
+  source="Vantage Rock client engagement"
+/>
+
+**Explanations improved faster than outputs.** The flux agent's first drafts were mediocre — technically right, commercially useless. But corrections compound. Because each correction was captured rather than typed over in a document, month three read like something a board would actually engage with. The variance numbers were never the hard part. The narrative was, and that is the part that got better.
+
+**The boring agent won.** The Expense Agent is the least interesting of the five and it produced the most consistent value, because month-over-month cost movement with a reason attached is something nobody in a growing company ever has time to do properly, and it is exactly the kind of work that does not require judgment until the moment it does.
+
+## Three things that failed
+
+I would rather write this section than the previous one, because it is the part nobody publishes.
+
+**Confident wrong answers cost more than errors.** An agent that fails loudly is a bug. An agent that produces a plausible, well-formatted, incorrect number is a liability, because it clears the sniff test and lands in a deck. We hit this on cost allocation — the reasoning read as sound and the output was wrong. The fix was structural, not prompt-level: any figure that feeds a decision has to trace to a source record, and anything that cannot be traced does not get produced at all. That single rule killed a category of failure.
+
+**Chart-of-accounts drift broke more than model limitations did.** Every serious failure traced back to the underlying data, not to the agent's reasoning. Accounts used inconsistently across periods. Entries coded by whoever was closest to the keyboard. An agent inherits your data hygiene and then scales it. If your books are inconsistent, an agent will produce inconsistency faster and with better formatting. This is why the diagnostic comes before the build, always.
+
+**Ownership decays.** The agents worked. Then someone changed a bank feed, and a piece went quiet for a period before anyone noticed. Agents are not appliances. Someone has to own them the way someone owns the close calendar. Nobody budgets for this and everybody needs it.
+
+<Callout label="If you take one thing">
+Every failure we had was a data or ownership failure wearing an AI costume. The model was almost never the problem. Fix the chart of accounts and name an owner before you build anything.
+</Callout>
+
+## The control layer
+
+This is the first question any serious buyer asks, and it should be.
+
+Four rules, and they have not changed since we started:
+
+1. **Every number traces to a source record.** Untraceable output is not produced. Not flagged — not produced.
+2. **A human signs anything that leaves the building.** The agent drafts the board commentary. A person owns it. That is not a transitional arrangement; it is the design.
+3. **Everything is logged.** What ran, what it read, what it wrote, what a human changed. If you cannot reconstruct how a number was produced, you cannot defend it, and eventually you will be asked to.
+4. **Nothing writes to the ledger unreviewed.** Agents propose entries. People post them.
+
+If those four constraints sound like they give back much of the speed, they don't. They give back some of it, and they are the reason the thing is still running.
+
+## What to build first
+
+If you are closing in spreadsheets today, do not start with an agent. Start with the two weeks of unglamorous work that makes an agent possible: fix the chart of accounts, enforce cutoff discipline, write down the accrual policy that currently lives in someone's head.
+
+Then build state visibility before automation. Know where the close is before you try to make it faster. In most finance functions that alone recovers a third of the calendar, and it is the cheapest thing on the list.
+
+Automation comes third. It is the part everyone wants to start with and it is the part that depends entirely on the first two.
+
+<Takeaway>
+Agents are real and they work, in a narrower band than the marketing suggests and a wider one than the skeptics allow. The constraint is almost never the model. It is your data, your controls, and whether anyone owns the thing after it ships.
+
+Human on the decisions. System on the rest. That division is not a slogan — it is what makes the rest of it defensible.
+</Takeaway>
+
+Next in this cluster: the [architecture of the Month-End Close Agent](/insights/month-end-close-agent-architecture) — what it reads, how it decides, where the review gates sit, and what I would build differently now.
