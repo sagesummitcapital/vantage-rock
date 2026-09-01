@@ -37,7 +37,7 @@ export default function Hero() {
           <motion.h1 variants={item} className="mt-7 font-display text-display-2xl">
             <span className="block text-ink">AI-enabled finance.</span>
             <span className="gradient-text block">
-              Fractional CFO. Without the full-time hire.
+              A human between the systems and the decisions.
             </span>
           </motion.h1>
 
@@ -45,9 +45,10 @@ export default function Hero() {
             variants={item}
             className="mt-8 max-w-[620px] text-[18px] leading-[1.65] text-ink-muted"
           >
-            The books exist. Cash is still the bank balance. The pack shows up
-            late. Vantage Rock is a fractional CFO firm that uses AI so close, cash,
-            and reporting keep up.
+            Vantage Rock is a fractional CFO firm. I build the finance function —
+            the close, the forecast, the cash view, the reporting — and put AI on the
+            mechanical work, so the numbers arrive while they can still change a
+            decision.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
@@ -65,15 +66,15 @@ export default function Hero() {
           {[
             {
               k: "Who it's for",
-              v: "Founder-led and sponsor-backed companies from $1M in revenue.",
+              v: "Founder-led and sponsor-backed companies from $1M in revenue, usually alongside an existing bookkeeper or controller.",
             },
             {
               k: "Where it's strongest",
-              v: "Healthcare, retail, professional services, technology and SaaS, and multi-entity groups.",
+              v: "Healthcare, professional services, technology and SaaS, and multi-entity groups.",
             },
             {
               k: "What you get",
-              v: "Close, cash, and reporting — without a full-time hire.",
+              v: "A finance function that produces answers in days, and a system that keeps producing them after I'm gone.",
             },
           ].map((c) => (
             <div key={c.k} className="bg-bg-raised px-6 py-7 md:px-8">

@@ -81,16 +81,17 @@ export default function HowItWorks() {
     <section id="how" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="04"
-          label="How we do it"
-          heading="Agents draft."
-          dim="A person signs."
+          number="03"
+          label="How the work gets done"
+          heading="A human sits between the systems"
+          dim="and the decisions."
         />
 
         <Reveal>
           <p className="-mt-6 mb-14 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
-            What repeats gets drafted. A person reviews it, posts it, and owns it
-            in the room.
+            Agents handle what repeats. Judgment, context and accountability stay with a
+            person — and every number that reaches leadership passes through one. That
+            hinge in the middle is the entire architecture, and it is deliberate.
           </p>
         </Reveal>
 
@@ -157,7 +158,7 @@ export default function HowItWorks() {
               The three rules that don&apos;t move
             </h3>
             <p className="mt-3 max-w-[600px] text-[15.5px] leading-[1.6] text-ink-muted">
-              These do not move.
+              This is the first question any serious operator asks, and it should be.
             </p>
           </Reveal>
 

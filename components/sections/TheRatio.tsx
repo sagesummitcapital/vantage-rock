@@ -89,21 +89,27 @@ export default function TheRatio() {
         <SectionHead
           number="01"
           label="The problem"
-          heading="The close is late."
-          dim="Cash is the bank app."
+          heading="Finance teams spend most of their time producing numbers"
+          dim="and very little interpreting them."
         />
 
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
             <div className="max-w-[540px] space-y-6 text-[16.5px] leading-[1.7] text-ink-muted">
               <p>
-                Leadership is deciding on last month. That is not a talent problem.
-                The week is spent producing the number, not using it.
+                That ratio is the problem, and it is almost never a talent problem or
+                an effort problem. It is a systems problem.
+              </p>
+              <p>
+                When the close takes fifteen days, when the forecast is rebuilt by hand
+                each quarter, when margin analysis starts from scratch every time
+                someone asks — the mechanical work crowds out the thinking. Leadership
+                ends up deciding on information that describes a month already over.
               </p>
               <p className="text-ink">
-                AI compresses the close, the recon, and the pack. A person still reads
-                it, posts it, and owns it — so the numbers arrive while they can still
-                change a decision.
+                Vantage Rock exists to change that ratio. AI compresses the mechanical
+                work — the close, the reconciliation, the assembly of the report — so
+                the output arrives while it can still influence a decision.
               </p>
             </div>
           </Reveal>
