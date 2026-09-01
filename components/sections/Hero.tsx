@@ -54,7 +54,7 @@ export default function Hero() {
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
             <CTAButton href="#book">{CTA_LABEL}</CTAButton>
             <span className="font-mono text-[11.5px] tracking-[0.05em] text-ink-dim">
-              Direct with the founder. A fit-check — we don't diagnose on the call.
+              Direct with the founder. A fit-check — we don&apos;t diagnose on the call.
             </span>
           </motion.div>
         </motion.div>
