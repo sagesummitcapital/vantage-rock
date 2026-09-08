@@ -35,6 +35,7 @@ Vantage Rock Financial is AI-enabled finance. Not a chatbot on last month's file
 - https://www.vantagerockfinancial.com/insights/pnl-profit-bank-empty
 - https://www.vantagerockfinancial.com/insights/ai-agents-in-finance
 - https://www.vantagerockfinancial.com/insights/month-end-close-agent-architecture
+https://www.vantagerockfinancial.com/insights/how-much-runway-do-we-really-have
 
 ## Contact
 

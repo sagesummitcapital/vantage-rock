@@ -33,6 +33,7 @@ The AI is not the product. It is how the work gets delivered. A human sits betwe
 - [Why does the P&L look fine and the bank doesn’t?](https://www.vantagerockfinancial.com/insights/pnl-profit-bank-empty): Profit on the P&L is not cash you can spend.
 - [AI agents in finance: a field report from a real close](https://www.vantagerockfinancial.com/insights/ai-agents-in-finance): Five agents in production. What worked, what failed, and the control layer.
 - [The architecture of a month-end close agent](https://www.vantagerockfinancial.com/insights/month-end-close-agent-architecture): What it reads, how it decides, where the review gates sit.
+- [How Much Runway Do We Really Have?](https://www.vantagerockfinancial.com/insights/how-much-runway-do-we-really-have): Cash ÷ monthly burn can give founders false confidence. Timing decides real runway.
 
 ## Contact
 
