@@ -29,8 +29,8 @@ export default function FinalCTA() {
 
             <Reveal delay={0.08}>
               <h2 className="mt-6 max-w-[560px] font-display text-display-xl">
-                <span className="text-ink">Book a 30-minute </span>
-                <span className="gradient-text">Finance Systems Review.</span>
+                <span className="text-ink">Book a 15–30 minute </span>
+                <span className="gradient-text">Introduction Call.</span>
               </h2>
             </Reveal>
 
