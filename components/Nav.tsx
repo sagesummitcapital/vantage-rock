@@ -140,7 +140,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-navy px-5 py-3 text-[14px] font-medium text-ink-invert transition-colors hover:bg-teal hover:text-white"
               >
-                Book a Finance Systems Review
+                Book an Introduction Call
               </a>
             </div>
           </motion.div>
