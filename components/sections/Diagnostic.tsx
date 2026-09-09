@@ -47,7 +47,7 @@ export default function Diagnostic() {
             </div>
 
             <div className="mt-8 flex flex-col items-start gap-4">
-              <CTAButton href="#book">Request the Review</CTAButton>
+              <CTAButton href="#book">Book an Introduction Call</CTAButton>
               <p className="max-w-[460px] text-[15px] leading-[1.55] text-ink-muted">
                 Want more?{" "}
                 <a
