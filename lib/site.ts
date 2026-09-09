@@ -20,7 +20,7 @@ export const YOUTUBE_URL = "https://www.youtube.com/@VantageRockFinancial";
 export const LOCATION = { city: "Scottsdale", region: "AZ", country: "US" };
 
 /** The one offer. Every CTA on the site points here. */
-export const CTA_LABEL = "Book a 30-minute call";
+export const CTA_LABEL = "Book an Introduction Call";
 
 export const SAME_AS = [
   FOUNDER_LINKEDIN,
