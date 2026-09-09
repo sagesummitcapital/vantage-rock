@@ -18,7 +18,7 @@ export default function ReviewCTA() {
         className="mt-4 max-w-[620px] font-display text-[clamp(1.7rem,3.4vw,2.4rem)] leading-[1.15] tracking-tighter2"
         style={{ color: "#F0F4F8" }}
       >
-        30-minute Finance Systems Review.
+        15–30 minute Introduction Call.
       </h2>
 
       <p className="mt-5 max-w-[560px] text-[16px] leading-[1.7]" style={{ color: "#C5D2DD" }}>
@@ -32,7 +32,7 @@ export default function ReviewCTA() {
           className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-[14px] font-medium transition-colors"
           style={{ background: "#2EE6C9", color: "#0B1A2A" }}
         >
-          Request the Review
+          Book an Introduction Call
           <span aria-hidden>→</span>
         </Link>
         <a

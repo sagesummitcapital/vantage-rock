@@ -113,9 +113,9 @@ export async function POST(req: Request) {
         from,
         to: toEmail,
         replyTo: lead.email,
-        subject: `New Finance Systems Review request — ${lead.company}`,
+        subject: `New Introduction Call request — ${lead.company}`,
         html: `
-          <h2 style="margin:0 0 12px">New Finance Systems Review request</h2>
+          <h2 style="margin:0 0 12px">New Introduction Call request</h2>
           <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
             <tr><td style="padding:4px 12px 4px 0;color:#666">Name</td><td style="padding:4px 0"><b>${lead.name}</b></td></tr>
             <tr><td style="padding:4px 12px 4px 0;color:#666">Title</td><td style="padding:4px 0">${lead.title}</td></tr>

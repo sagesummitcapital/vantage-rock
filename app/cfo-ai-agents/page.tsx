@@ -179,7 +179,7 @@ export default function CfoAiAgentsPage() {
               href="/#book"
               className="inline-flex items-center gap-2 rounded-md bg-navy px-[20px] py-[12px] text-[13px] font-medium text-ink-invert transition-colors hover:bg-teal hover:text-white"
             >
-              Request the Review
+              Book an Introduction Call
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
                 <path
                   d="M3 9L9 3M9 3H4M9 3V8"
@@ -256,7 +256,7 @@ export default function CfoAiAgentsPage() {
                 How this starts
               </h2>
               <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                The 30-minute Finance Systems Review is the door. It is a
+                The Introduction Call is the door. It is a
                 fit-check. We don&apos;t diagnose on the call. Diagnostic and the
                 work only after fit, quoted from scope. No list prices. Read{" "}
                 <a
@@ -306,7 +306,7 @@ export default function CfoAiAgentsPage() {
                 href="/#book"
                 className="inline-flex items-center gap-2 rounded-md bg-navy px-[20px] py-[12px] text-[13px] font-medium text-ink-invert transition-colors hover:bg-teal hover:text-white"
               >
-                Request the Review
+                Book an Introduction Call
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
                   <path
                     d="M3 9L9 3M9 3H4M9 3V8"
