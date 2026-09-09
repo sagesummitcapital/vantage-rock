@@ -11,14 +11,16 @@ import {
 } from "@/lib/site";
 
 const depth = [
-  "FP&A, budgeting and forecasting",
+  "FP&A, budgeting, and forecasting",
+  "Fractional CFO and strategic finance leadership",
+  "Cash flow, profitability, and pricing",
   "Controllership and financial reporting",
-  "Cash flow, profitability and pricing",
-  "Management and KPI reporting",
+  "KPI and management reporting",
   "Revenue and finance operations",
   "Multi-entity finance",
   "Financial systems and process improvement",
-  "M&A integration and due diligence",
+  "M&A integration and due diligence support",
+  "AI-enabled finance workflows, automation, and agent implementation",
 ];
 
 const links = [
@@ -69,13 +71,16 @@ export default function About() {
           <Reveal delay={0.12}>
             <div className="max-w-[600px] space-y-5 text-[16.5px] leading-[1.7] text-ink-muted">
               <p>
-                Stavros Christias has spent a decade in healthcare, SaaS through
-                acquisition, startups, and PE-backed groups — close, cash, and
-                reporting, including a month-end that moved from fifteen days to three.
+                Stavros Christias has spent over a decade in finance and
+                operations across retail, healthcare, SaaS, startups, and
+                PE-backed businesses — FP&amp;A, controllership, close, cash, and
+                reporting. That includes a month-end close that moved from
+                fifteen days to three.
               </p>
               <p className="text-ink">
-                Vantage Rock is that work with AI on it. When you reach out, you talk
-                to him. Not a sales team.
+                Vantage Rock is that work with AI on it. Agents handle the
+                mechanical lift. Stavros reviews and delivers the answer. When
+                you reach out, you talk to him.
               </p>
             </div>
 
