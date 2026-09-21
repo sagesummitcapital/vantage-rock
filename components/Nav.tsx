@@ -8,7 +8,6 @@ import CTAButton from "./CTAButton";
 // Root-relative so the nav also works from /insights and other subpages.
 // On the homepage the browser still treats these as same-page anchors.
 const links = [
-  { href: "/what-we-do", label: "What we do" },
   { href: "/#services", label: "Services" },
   { href: "/#how", label: "How it works" },
   { href: "/#engagements", label: "Engagements" },
