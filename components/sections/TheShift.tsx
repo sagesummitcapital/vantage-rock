@@ -77,8 +77,9 @@ export default function TheShift() {
           </Reveal>
 
           <Reveal delay={0.19}>
-            <div
-              className="relative h-full overflow-hidden rounded-xl p-7 shadow-[0_24px_60px_-20px_rgba(11,26,42,0.4)]"
+            <Link
+              href="/fractional-cfo"
+              className="relative block h-full overflow-hidden rounded-xl p-7 shadow-[0_24px_60px_-20px_rgba(11,26,42,0.4)]"
               style={{
                 background:
                   "linear-gradient(160deg, #0F2235 0%, #0B1A2A 70%, #081421 100%)",
@@ -117,7 +118,7 @@ export default function TheShift() {
                 </span>
                 Fractional CFO. Then a Review.
               </p>
-            </div>
+            </Link>
           </Reveal>
         </div>
 
