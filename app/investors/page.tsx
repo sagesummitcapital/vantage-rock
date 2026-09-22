@@ -7,7 +7,7 @@ const PATH = "/investors";
 const CANONICAL = `${SITE_URL}${PATH}`;
 const TITLE = "Investors";
 const DESCRIPTION =
-  "For PE groups and investors: AI-enabled finance for portfolio companies, with intent to acquire an AI implementation team in 2027.";
+  "For PE groups and investors: finance that moves at deal speed inside portfolio companies — with intent to combine finance depth and AI implementation in 2027.";
 const INVESTORS_EMAIL = "investors@vantagerockfinancial.com";
 const MAILTO = `mailto:${INVESTORS_EMAIL}`;
 const MAILTO_INTRO = `mailto:${INVESTORS_EMAIL}?subject=${encodeURIComponent("AI implementation intro")}`;
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
 const thesis = [
   {
     title: "PE intros",
-    body: "Partner with private equity groups and investors who care about portco finance quality and AI leverage.",
+    body: "Partner with private equity groups and investors who care about portco finance quality, cash discipline, and AI leverage.",
   },
   {
     title: "Portfolio company work",
-    body: "Deliver AI-enabled finance / fractional CFO / FP&A where the books, cash, and board pack actually live.",
+    body: "Deliver AI-enabled finance / fractional CFO / FP&A where the books, cash, and board pack actually live — at the speed a hold period demands.",
   },
   {
     title: "2027 AI implementation acquisition",
@@ -57,9 +57,9 @@ const thesis = [
 
 const whyPartner = [
   "We lead with finance — fractional CFO and FP&A — not slide-deck automation.",
-  "AI is how the work gets delivered: workflows and agents on close, cash, expense, commission, recurring reporting — with a human still owning the number.",
-  "Delivery is already practiced across small businesses, founder-led teams, and PE-backed companies when fit.",
-  "Soft partnership: we can work alongside value-creation / ops teams as the finance + AI wedge inside the portfolio.",
+  "We move at deal speed: compress the post-close finance gap instead of filling it six months later.",
+  "Output sponsors actually use: cash clarity, a close you can trust, reporting that supports the next capital decision — with a human still owning the number.",
+  "Soft partnership: we work alongside value-creation / ops teams as the finance + AI wedge inside the portfolio — additive, not a replacement for the sponsor’s operating system.",
 ];
 
 const capitalEnables = [
@@ -180,17 +180,15 @@ export default function InvestorsPage() {
                 id="investors-hero"
                 className="mt-3 font-display text-display-xl text-ink"
               >
-                AI-enabled finance for portfolio companies — and a path to an
-                AI-finance implementation powerhouse.
+                Finance infrastructure + value creation + AI-enabled
+                execution — built for sponsor-backed companies.
               </h1>
               <p className="mt-6 text-[17px] leading-[1.7] text-ink">
                 Vantage Rock Financial already does the operating work:
-                fractional CFO, FP&amp;A, and practical AI inside finance — for
-                small businesses, founder-led teams, and PE-backed companies
-                when fit. We are seeking alignment with PE groups and investors
-                who want that capability across portcos — and who see the logic
-                of combining finance depth with AI implementation talent in
-                2027.
+                fractional CFO, FP&amp;A, and practical AI inside finance. We
+                are seeking alignment with PE groups and investors who want
+                that capability across portcos — and who see the logic of
+                combining finance depth with AI implementation talent in 2027.
               </p>
               <div className="mt-8">
                 <MailCta />
@@ -219,10 +217,10 @@ export default function InvestorsPage() {
               </ol>
               <p className="mt-8 text-[17px] leading-[1.7] text-ink-muted">
                 This is not a classic VC Fund I story. It is an operator
-                overlay: capital that understands portfolio companies, paired
-                with a services engine that already speaks finance — including
-                an existing small-business implementation practice that funds
-                and proves delivery.
+                overlay: capital that understands how sponsors create equity
+                value, paired with a services engine that already speaks
+                finance — including an existing small-business / founder-led
+                practice that funds and proves delivery.
               </p>
             </section>
 
@@ -238,11 +236,11 @@ export default function InvestorsPage() {
                 Private equity already owns the problem VRF solves on portcos.
               </p>
               <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                Portcos need trusted close and cash, forecasts leadership will
-                use, board-ready reporting, and a path to put AI on repetitive
-                finance work without buying vaporware. Sponsors feel that gap in
-                diligence, in the first hundred days post-close, and every time
-                growth outruns the finance team.
+                Portcos need a trusted close and cash view, forecasts
+                leadership will use, board packs that travel, and a path to put
+                AI on repetitive finance work without buying vaporware.
+                Sponsors feel that gap in diligence, in the first 100 days
+                post-close, and every time growth outruns the finance seat.
               </p>
               <p className="mt-6 text-[17px] leading-[1.7] text-ink">
                 Why partner with VRF instead of another generic AI shop:
@@ -284,7 +282,8 @@ export default function InvestorsPage() {
                     Senior finance leadership without a full-time hire. Close,
                     cash, reporting. Scenarios and capital allocation. Board-
                     and investor-ready packs. Diligence and post-acquisition
-                    finance integration support when scoped.
+                    finance support when scoped — including the first-100-days
+                    window when the seat is still empty.
                   </p>
                 </div>
                 <div>
@@ -293,9 +292,9 @@ export default function InvestorsPage() {
                   </h3>
                   <p className="mt-3 text-[17px] leading-[1.7] text-ink">
                     Forecasts and models leadership can run decisions from —
-                    not a quarterly rebuild that dies in a folder. Pricing,
-                    margin, hiring, and cash scenarios tied to how the business
-                    actually runs.
+                    tied to how the business actually runs and to the operating
+                    agenda the sponsor is driving. Not a quarterly rebuild that
+                    dies in a folder.
                   </p>
                 </div>
                 <div>
@@ -372,7 +371,8 @@ export default function InvestorsPage() {
               <p className="mt-4 text-[17px] leading-[1.7] text-ink">
                 We intend to acquire an AI implementation team in 2027, then
                 combine that capability with Vantage Rock&apos;s existing
-                finance operating work.
+                finance operating work — finance delivery and AI execution
+                under the same controls, accountable to the same relationships.
               </p>
               <p className="mt-6 text-[17px] leading-[1.7] text-ink">
                 Intros welcome for teams that:
