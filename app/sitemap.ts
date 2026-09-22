@@ -31,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/insights`,
       // Index is only as fresh as its newest article.
       lastModified: insights[0] ? new Date(insights[0].updatedAt ?? insights[0].publishedAt) : new Date(),
