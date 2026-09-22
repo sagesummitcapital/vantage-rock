@@ -8,24 +8,24 @@ import {
   LOCATION,
 } from "@/lib/site";
 
-const PATH = "/fractional-cfo";
+const PATH = "/fpa";
 const CANONICAL = `${SITE_URL}${PATH}`;
-const TITLE = "Fractional CFO for founder-led and PE-backed companies";
+const TITLE = "FP&A services — financial planning & analysis for growing companies";
 const DESCRIPTION =
-  "Fractional CFO services for founder-led and sponsor-backed companies from $1M in revenue. Close, cash, board reporting, and AI on the repeating work. Scottsdale AZ. Introduction Call — fit-check only.";
+  "FP&A services for founder-led and PE-backed companies: rolling forecasts, cash planning, budgets, KPI packs, and board-ready analysis. Scottsdale AZ. Introduction Call — fit-check only.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    "fractional CFO",
-    "fractional CFO services",
-    "outsourced CFO",
-    "part-time CFO",
-    "AI-enabled finance",
     "FP&A",
-    "founder-led business finance",
-    "private equity portfolio CFO",
+    "FP&A services",
+    "FP&A consultant",
+    "financial planning and analysis",
+    "rolling forecast",
+    "cash flow forecasting",
+    "budget vs actuals",
+    "board reporting",
   ],
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -50,24 +50,24 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "What does a fractional CFO actually do?",
-    a: "A fractional CFO owns the judgment layer: cash timing, forecasts you can run the business on, board and lender packs, pricing and margin calls, and the design of the finance system. Bookkeeping and tax stay with your existing providers. The work is scoped to the shop, not a full-time seat you do not need yet.",
+    q: "What is FP&A, in practice?",
+    a: "Financial planning and analysis is the forward layer of finance: budgets, rolling forecasts, cash plans, variance and flux narrative, KPI packs, and the scenarios leadership uses to decide. It sits on top of a reliable close. If the books are late or inconsistent, fix that first — judgment on dirty numbers is expensive noise.",
+  },
+  {
+    q: "How is FP&A different from a controller or bookkeeper?",
+    a: "A bookkeeper records what happened. A controller closes the books correctly. FP&A uses that closed file to explain why the numbers moved and what happens next. Controllers own the entries. FP&A owns the model, the story, and the decision support. More on the stack in bookkeeper vs controller vs CFO.",
   },
   {
     q: "Who is this for?",
-    a: "Founder-led and sponsor-backed companies from roughly $1M in revenue — strongest in healthcare, retail, professional services, technology and SaaS, and multi-entity groups. PE-backed fits when the operator is still running the company. If you do not have books yet, that is a bookkeeping engagement first.",
+    a: "Founder-led and sponsor-backed companies from roughly $1M in revenue where the spreadsheet forecast no longer matches how the business runs — multi-channel, multi-entity, or growth that outpaced the model. Strongest in healthcare, retail, professional services, technology and SaaS. If you do not have a close yet, that is a controller conversation first.",
   },
   {
-    q: "How is this different from a bookkeeper or controller?",
-    a: "A bookkeeper records what happened. A controller closes the books correctly. A fractional CFO uses that information to decide what happens next. If close is unreliable, fix the controller layer first — judgment on dirty books is expensive noise. More on that in bookkeeper vs controller vs CFO.",
-  },
-  {
-    q: "Where does AI fit?",
-    a: "AI runs the repeating mechanical work — close drafts, cash follow-up, expense trends, flux narrative, daily brief — under review. A person still signs what leaves. See CFO AI agents and what AI-enabled finance actually means.",
+    q: "Where does AI fit in FP&A?",
+    a: "AI drafts flux, pulls expense trends, refreshes cash views, and assembles the first narrative for the pack — under review. A person still owns the assumptions and signs what leaves. See CFO AI agents and AI-enabled finance.",
   },
   {
     q: "How does an engagement start?",
-    a: "The Introduction Call is a fit-check. We do not diagnose on the call. If it is a fit, a diagnostic and scope come next. Fees are quoted from scope. No list prices.",
+    a: "The Introduction Call is a fit-check. We do not diagnose on the call. If it is a fit, a diagnostic and scope come next. Fees are quoted from scope. No list prices. FP&A often sits inside a fractional CFO engagement rather than as a standalone SKU.",
   },
 ];
 
@@ -76,7 +76,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${CANONICAL}#service`,
-    name: "Fractional CFO Services",
+    name: "FP&A Services",
     description: DESCRIPTION,
     url: CANONICAL,
     provider: {
@@ -99,18 +99,18 @@ const jsonLd = [
     },
     areaServed: { "@type": "Country", name: "United States" },
     serviceType: [
-      "Fractional CFO",
-      "Outsourced CFO",
       "FP&A",
-      "AI-Enabled Finance",
-      "Board and investor reporting",
+      "Financial planning and analysis",
+      "Rolling forecasts",
       "Cash flow forecasting",
+      "Budget vs actuals",
+      "Board and KPI reporting",
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Fractional CFO",
+    name: "FP&A Services",
     description: DESCRIPTION,
     url: CANONICAL,
     provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
@@ -130,7 +130,7 @@ const jsonLd = [
 const linkClass =
   "text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-deep";
 
-export default function FractionalCfoPage() {
+export default function FpaPage() {
   return (
     <>
       <main id="main" className="relative z-10 min-h-screen bg-bg text-ink">
@@ -177,41 +177,49 @@ export default function FractionalCfoPage() {
               Vantage Rock Financial · Scottsdale, AZ · Founded 2026
             </p>
             <h1 className="mt-3 font-display text-display-xl text-ink">
-              Fractional CFO for companies that need judgment, not another title
+              FP&A for companies that need a forecast leadership can run on
             </h1>
             <p className="mt-5 font-display text-[22px] italic leading-[1.35] tracking-[-0.02em] text-ink-muted md:text-[24px]">
-              Close, cash, and reporting that leadership can run on. AI on the
-              repeating work. A human on the decisions.
+              Rolling forecasts, cash plans, and board packs with the why
+              attached — not a model rebuilt once a quarter and filed.
             </p>
 
             <div className="mt-12 space-y-6 text-[17px] leading-[1.7] text-ink">
               <p>
-                Most shops that say they need a CFO are really naming a gap:
-                cash that surprises mid-week, a close that lands late, a board
-                pack rebuilt from memory, or ops that outgrew the books. Hiring
-                a full-time seat is slow and expensive when the function still
-                needs design. A fractional CFO is the scoped answer — senior
-                finance leadership without a full-time hire.
+                FP&A is financial planning and analysis: the work that turns a
+                closed set of books into decisions. Budgets that match how the
+                business actually operates. Rolling forecasts that update when
+                reality moves. Cash views that explain the next six to thirteen
+                weeks, not just the bank balance this morning. Variance and flux
+                narrative that answers the board before they ask. KPI packs built
+                to be read, not archived.
               </p>
               <p>
-                Vantage Rock Financial is a fractional CFO firm for founder-led
-                and sponsor-backed companies from roughly $1M in revenue. The
-                work covers close cadence, cash visibility,{" "}
-                <a href="/fpa" className={linkClass}>
-                  FP&amp;A
+                Most shops that say they need “better reporting” are naming an
+                FP&A gap. The P&amp;L looks fine and cash still surprises. Three
+                forecast tabs disagree on the same week. The board pack is a
+                dump of last month with no story. Growth added a channel or an
+                entity and the model was never redesigned. Hiring a full-time
+                FP&amp;A analyst is slow when the function still needs design —
+                and a bookkeeper cannot own the judgment layer alone.
+              </p>
+              <p>
+                Vantage Rock Financial delivers FP&amp;A as part of{" "}
+                <a href="/fractional-cfo" className={linkClass}>
+                  fractional CFO
                 </a>{" "}
-                forecasts and scenarios, margin and pricing, board and investor
-                reporting, and the systems underneath so the file stops
-                depending on a hero.
-                Typically the bookkeeper or controller stays. We do not replace
-                your CPA, and we do not do tax, audit, or bookkeeping.
+                leadership for founder-led and sponsor-backed companies from
+                roughly $1M in revenue. The bookkeeper or controller typically
+                stays. We do not replace your CPA, and we do not do tax, audit,
+                or bookkeeping. The planning layer sits on a close you can trust;
+                if close is late, we fix that cadence before we decorate the
+                forecast.
               </p>
               <p>
-                AI is how the repeating work gets delivered — not a chatbot on
-                last month&apos;s spreadsheet. Agents draft close work, track
-                receivables, surface expense trends, write the first flux
-                narrative, and assemble the daily brief. A person still reviews
-                what posts and signs what leaves. That is{" "}
+                AI is how the repeating analysis gets drafted — flux narratives,
+                expense trends, cash follow-up, the first pass of the pack —
+                under review. A person still owns the assumptions and signs what
+                leaves. That is{" "}
                 <a href="/ai-enabled-finance" className={linkClass}>
                   AI-enabled finance
                 </a>
@@ -222,44 +230,28 @@ export default function FractionalCfoPage() {
                 , under fractional leadership.
               </p>
               <p>
-                Operators usually call when one of a few triggers shows up. Cash
-                timing no longer matches the P&L story. Month-end is always late
-                and the founder is still the spreadsheet. The board or PE
-                partner wants a pack that explains the why, not just the result.
-                A hire is on the table but the function is not ready for a
-                full-time seat. Those are the same patterns we write about in{" "}
+                Operators usually call when runway math stopped matching the bank,{" "}
                 <a
-                  href="/insights/top-5-reasons-fractional-cfo"
+                  href="/insights/how-much-runway-do-we-really-have"
                   className={linkClass}
                 >
-                  top reasons operators look for a fractional CFO
-                </a>{" "}
-                and in{" "}
-                <a
-                  href="/insights/bookkeeper-vs-controller-vs-cfo"
-                  className={linkClass}
-                >
-                  bookkeeper vs controller vs CFO
+                  cash ÷ burn stopped being a safe shortcut
                 </a>
-                .
-              </p>
-              <p>
-                For sponsor-backed shops, the bar is the same: numbers the
-                operating partner can trust, a close that holds, and AI used
-                where finance teams already work — not as a demo. Portco-facing
-                detail is on{" "}
+                , or the P&amp;L story and the cash story diverged — the same
+                pattern as{" "}
+                <a
+                  href="/insights/pnl-profit-bank-empty"
+                  className={linkClass}
+                >
+                  profit on the P&amp;L with an empty bank
+                </a>
+                . For sponsor-backed shops, the bar is a pack the operating
+                partner can trust and a model that survives diligence questions.
+                Portco-facing work is covered on{" "}
                 <a href="/pe-portfolio-finance" className={linkClass}>
                   PE portfolio finance
                 </a>
-                . How PE finance
-                teams actually use tools like Claude is covered in{" "}
-                <a
-                  href="/insights/how-private-equity-finance-teams-use-claude"
-                  className={linkClass}
-                >
-                  how private equity finance teams use Claude
-                </a>
-                . The engagement stays operator-led; there is no PE sprint SKU.
+                .
               </p>
               <p>
                 Based in Scottsdale, Arizona. Engagements are remote-first across
@@ -274,11 +266,11 @@ export default function FractionalCfoPage() {
                 What you get
               </h2>
               <ul className="mt-6 space-y-3 border-l-2 border-teal/40 pl-5 text-[17px] leading-[1.6] text-ink">
-                <li>Rolling cash and forecast views someone owns every week</li>
-                <li>Close calendar with named owners — not a hero weekend</li>
-                <li>Board- and lender-ready packs with the why attached</li>
-                <li>Margin, pricing, and capacity calls grounded in the file</li>
-                <li>AI on repeating work; human sign-off on what leaves</li>
+                <li>Rolling forecast and budget vs actuals someone owns weekly</li>
+                <li>Cash plan tied to timing — not a single-month burn ratio</li>
+                <li>Board- and lender-ready packs with flux and the why</li>
+                <li>Scenario views for pricing, hiring, and capacity calls</li>
+                <li>AI on repeating analysis; human sign-off on what leaves</li>
               </ul>
             </section>
 
@@ -314,10 +306,14 @@ export default function FractionalCfoPage() {
                   info@vantagerockfinancial.com
                 </a>
                 . Read more on{" "}
+                <a href="/fractional-cfo" className={linkClass}>
+                  fractional CFO services
+                </a>
+                ,{" "}
                 <a href="/ai-enabled-finance" className={linkClass}>
                   AI-enabled finance
-                </a>{" "}
-                and{" "}
+                </a>
+                , and{" "}
                 <a href="/cfo-ai-agents" className={linkClass}>
                   the five CFO AI agents
                 </a>
@@ -355,7 +351,7 @@ export default function FractionalCfoPage() {
               className="font-mono text-[12px] tracking-[0.04em]"
               style={{ color: "#F0F4F8" }}
             >
-              Stavros Christas
+              Stavros Christias
             </p>
             <a
               href="/"
