@@ -45,8 +45,11 @@ export default function Agents() {
           <p className="-mt-6 mb-12 max-w-[620px] text-[16.5px] leading-[1.65] text-ink-muted">
             These agents increase revenue, reduce manual work, automate reporting,
             watch costs, support sales with calculators, and run FP&A. They are not
-            five products. They are how the fractional CFO work gets done, on your
-            data, under review.
+            five products. They are how the{" "}
+            <Link href="/fractional-cfo" className="text-teal underline decoration-teal/30 underline-offset-2 hover:text-teal-deep">
+              fractional CFO
+            </Link>{" "}
+            work gets done, on your data, under review.
           </p>
         </Reveal>
 
