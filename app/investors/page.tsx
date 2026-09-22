@@ -7,10 +7,9 @@ const PATH = "/investors";
 const CANONICAL = `${SITE_URL}${PATH}`;
 const TITLE = "Investors";
 const DESCRIPTION =
-  "For PE groups and investors: finance that moves at deal speed inside portfolio companies — with intent to combine finance depth and AI implementation in 2027.";
+  "For PE groups and investors: AI-enabled finance for portfolio companies — finance that moves at deal speed through the hold.";
 const INVESTORS_EMAIL = "investors@vantagerockfinancial.com";
 const MAILTO = `mailto:${INVESTORS_EMAIL}`;
-const MAILTO_INTRO = `mailto:${INVESTORS_EMAIL}?subject=${encodeURIComponent("AI implementation intro")}`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -46,12 +45,8 @@ const thesis = [
     body: "Deliver AI-enabled finance / fractional CFO / FP&A where the books, cash, and board pack actually live — at the speed a hold period demands.",
   },
   {
-    title: "2027 AI implementation acquisition",
-    body: "Prepare to acquire an AI implementation team so delivery capacity matches demand.",
-  },
-  {
-    title: "Combine",
-    body: "Finance operator depth + implementation muscle → an AI-finance implementation firm that can sit next to a PE portfolio and ship.",
+    title: "Operator overlay",
+    body: "Capital that understands how sponsors create equity value, paired with a services engine that already speaks finance — including an existing small-business / founder-led practice that funds and proves delivery.",
   },
 ];
 
@@ -68,19 +63,13 @@ const capitalEnables = [
     body: "More capacity for PE-backed finance engagements alongside the existing practice, without diluting delivery quality.",
   },
   {
-    title: "AI implementation readiness",
-    body: "Relationships, diligence muscle, and operating readiness for a 2027 acquisition of an AI implementation team.",
+    title: "Delivery quality",
+    body: "Stronger close, cash, and board-pack muscle — AI-enabled where it compresses work, human-owned where the number must stand.",
   },
   {
-    title: "Combined platform",
-    body: "After that acquisition: one stack that can sell and deliver AI-finance implementation — finance leadership + implementation — into PE portfolios and complex operating companies.",
+    title: "Repeatable seat",
+    body: "A finance + AI wedge sponsors can bring into more than one portco without rebuilding the function from scratch each time.",
   },
-];
-
-const acquisitionFit = [
-  "Implement AI in real operating environments (not demo-only)",
-  "Share delivery discipline and client ownership, and can work inside finance-grade controls",
-  "Fit PE / mid-market complexity — and the small-business / founder-led implementation work we already do",
 ];
 
 const jsonLd = {
@@ -180,15 +169,16 @@ export default function InvestorsPage() {
                 id="investors-hero"
                 className="mt-3 font-display text-display-xl text-ink"
               >
-                Finance infrastructure + value creation + AI-enabled
-                execution — built for sponsor-backed companies.
+                AI-enabled finance for portfolio companies — and a path to an
+                AI-finance implementation powerhouse.
               </h1>
               <p className="mt-6 text-[17px] leading-[1.7] text-ink">
                 Vantage Rock Financial already does the operating work:
-                fractional CFO, FP&amp;A, and practical AI inside finance. We
-                are seeking alignment with PE groups and investors who want
-                that capability across portcos — and who see the logic of
-                combining finance depth with AI implementation talent in 2027.
+                fractional CFO, FP&amp;A, and practical AI inside finance — for
+                small businesses, founder-led teams, and PE-backed companies
+                when fit. We are seeking alignment with PE groups and investors
+                who want that capability across portcos — finance infrastructure
+                that supports value creation, not slide-deck automation.
               </p>
               <div className="mt-8">
                 <MailCta />
@@ -217,10 +207,9 @@ export default function InvestorsPage() {
               </ol>
               <p className="mt-8 text-[17px] leading-[1.7] text-ink-muted">
                 This is not a classic VC Fund I story. It is an operator
-                overlay: capital that understands how sponsors create equity
-                value, paired with a services engine that already speaks
-                finance — including an existing small-business / founder-led
-                practice that funds and proves delivery.
+                overlay next to the portfolio: finance leadership + AI-enabled
+                execution that can sit beside value-creation / ops teams and
+                ship.
               </p>
             </section>
 
@@ -299,7 +288,7 @@ export default function InvestorsPage() {
                 </div>
                 <div>
                   <h3 className="font-display text-[22px] tracking-[-0.02em] text-ink">
-                    AI-enabled finance / AI implementation (services)
+                    AI-enabled finance
                   </h3>
                   <p className="mt-3 text-[17px] leading-[1.7] text-ink">
                     Practical AI inside finance ops: workflows and agents for
@@ -356,43 +345,6 @@ export default function InvestorsPage() {
               </p>
             </section>
 
-            {/* 2027 ACQUISITION */}
-            <section
-              className="mt-16 scroll-mt-24"
-              id="acquisition-2027"
-              aria-labelledby="acquisition-heading"
-            >
-              <h2
-                id="acquisition-heading"
-                className="font-display text-[28px] tracking-[-0.02em] text-ink"
-              >
-                2027 — AI implementation team acquisition
-              </h2>
-              <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                We intend to acquire an AI implementation team in 2027, then
-                combine that capability with Vantage Rock&apos;s existing
-                finance operating work — finance delivery and AI execution
-                under the same controls, accountable to the same relationships.
-              </p>
-              <p className="mt-6 text-[17px] leading-[1.7] text-ink">
-                Intros welcome for teams that:
-              </p>
-              <ul className="mt-4 space-y-3 border-l-2 border-teal/40 pl-5 text-[17px] leading-[1.6] text-ink">
-                {acquisitionFit.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-              <p className="mt-6 text-[17px] leading-[1.7] text-ink-muted">
-                This is not an announcement of a signed deal, a named target, or
-                a guarantee of timing. It is an open ask for capital partners
-                and intros.
-              </p>
-              <p className="mt-4 text-[17px] leading-[1.7] text-ink">
-                <MailLink href={MAILTO_INTRO}>{INVESTORS_EMAIL}</MailLink>
-                {" — "}
-                subject &ldquo;AI implementation intro&rdquo; is enough.
-              </p>
-            </section>
 
             {/* CONTACT */}
             <section
@@ -412,10 +364,6 @@ export default function InvestorsPage() {
                   investor: email{" "}
                   <MailLink>{INVESTORS_EMAIL}</MailLink> with a short note on
                   portfolio focus and what you want in a finance + AI partner.
-                </p>
-                <p>
-                  If you can intro an AI implementation team we should know
-                  before 2027: same inbox.
                 </p>
                 <p className="text-ink-muted">
                   If you run a company and need fractional CFO / FP&amp;A /
@@ -468,8 +416,7 @@ export default function InvestorsPage() {
               className="mt-3 font-mono text-[12px] tracking-[0.04em]"
               style={{ color: "#8FA3B5" }}
             >
-              Services: Fractional CFO · FP&amp;A · AI-enabled finance · AI
-              implementation
+              Services: Fractional CFO · FP&amp;A · AI-enabled finance
             </p>
             <p
               className="mt-4 max-w-[640px] font-mono text-[10px] leading-[1.5] tracking-[0.04em]"
