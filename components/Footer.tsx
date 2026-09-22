@@ -41,6 +41,8 @@ export default function Footer() {
             <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "#C5D2DD" }}>
               <a href="/#services" className="transition-colors hover:text-[#2EE6C9]">Services</a>
               <a href="/fractional-cfo" className="transition-colors hover:text-[#2EE6C9]">Fractional CFO</a>
+              <a href="/fpa" className="transition-colors hover:text-[#2EE6C9]">FP&A</a>
+              <a href="/pe-portfolio-finance" className="transition-colors hover:text-[#2EE6C9]">PE Portfolio</a>
               <a href="/#how" className="transition-colors hover:text-[#2EE6C9]">How it works</a>
               <a href="/#engagements" className="transition-colors hover:text-[#2EE6C9]">Engagements</a>
               <a href="/insights" className="transition-colors hover:text-[#2EE6C9]">Insights</a>

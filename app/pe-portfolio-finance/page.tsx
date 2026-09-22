@@ -8,24 +8,23 @@ import {
   LOCATION,
 } from "@/lib/site";
 
-const PATH = "/fractional-cfo";
+const PATH = "/pe-portfolio-finance";
 const CANONICAL = `${SITE_URL}${PATH}`;
-const TITLE = "Fractional CFO for founder-led and PE-backed companies";
+const TITLE = "PE portfolio finance — fractional CFO for sponsor-backed companies";
 const DESCRIPTION =
-  "Fractional CFO services for founder-led and sponsor-backed companies from $1M in revenue. Close, cash, board reporting, and AI on the repeating work. Scottsdale AZ. Introduction Call — fit-check only.";
+  "PE portfolio finance for operator-led portcos: close cadence, cash visibility, board packs sponsors trust, and AI on repeating work. Scottsdale AZ. Introduction Call — fit-check only.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    "fractional CFO",
-    "fractional CFO services",
-    "outsourced CFO",
-    "part-time CFO",
-    "AI-enabled finance",
-    "FP&A",
-    "founder-led business finance",
+    "PE portfolio finance",
     "private equity portfolio CFO",
+    "PE portfolio company CFO",
+    "fractional CFO private equity",
+    "sponsor-backed finance",
+    "board reporting private equity",
+    "portfolio company FP&A",
   ],
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -50,24 +49,24 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "What does a fractional CFO actually do?",
-    a: "A fractional CFO owns the judgment layer: cash timing, forecasts you can run the business on, board and lender packs, pricing and margin calls, and the design of the finance system. Bookkeeping and tax stay with your existing providers. The work is scoped to the shop, not a full-time seat you do not need yet.",
+    q: "Who is PE portfolio finance for?",
+    a: "Operator-led portfolio companies where the founder or CEO is still running the business, and the sponsor needs numbers they can trust. Also useful when a PE ops or deal partner is shopping scoped finance support for a portco — without a full-time CFO seat or a PE sprint SKU. If books are not closed yet, that is a controller conversation first.",
   },
   {
-    q: "Who is this for?",
-    a: "Founder-led and sponsor-backed companies from roughly $1M in revenue — strongest in healthcare, retail, professional services, technology and SaaS, and multi-entity groups. PE-backed fits when the operator is still running the company. If you do not have books yet, that is a bookkeeping engagement first.",
+    q: "How is this different from an LP / investor page?",
+    a: "This page is for portco operations and sponsor-facing reporting cadence. Investor relations for LPs lives elsewhere and stays link-only. The work here is close, cash, forecast, board packs, and the systems underneath so the file does not depend on a hero weekend.",
   },
   {
-    q: "How is this different from a bookkeeper or controller?",
-    a: "A bookkeeper records what happened. A controller closes the books correctly. A fractional CFO uses that information to decide what happens next. If close is unreliable, fix the controller layer first — judgment on dirty books is expensive noise. More on that in bookkeeper vs controller vs CFO.",
+    q: "What does a fractional CFO do in a portco?",
+    a: "Owns the judgment layer the operating partner will probe: cash timing, forecasts that survive diligence questions, flux that explains the why, margin and pricing calls, and a close calendar with named owners. Bookkeeping and tax stay with existing providers. Scoped leadership — not a full-time hire you do not need yet.",
   },
   {
-    q: "Where does AI fit?",
-    a: "AI runs the repeating mechanical work — close drafts, cash follow-up, expense trends, flux narrative, daily brief — under review. A person still signs what leaves. See CFO AI agents and what AI-enabled finance actually means.",
+    q: "Where does AI fit for PE finance teams?",
+    a: "AI drafts close work, cash follow-up, expense trends, and the first flux narrative under review. A person still signs what leaves. How PE finance teams actually use tools like Claude — with methodology and context, not a blank chat — is covered in our Insights. See also CFO AI agents.",
   },
   {
     q: "How does an engagement start?",
-    a: "The Introduction Call is a fit-check. We do not diagnose on the call. If it is a fit, a diagnostic and scope come next. Fees are quoted from scope. No list prices.",
+    a: "The Introduction Call is a fit-check with the operator (and sponsor if they join). We do not diagnose on the call. If it is a fit, a diagnostic and scope come next. Fees are quoted from scope. No list prices. No PE sprint package.",
   },
 ];
 
@@ -76,7 +75,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${CANONICAL}#service`,
-    name: "Fractional CFO Services",
+    name: "PE Portfolio Finance",
     description: DESCRIPTION,
     url: CANONICAL,
     provider: {
@@ -99,18 +98,18 @@ const jsonLd = [
     },
     areaServed: { "@type": "Country", name: "United States" },
     serviceType: [
+      "PE portfolio finance",
+      "Private equity portfolio CFO",
       "Fractional CFO",
-      "Outsourced CFO",
+      "Board and investor reporting",
       "FP&A",
       "AI-Enabled Finance",
-      "Board and investor reporting",
-      "Cash flow forecasting",
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Fractional CFO",
+    name: "PE Portfolio Finance",
     description: DESCRIPTION,
     url: CANONICAL,
     provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
@@ -130,7 +129,7 @@ const jsonLd = [
 const linkClass =
   "text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-deep";
 
-export default function FractionalCfoPage() {
+export default function PePortfolioFinancePage() {
   return (
     <>
       <main id="main" className="relative z-10 min-h-screen bg-bg text-ink">
@@ -177,41 +176,43 @@ export default function FractionalCfoPage() {
               Vantage Rock Financial · Scottsdale, AZ · Founded 2026
             </p>
             <h1 className="mt-3 font-display text-display-xl text-ink">
-              Fractional CFO for companies that need judgment, not another title
+              PE portfolio finance for operator-led companies that need sponsor-ready numbers
             </h1>
             <p className="mt-5 font-display text-[22px] italic leading-[1.35] tracking-[-0.02em] text-ink-muted md:text-[24px]">
-              Close, cash, and reporting that leadership can run on. AI on the
-              repeating work. A human on the decisions.
+              Close, cash, and board packs the operating partner can trust. AI on
+              the repeating work. A human on the decisions. No PE sprint SKU.
             </p>
 
             <div className="mt-12 space-y-6 text-[17px] leading-[1.7] text-ink">
               <p>
-                Most shops that say they need a CFO are really naming a gap:
-                cash that surprises mid-week, a close that lands late, a board
-                pack rebuilt from memory, or ops that outgrew the books. Hiring
-                a full-time seat is slow and expensive when the function still
-                needs design. A fractional CFO is the scoped answer — senior
-                finance leadership without a full-time hire.
+                Private equity portfolio companies that still run founder- or
+                CEO-led often hit the same wall: the file that got through
+                diligence does not hold under operating pressure. Month-end
+                slips. Cash timing surprises mid-week. The board pack is rebuilt
+                from memory the night before. The sponsor asks for the why and
+                gets a dump of last month. That is a finance leadership gap —
+                not a software gap.
               </p>
               <p>
-                Vantage Rock Financial is a fractional CFO firm for founder-led
-                and sponsor-backed companies from roughly $1M in revenue. The
-                work covers close cadence, cash visibility,{" "}
+                Vantage Rock Financial is a{" "}
+                <a href="/fractional-cfo" className={linkClass}>
+                  fractional CFO
+                </a>{" "}
+                firm for founder-led and sponsor-backed companies from roughly
+                $1M in revenue. For portcos, the engagement stays operator-led:
+                close cadence, cash visibility,{" "}
                 <a href="/fpa" className={linkClass}>
                   FP&amp;A
                 </a>{" "}
-                forecasts and scenarios, margin and pricing, board and investor
-                reporting, and the systems underneath so the file stops
-                depending on a hero.
-                Typically the bookkeeper or controller stays. We do not replace
-                your CPA, and we do not do tax, audit, or bookkeeping.
+                and scenarios, margin and pricing calls, and board packs built
+                for the operating partner — not for filing. Typically the
+                bookkeeper or controller stays. We do not replace your CPA, and
+                we do not do tax, audit, or bookkeeping.
               </p>
               <p>
-                AI is how the repeating work gets delivered — not a chatbot on
-                last month&apos;s spreadsheet. Agents draft close work, track
-                receivables, surface expense trends, write the first flux
-                narrative, and assemble the daily brief. A person still reviews
-                what posts and signs what leaves. That is{" "}
+                AI is how the repeating work gets delivered — close drafts,
+                receivables follow-up, expense trends, flux narrative, daily
+                brief — under review. A person still signs what leaves. That is{" "}
                 <a href="/ai-enabled-finance" className={linkClass}>
                   AI-enabled finance
                 </a>
@@ -219,47 +220,44 @@ export default function FractionalCfoPage() {
                 <a href="/cfo-ai-agents" className={linkClass}>
                   CFO AI agents
                 </a>
-                , under fractional leadership.
-              </p>
-              <p>
-                Operators usually call when one of a few triggers shows up. Cash
-                timing no longer matches the P&L story. Month-end is always late
-                and the founder is still the spreadsheet. The board or PE
-                partner wants a pack that explains the why, not just the result.
-                A hire is on the table but the function is not ready for a
-                full-time seat. Those are the same patterns we write about in{" "}
-                <a
-                  href="/insights/top-5-reasons-fractional-cfo"
-                  className={linkClass}
-                >
-                  top reasons operators look for a fractional CFO
-                </a>{" "}
-                and in{" "}
-                <a
-                  href="/insights/bookkeeper-vs-controller-vs-cfo"
-                  className={linkClass}
-                >
-                  bookkeeper vs controller vs CFO
-                </a>
-                .
-              </p>
-              <p>
-                For sponsor-backed shops, the bar is the same: numbers the
-                operating partner can trust, a close that holds, and AI used
-                where finance teams already work — not as a demo. Portco-facing
-                detail is on{" "}
-                <a href="/pe-portfolio-finance" className={linkClass}>
-                  PE portfolio finance
-                </a>
-                . How PE finance
-                teams actually use tools like Claude is covered in{" "}
+                . How PE finance teams actually use tools like Claude — with
+                business context and methodology, not a blank chat — is covered
+                in{" "}
                 <a
                   href="/insights/how-private-equity-finance-teams-use-claude"
                   className={linkClass}
                 >
                   how private equity finance teams use Claude
                 </a>
-                . The engagement stays operator-led; there is no PE sprint SKU.
+                .
+              </p>
+              <p>
+                Sponsors and operators usually call when one of a few triggers
+                shows up. The close is always late and the CEO is still the
+                spreadsheet. Cash no longer matches the P&amp;L story. The board
+                wants a pack that explains variance, not just the result. A
+                full-time CFO hire is on the table but the function is not ready
+                for that seat. Those are the same patterns as{" "}
+                <a
+                  href="/insights/top-5-reasons-fractional-cfo"
+                  className={linkClass}
+                >
+                  why operators look for a fractional CFO
+                </a>{" "}
+                and{" "}
+                <a
+                  href="/insights/why-month-end-close-is-late"
+                  className={linkClass}
+                >
+                  why month-end close runs late
+                </a>
+                .
+              </p>
+              <p>
+                This page is for portco ops voice — not an LP fundraising pitch.
+                There is no PE sprint package and no invented diligence theater.
+                The bar is numbers someone will put their name on, on a cadence
+                the sponsor can calendar.
               </p>
               <p>
                 Based in Scottsdale, Arizona. Engagements are remote-first across
@@ -274,9 +272,9 @@ export default function FractionalCfoPage() {
                 What you get
               </h2>
               <ul className="mt-6 space-y-3 border-l-2 border-teal/40 pl-5 text-[17px] leading-[1.6] text-ink">
-                <li>Rolling cash and forecast views someone owns every week</li>
                 <li>Close calendar with named owners — not a hero weekend</li>
-                <li>Board- and lender-ready packs with the why attached</li>
+                <li>Rolling cash and forecast views the operator owns weekly</li>
+                <li>Board packs with flux and the why the OP can probe</li>
                 <li>Margin, pricing, and capacity calls grounded in the file</li>
                 <li>AI on repeating work; human sign-off on what leaves</li>
               </ul>
@@ -314,10 +312,14 @@ export default function FractionalCfoPage() {
                   info@vantagerockfinancial.com
                 </a>
                 . Read more on{" "}
-                <a href="/ai-enabled-finance" className={linkClass}>
-                  AI-enabled finance
-                </a>{" "}
-                and{" "}
+                <a href="/fractional-cfo" className={linkClass}>
+                  fractional CFO services
+                </a>
+                ,{" "}
+                <a href="/fpa" className={linkClass}>
+                  FP&amp;A
+                </a>
+                , and{" "}
                 <a href="/cfo-ai-agents" className={linkClass}>
                   the five CFO AI agents
                 </a>
@@ -355,7 +357,7 @@ export default function FractionalCfoPage() {
               className="font-mono text-[12px] tracking-[0.04em]"
               style={{ color: "#F0F4F8" }}
             >
-              Stavros Christas
+              Stavros Christias
             </p>
             <a
               href="/"
