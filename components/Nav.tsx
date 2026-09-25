@@ -9,9 +9,6 @@ import CTAButton from "./CTAButton";
 // On the homepage the browser still treats these as same-page anchors.
 const links = [
   { href: "/#services", label: "Services" },
-  { href: "/fractional-cfo", label: "Fractional CFO" },
-  { href: "/fpa", label: "FP&A" },
-  { href: "/pe-portfolio-finance", label: "PE Portfolio" },
   { href: "/#how", label: "How it works" },
   { href: "/#engagements", label: "Engagements" },
   { href: "/insights", label: "Insights" },
