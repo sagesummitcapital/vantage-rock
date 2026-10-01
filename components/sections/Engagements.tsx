@@ -124,9 +124,9 @@ export default function Engagements() {
               <div className="mono-label mb-4">How it starts</div>
               <ol className="space-y-4">
                 {[
-                  "A 15–30 minute Introduction Call. Fit-check — we don't diagnose on the call. Nothing to prepare.",
-                  "If it's a fit, a short diagnostic — what to fix, in what order, and what it's worth fixing.",
-                  "Then the engagement, scoped from that. You always know what you're buying before you buy it.",
+                  "A 15–30 minute call. Fit-check only — I'm not diagnosing on the call. Nothing to prepare.",
+                  "If it's a fit, we scope an engagement from there. You know exactly what you're buying before we start.",
+                  "Work begins. Scoped, bounded, and priced before anything moves.",
                 ].map((s, i) => (
                   <li key={s} className="flex gap-4">
                     <span className="tabular mt-[2px] font-mono text-[12px] text-teal">
