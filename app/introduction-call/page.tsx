@@ -449,7 +449,7 @@ export default function Page() {
               {SITE_NAME} ·{" "}
               <a
                 href="/"
-                className="transition-colors hover:text-[#2EE6C9]"
+                className="transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#8FA3B5" }}
               >
                 vantagerockfinancial.com

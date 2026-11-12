@@ -20,7 +20,7 @@ export default function Nav() {
   const { scrollY } = useScroll();
   const backdropOpacity = useTransform(scrollY, [0, 100], [0.6, 0.92]);
   const borderOpacity = useTransform(scrollY, [0, 100], [0, 1]);
-  const backgroundColor = useMotionTemplate`rgba(250, 251, 252, ${backdropOpacity})`;
+  const backgroundColor = useMotionTemplate`rgba(244, 245, 242, ${backdropOpacity})`;
   const [open, setOpen] = useState(false);
 
   // Lock body scroll when the mobile menu is open
@@ -58,9 +58,9 @@ export default function Nav() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden gap-8 text-[13px] text-ink-muted md:flex">
+        <div className="hidden gap-9 text-[13.5px] text-ink-muted md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="transition-colors hover:text-teal">
+            <a key={l.href} href={l.href} className="transition-colors hover:text-ink">
               {l.label}
             </a>
           ))}

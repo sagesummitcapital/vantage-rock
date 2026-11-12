@@ -32,7 +32,7 @@ export default function ScorecardPanel() {
     >
       <div
         className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full blur-3xl"
-        style={{ background: "rgba(46,230,201,0.12)" }}
+        style={{ background: "rgba(127,217,204,0.12)" }}
         aria-hidden
       />
 
@@ -44,7 +44,7 @@ export default function ScorecardPanel() {
         <div>
           <div
             className="font-mono text-[10px] uppercase tracking-[0.14em]"
-            style={{ color: "#2EE6C9" }}
+            style={{ color: "#7FD9CC" }}
           >
             SAMPLE
           </div>
@@ -102,7 +102,7 @@ export default function ScorecardPanel() {
                   background:
                     a.score < 35
                       ? "linear-gradient(90deg,#E2A05F,#D6845F)"
-                      : "linear-gradient(90deg,#17A89A,#2EE6C9)",
+                      : "linear-gradient(90deg,#0F7F78,#7FD9CC)",
                 }}
                 initial={reduce ? { width: `${a.score}%` } : { width: 0 }}
                 whileInView={{ width: `${a.score}%` }}
@@ -125,11 +125,11 @@ export default function ScorecardPanel() {
         viewport={{ once: true }}
         transition={{ delay: 1.2, duration: 0.5 }}
         className="relative mt-5 flex items-start gap-2.5 rounded-lg p-3.5"
-        style={{ background: "rgba(46,230,201,0.07)" }}
+        style={{ background: "rgba(127,217,204,0.07)" }}
       >
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="mt-[1px] flex-shrink-0" aria-hidden>
-          <circle cx="8" cy="8" r="7" stroke="#2EE6C9" strokeWidth="1.1" />
-          <path d="M8 4.5v4M8 11h.01" stroke="#2EE6C9" strokeWidth="1.4" strokeLinecap="round" />
+          <circle cx="8" cy="8" r="7" stroke="#7FD9CC" strokeWidth="1.1" />
+          <path d="M8 4.5v4M8 11h.01" stroke="#7FD9CC" strokeWidth="1.4" strokeLinecap="round" />
         </svg>
         <p className="text-[12.5px] leading-[1.45]" style={{ color: "#C5D2DD" }}>
           Biggest gaps: <span style={{ color: "#F0F4F8" }}>automation, cash

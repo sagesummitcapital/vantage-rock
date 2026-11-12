@@ -8,8 +8,8 @@ import SectionHead from "../SectionHead";
 function CheckIcon({ bright = false }: { bright?: boolean }) {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="flex-shrink-0" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke={bright ? "#2EE6C9" : "currentColor"} strokeWidth="1.2" />
-      <path d="M5 8l2 2 4-4.5" stroke={bright ? "#2EE6C9" : "currentColor"} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="8" cy="8" r="7" stroke={bright ? "#7FD9CC" : "currentColor"} strokeWidth="1.2" />
+      <path d="M5 8l2 2 4-4.5" stroke={bright ? "#7FD9CC" : "currentColor"} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -87,10 +87,10 @@ export default function TheShift() {
             >
               <div
                 className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl"
-                style={{ background: "rgba(46,230,201,0.15)" }}
+                style={{ background: "rgba(127,217,204,0.15)" }}
                 aria-hidden
               />
-              <div className="mono-label mb-6" style={{ color: "#2EE6C9" }}>
+              <div className="mono-label mb-6" style={{ color: "#7FD9CC" }}>
                 Fractional CFO
               </div>
               <div className="mb-6 flex flex-col items-center gap-[3px]">
@@ -101,7 +101,7 @@ export default function TheShift() {
                     style={{
                       width: `${70 - i * 8}%`,
                       height: 8,
-                      background: `rgba(46,230,201,${0.7 - i * 0.13})`,
+                      background: `rgba(127,217,204,${0.7 - i * 0.13})`,
                     }}
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{

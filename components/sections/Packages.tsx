@@ -68,8 +68,8 @@ const packages: Pkg[] = [
 function Check() {
   return (
     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="mt-[2px] flex-shrink-0" aria-hidden>
-      <circle cx="8" cy="8" r="7" stroke="#17A89A" strokeWidth="1.1" opacity="0.5" />
-      <path d="M5 8l2 2 4-4.5" stroke="#17A89A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="8" cy="8" r="7" stroke="#0F7F78" strokeWidth="1.1" opacity="0.5" />
+      <path d="M5 8l2 2 4-4.5" stroke="#0F7F78" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -98,7 +98,7 @@ export default function Packages() {
               <div
                 className={`card-lift relative flex h-full flex-col rounded-xl border p-7 md:p-8 ${
                   pkg.popular
-                    ? "border-teal/40 bg-bg-raised shadow-[0_16px_50px_-16px_rgba(23,168,154,0.25)]"
+                    ? "border-teal/40 bg-bg-raised shadow-[0_16px_50px_-16px_rgba(15,127,120,0.25)]"
                     : "border-line bg-bg-raised soft-shadow"
                 }`}
               >

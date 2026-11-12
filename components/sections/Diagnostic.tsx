@@ -70,7 +70,7 @@ export default function Diagnostic() {
             >
               <div
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl"
-                style={{ background: "rgba(23,168,154,0.08)" }}
+                style={{ background: "rgba(15,127,120,0.08)" }}
                 aria-hidden
               />
 
@@ -101,8 +101,8 @@ export default function Diagnostic() {
                       className="flex items-start gap-3 text-[15px] leading-[1.5] text-ink"
                     >
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="mt-[2px] flex-shrink-0" aria-hidden>
-                        <circle cx="9" cy="9" r="8" stroke="#17A89A" strokeWidth="1.1" />
-                        <path d="M5.5 9l2.5 2.5L13 6" stroke="#17A89A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="9" cy="9" r="8" stroke="#0F7F78" strokeWidth="1.1" />
+                        <path d="M5.5 9l2.5 2.5L13 6" stroke="#0F7F78" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       {d}
                     </motion.li>

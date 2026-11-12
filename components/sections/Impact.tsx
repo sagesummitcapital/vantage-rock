@@ -31,12 +31,12 @@ export default function Impact() {
           >
             <div
               className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl"
-              style={{ background: "rgba(46,230,201,0.12)" }}
+              style={{ background: "rgba(127,217,204,0.12)" }}
               aria-hidden
             />
             <div className="relative grid gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
               <div>
-                <div className="mono-label mb-4" style={{ color: "#2EE6C9" }}>
+                <div className="mono-label mb-4" style={{ color: "#7FD9CC" }}>
                   Healthcare & wellness operator
                 </div>
                 <div className="space-y-6">
@@ -75,8 +75,8 @@ export default function Impact() {
                       style={{ color: "#F0F4F8" }}
                     >
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="mt-[2px] flex-shrink-0" aria-hidden>
-                        <circle cx="9" cy="9" r="8" stroke="#2EE6C9" strokeWidth="1.1" />
-                        <path d="M5.5 9l2.5 2.5L13 6" stroke="#2EE6C9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="9" cy="9" r="8" stroke="#7FD9CC" strokeWidth="1.1" />
+                        <path d="M5.5 9l2.5 2.5L13 6" stroke="#7FD9CC" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       {r}
                     </motion.li>

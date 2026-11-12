@@ -359,7 +359,7 @@ export default function FractionalCfoPage() {
             </p>
             <a
               href="/"
-              className="mt-2 inline-block font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+              className="mt-2 inline-block font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
               style={{ color: "#8FA3B5" }}
             >
               vantagerockfinancial.com

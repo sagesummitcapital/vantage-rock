@@ -23,7 +23,7 @@ export default async function OpengraphImage() {
           <span style={{ fontSize: 34, color: "#F0F4F8", letterSpacing: -1 }}>
             VANTAGE
           </span>
-          <span style={{ width: 2, height: 30, background: "#2EE6C9" }} />
+          <span style={{ width: 2, height: 30, background: "#7FD9CC" }} />
           <span style={{ fontSize: 34, color: "#F0F4F8", letterSpacing: -1 }}>
             ROCK
           </span>
@@ -41,7 +41,7 @@ export default async function OpengraphImage() {
             }}
           >
             <span>AI-native financial</span>
-            <span style={{ color: "#2EE6C9" }}>leadership.</span>
+            <span style={{ color: "#7FD9CC" }}>leadership.</span>
           </div>
           <div
             style={{
@@ -70,7 +70,7 @@ export default async function OpengraphImage() {
           }}
         >
           <span>CLARITY · INSIGHT · AUTOMATION</span>
-          <span style={{ color: "#2EE6C9" }}>vantagerockfinancial.com</span>
+          <span style={{ color: "#7FD9CC" }}>vantagerockfinancial.com</span>
         </div>
       </div>
     ),

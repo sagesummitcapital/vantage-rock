@@ -12,7 +12,7 @@ import SectionHead from "../SectionHead";
  */
 
 const PRODUCE = "#C6D2DA"; // recessive remainder
-const INTERPRET = "#0E7C72"; // teal-deep — the part that matters
+const INTERPRET = "#0A5F5A"; // teal-deep — the part that matters
 
 function Legend() {
   return (

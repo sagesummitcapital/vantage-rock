@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState, type FormEvent } from "react";
 
 type FormData = {
@@ -82,12 +81,12 @@ export default function BookingForm() {
 
   if (status === "success") {
     return (
-      <div className="relative z-10 mx-auto max-w-[640px] rounded-xl border border-teal/40 bg-bg-raised p-10 text-center soft-shadow">
+      <div className="relative z-10 mx-auto max-w-[640px] rounded-xl border border-white/10 bg-bg-raised p-10 text-center text-ink">
         <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-teal bg-teal/10">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M4 10l4 4 8-8"
-              stroke="#17A89A"
+              stroke="#0F7F78"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -114,7 +113,7 @@ export default function BookingForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative z-10 mx-auto max-w-[760px] rounded-xl border border-line bg-bg-raised p-7 soft-shadow md:p-10"
+      className="relative z-10 mx-auto max-w-[760px] rounded-xl border border-white/10 bg-bg-raised p-7 text-ink md:p-10"
     >
       <div className="mb-8 flex items-center justify-between border-b border-line pb-5">
         <span className="mono-label !text-teal">15–30 minute Introduction Call</span>
@@ -239,26 +238,13 @@ export default function BookingForm() {
           Direct to the founder · no spam · no mailing list
         </span>
 
-        <motion.button
+        <button
           type="submit"
           disabled={status === "submitting"}
-          whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          className="group relative inline-flex items-center justify-center gap-2 rounded-md bg-navy px-6 py-3 text-[13px] font-medium text-ink-invert transition-all duration-300 hover:bg-teal hover:text-white hover:shadow-[0_8px_24px_-6px_rgba(23,168,154,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-md bg-navy px-7 py-[15px] text-[14px] font-medium tracking-[0.01em] text-ink-invert transition-colors duration-200 hover:bg-teal-deep disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Submitting…" : "Book an Introduction Call"}
-          {status !== "submitting" && (
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
-              <path
-                d="M3 9L9 3M9 3H4M9 3V8"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-              />
-            </svg>
-          )}
-        </motion.button>
+          {status === "submitting" ? "Sending…" : "Book an Introduction Call"}
+        </button>
       </div>
     </form>
   );
@@ -285,4 +271,4 @@ function Field({
 }
 
 const inputClass =
-  "w-full rounded-md border border-line-strong bg-bg-sunken px-4 py-[11px] text-[14px] text-ink placeholder:text-ink-dim outline-none transition-all duration-200 focus:border-teal focus:bg-white focus:shadow-[0_0_0_3px_rgba(23,168,154,0.12)]";
+  "w-full rounded-md border border-line-strong bg-bg-sunken px-4 py-[11px] text-[14px] text-ink placeholder:text-ink-dim outline-none transition-all duration-200 focus:border-teal focus:bg-white focus:shadow-[0_0_0_3px_rgba(15,127,120,0.12)]";

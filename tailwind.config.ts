@@ -8,55 +8,67 @@ const config: Config = {
         // Brand palette
         navy: {
           DEFAULT: "#0B1A2A", // Deep Slate Navy — primary text / dark accents
-          deep: "#081421",
+          deep: "#06111C",
           soft: "#1E3346",
         },
         teal: {
-          DEFAULT: "#17A89A", // slightly deepened teal for contrast on light bg
-          bright: "#2EE6C9", // electric teal — for dark panels / glows
-          deep: "#0E7C72",
+          DEFAULT: "#0F7F78", // verdigris — reads as ink on the limestone page
+          bright: "#7FD9CC", // pale verdigris — for text and line work on navy
+          deep: "#0A5F5A",
         },
         // Light surfaces
         paper: {
-          DEFAULT: "#FAFBFC", // off-white page background
+          DEFAULT: "#F4F5F2", // off-white page background
           raised: "#FFFFFF", // cards
-          sunken: "#F2F5F7", // subtle wells
+          sunken: "#E9ECE8", // subtle wells
           contrast: "#0B1A2A", // dark panels (AI oversight, CTA blocks)
         },
         // Semantic
         bg: {
-          DEFAULT: "#FAFBFC",
+          DEFAULT: "#F4F5F2",
           raised: "#FFFFFF",
-          sunken: "#F2F5F7",
+          sunken: "#E9ECE8",
         },
         ink: {
           DEFAULT: "#0B1A2A", // near-navy body text
-          muted: "#56697A", // secondary text
-          dim: "#8597A6", // tertiary / labels
-          invert: "#F0F4F8", // text on dark panels
+          muted: "#4C5D6B", // secondary text
+          dim: "#74838F", // tertiary / labels
+          invert: "#EEF0EC", // text on dark panels
         },
         line: {
-          DEFAULT: "rgba(11, 26, 42, 0.10)",
-          strong: "rgba(11, 26, 42, 0.18)",
+          DEFAULT: "rgba(11, 26, 42, 0.13)",
+          strong: "rgba(11, 26, 42, 0.24)",
+        },
+        // Warm metal, used only for hairlines and small marks
+        brass: {
+          DEFAULT: "#A8895A",
+          soft: "#C9B48C",
         },
         accent: {
-          DEFAULT: "#17A89A",
+          DEFAULT: "#0F7F78",
           warn: "#D6453F",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "Iowan Old Style", "Georgia", "serif"],
         sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+        // Small labels are set in the sans; a monospace face is not part of the identity.
+        mono: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      // Tight corners: closer to engraved stationery than to app cards.
+      borderRadius: {
+        md: "2px",
+        lg: "3px",
+        xl: "4px",
       },
       letterSpacing: {
         tightest: "-0.035em",
         tighter2: "-0.025em",
       },
       fontSize: {
-        "display-2xl": ["clamp(2.75rem, 6.4vw, 4.75rem)", { lineHeight: "1.03", letterSpacing: "-0.028em", fontWeight: "400" }],
-        "display-xl": ["clamp(2.25rem, 5vw, 3.75rem)", { lineHeight: "1.06", letterSpacing: "-0.025em", fontWeight: "400" }],
-        "display-lg": ["clamp(1.9rem, 3.9vw, 2.85rem)", { lineHeight: "1.12", letterSpacing: "-0.022em", fontWeight: "400" }],
+        "display-2xl": ["clamp(2.9rem, 7vw, 5.75rem)", { lineHeight: "0.98", letterSpacing: "-0.034em", fontWeight: "300" }],
+        "display-xl": ["clamp(2.3rem, 5.2vw, 4.1rem)", { lineHeight: "1.03", letterSpacing: "-0.03em", fontWeight: "300" }],
+        "display-lg": ["clamp(2rem, 4.3vw, 3.3rem)", { lineHeight: "1.06", letterSpacing: "-0.028em", fontWeight: "350" }],
       },
       animation: {
         ticker: "ticker 50s linear infinite",

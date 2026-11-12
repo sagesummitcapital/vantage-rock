@@ -58,7 +58,7 @@ export default function Proof() {
               >
                 <div
                   className="tabular font-display text-[clamp(2rem,4vw,2.75rem)] leading-none tracking-tighter2"
-                  style={{ color: "#2EE6C9" }}
+                  style={{ color: "#7FD9CC" }}
                 >
                   {m.v}
                 </div>

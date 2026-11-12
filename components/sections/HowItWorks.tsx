@@ -112,11 +112,11 @@ export default function HowItWorks() {
             >
               <div
                 className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full blur-3xl"
-                style={{ background: "rgba(46,230,201,0.16)" }}
+                style={{ background: "rgba(127,217,204,0.16)" }}
                 aria-hidden
               />
               <div className="relative">
-                <div className="mono-label mb-4" style={{ color: "#2EE6C9" }}>
+                <div className="mono-label mb-4" style={{ color: "#7FD9CC" }}>
                   The operator
                 </div>
                 <p
@@ -135,7 +135,7 @@ export default function HowItWorks() {
                       >
                         <span
                           className="mt-[7px] h-[5px] w-[5px] flex-shrink-0 rounded-full"
-                          style={{ background: "#2EE6C9" }}
+                          style={{ background: "#7FD9CC" }}
                           aria-hidden
                         />
                         {i}

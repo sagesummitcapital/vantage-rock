@@ -15,7 +15,7 @@ const assurances = [
 
 export default function FinalCTA() {
   return (
-    <section id="book" className="relative overflow-hidden bg-bg-sunken">
+    <section id="book" className="relative overflow-hidden bg-navy text-ink-invert">
       <div className="aurora-glow" aria-hidden />
       <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden />
 
@@ -24,18 +24,18 @@ export default function FinalCTA() {
           {/* Framing */}
           <div>
             <Reveal>
-              <span className="mono-label">10 — Next step</span>
+              <div className="section-label !text-teal-bright">Next step</div>
             </Reveal>
 
             <Reveal delay={0.08}>
               <h2 className="mt-6 max-w-[560px] font-display text-display-xl">
-                <span className="text-ink">Book a 15–30 minute </span>
-                <span className="gradient-text">Introduction Call.</span>
+                <span>Book a 15–30 minute </span>
+                <span className="italic text-teal-bright">Introduction Call.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.14}>
-              <p className="mt-7 max-w-[480px] text-[17px] leading-[1.7] text-ink-muted">
+              <p className="mt-7 max-w-[480px] text-[17px] leading-[1.7] text-ink-invert/75">
                 It is a fit-check, not a sales call. We don&apos;t diagnose on the
                 call and you don&apos;t leave with a plan. Thirty minutes tells us
                 both whether there&apos;s work here worth doing.
@@ -45,12 +45,12 @@ export default function FinalCTA() {
             <Reveal delay={0.2}>
               <ul className="mt-9 space-y-3">
                 {assurances.map((t) => (
-                  <li key={t} className="flex items-center gap-3 text-[14.5px] text-ink-muted">
+                  <li key={t} className="flex items-center gap-3 text-[14.5px] text-ink-invert/80">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                      <circle cx="8" cy="8" r="7" stroke="#17A89A" strokeWidth="1.1" />
+                      <circle cx="8" cy="8" r="7" stroke="#7FD9CC" strokeWidth="1.1" />
                       <path
                         d="M5 8l2 2 4-4.5"
-                        stroke="#17A89A"
+                        stroke="#7FD9CC"
                         strokeWidth="1.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -63,12 +63,12 @@ export default function FinalCTA() {
             </Reveal>
 
             <Reveal delay={0.26}>
-              <div className="mt-10 border-t border-line pt-7">
-                <div className="mono-label mb-4">Or reach out directly</div>
+              <div className="mt-10 border-t border-white/10 pt-7">
+                <div className="mono-label mb-4 !text-ink-invert/55">Or reach out directly</div>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[14px]">
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="font-medium text-teal transition-colors hover:text-ink"
+                    className="font-medium text-teal-bright underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -76,7 +76,7 @@ export default function FinalCTA() {
                     href={FOUNDER_LINKEDIN}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-teal transition-colors hover:text-ink"
+                    className="font-medium text-teal-bright underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
                   >
                     LinkedIn — Stavros
                   </a>
@@ -84,7 +84,7 @@ export default function FinalCTA() {
                     href={COMPANY_LINKEDIN}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-teal transition-colors hover:text-ink"
+                    className="font-medium text-teal-bright underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
                   >
                     LinkedIn — Vantage Rock
                   </a>
@@ -92,7 +92,7 @@ export default function FinalCTA() {
                     href={X_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-teal transition-colors hover:text-ink"
+                    className="font-medium text-teal-bright underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
                   >
                     @VantageRock
                   </a>

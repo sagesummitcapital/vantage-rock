@@ -507,7 +507,7 @@ export default function AboutPage() {
               {SITE_NAME} ·{" "}
               <a
                 href="/"
-                className="transition-colors hover:text-[#2EE6C9]"
+                className="transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#8FA3B5" }}
               >
                 vantagerockfinancial.com
@@ -515,7 +515,7 @@ export default function AboutPage() {
               ·{" "}
               <a
                 href={MAILTO}
-                className="transition-colors hover:text-[#2EE6C9]"
+                className="transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#F0F4F8" }}
               >
                 {CONTACT_EMAIL}

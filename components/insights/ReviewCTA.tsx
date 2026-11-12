@@ -30,14 +30,14 @@ export default function ReviewCTA() {
         <Link
           href="/#book"
           className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-[14px] font-medium transition-colors"
-          style={{ background: "#2EE6C9", color: "#0B1A2A" }}
+          style={{ background: "#7FD9CC", color: "#0B1A2A" }}
         >
           Book an Introduction Call
           <span aria-hidden>→</span>
         </Link>
         <a
           href="mailto:info@vantagerockfinancial.com"
-          className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+          className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
           style={{ color: "#8FA3B5" }}
         >
           info@vantagerockfinancial.com

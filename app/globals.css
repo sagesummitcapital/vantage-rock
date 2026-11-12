@@ -5,29 +5,34 @@
 :root {
   /* Brand */
   --navy: #0B1A2A;
-  --navy-deep: #081421;
-  --teal: #17A89A;
-  --teal-bright: #2EE6C9;
-  --teal-deep: #0E7C72;
+  --navy-deep: #06111C;
+  --teal: #0F7F78;
+  --teal-bright: #7FD9CC;
+  --teal-deep: #0A5F5A;
 
   /* Light surfaces */
-  --paper: #FAFBFC;
+  --paper: #F4F5F2;
   --paper-raised: #FFFFFF;
-  --paper-sunken: #F2F5F7;
+  --paper-sunken: #E9ECE8;
   --paper-contrast: #0B1A2A;
 
   /* Semantic */
-  --bg: #FAFBFC;
+  --bg: #F4F5F2;
   --bg-raised: #FFFFFF;
-  --bg-sunken: #F2F5F7;
+  --bg-sunken: #E9ECE8;
   --ink: #0B1A2A;
-  --ink-muted: #56697A;
-  --ink-dim: #8597A6;
-  --ink-invert: #F0F4F8;
-  --line: rgba(11, 26, 42, 0.10);
-  --line-strong: rgba(11, 26, 42, 0.18);
-  --accent: #17A89A;
+  --ink-muted: #4C5D6B;
+  --ink-dim: #74838F;
+  --ink-invert: #EEF0EC;
+  --brass: #A8895A;
+  --line: rgba(11, 26, 42, 0.13);
+  --line-strong: rgba(11, 26, 42, 0.24);
+  --accent: #0F7F78;
   --accent-warn: #D6453F;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
 * {
@@ -58,24 +63,44 @@ p {
   color: #fff;
 }
 
-/* Mono label */
+/* Small label. Sentence case, set in the sans. (Class name kept so every
+   page picks up the change.) */
 .mono-label {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 10.5px;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--ink-dim);
   font-variant-numeric: tabular-nums;
 }
 
+/* Section label: a short brass rule, then the label */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--teal-deep);
+}
+.section-label::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--brass);
+}
+
 /* Serif display — Newsreader, display cut */
+/* :where() keeps these as defaults, so a size utility that sets its own
+   weight or tracking (text-display-*) wins. */
+:where(.font-display) {
+  font-weight: 400;
+  letter-spacing: -0.021em;
+}
 .font-display {
   font-family: var(--font-display), "Iowan Old Style", Georgia, serif;
   font-optical-sizing: auto;
-  font-weight: 400;
-  /* Tighter, more deliberate spacing reads as considered rather than default */
-  letter-spacing: -0.021em;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   text-rendering: optimizeLegibility;
 }
@@ -94,66 +119,36 @@ p {
   font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-/* Animated gradient text — navy → teal for light bg */
+/* Second line of a heading. Solid colour, drawn italic. No gradients.
+   (Class names kept so every page picks up the change.) */
 .gradient-text {
-  background: linear-gradient(
-    110deg,
-    #17A89A 0%,
-    #0E7C72 35%,
-    #17A89A 65%,
-    #2EE6C9 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: gradient-shift 8s ease-in-out infinite;
+  color: var(--teal-deep);
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
-
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
 .gradient-text-teal {
-  background: linear-gradient(110deg, #17A89A 0%, #0E7C72 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--ink-muted);
 }
-
-/* Gradient text for use ON dark panels (brighter) */
 .gradient-text-bright {
-  background: linear-gradient(110deg, #F0F4F8 0%, #2EE6C9 60%, #F0F4F8 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: gradient-shift 8s ease-in-out infinite;
+  color: var(--teal-bright);
+  font-style: italic;
 }
 
-/* Grid backdrop — subtle navy lines on light */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(11, 26, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 26, 42, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 75%);
-}
-
-/* Aurora glow — soft teal tint on light */
+/* Retired decoration: grid backdrop and glow. Kept as no-ops so existing
+   markup does not need touching. */
+.grid-bg,
 .aurora-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 50% 40% at 30% 35%, rgba(23, 168, 154, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 35% at 72% 60%, rgba(46, 230, 201, 0.07) 0%, transparent 60%);
-  pointer-events: none;
-  filter: blur(40px);
+  display: none;
+}
+
+/* Hero contour lines draw in once on load. The only ambient motion on the site. */
+.contour-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: contour-draw 2.8s cubic-bezier(0.22, 0.7, 0.2, 1) 0.15s forwards;
+}
+@keyframes contour-draw {
+  to { stroke-dashoffset: 0; }
 }
 
 /* Ticker mask */
@@ -169,21 +164,16 @@ p {
   border-radius: 4px;
 }
 
-/* Card hover lift */
+/* Card hover: the border darkens. Nothing moves. */
 .card-lift {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease, background 0.4s ease,
-              box-shadow 0.4s ease;
+  transition: border-color 0.3s ease;
 }
 .card-lift:hover {
-  transform: translateY(-3px);
   border-color: var(--line-strong);
-  box-shadow: 0 16px 40px -12px rgba(11, 26, 42, 0.12);
 }
 
-/* Teal glow */
 .teal-glow {
-  box-shadow: 0 0 24px rgba(23, 168, 154, 0.25);
+  box-shadow: none;
 }
 
 /* Loader sweep */
@@ -203,9 +193,9 @@ p {
   100% { transform: translateX(100%); }
 }
 
-/* Subtle card shadow for light theme depth */
+/* Cards sit flat on the page, held by a hairline. */
 .soft-shadow {
-  box-shadow: 0 1px 3px rgba(11, 26, 42, 0.04), 0 8px 24px -8px rgba(11, 26, 42, 0.06);
+  box-shadow: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

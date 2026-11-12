@@ -57,10 +57,10 @@ function Check() {
       className="mt-[3px] flex-shrink-0"
       aria-hidden
     >
-      <circle cx="8" cy="8" r="7" stroke="#17A89A" strokeWidth="1.1" opacity="0.45" />
+      <circle cx="8" cy="8" r="7" stroke="#0F7F78" strokeWidth="1.1" opacity="0.45" />
       <path
         d="M5 8l2 2 4-4.5"
-        stroke="#17A89A"
+        stroke="#0F7F78"
         strokeWidth="1.3"
         strokeLinecap="round"
         strokeLinejoin="round"

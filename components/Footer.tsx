@@ -39,20 +39,20 @@ export default function Footer() {
           {/* Right column */}
           <div className="flex flex-col gap-6 md:items-end">
             <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "#C5D2DD" }}>
-              <a href="/#services" className="transition-colors hover:text-[#2EE6C9]">Services</a>
-              <a href="/fractional-cfo" className="transition-colors hover:text-[#2EE6C9]">Fractional CFO</a>
-              <a href="/fpa" className="transition-colors hover:text-[#2EE6C9]">FP&A</a>
-              <a href="/pe-portfolio-finance" className="transition-colors hover:text-[#2EE6C9]">PE Portfolio</a>
-              <a href="/#how" className="transition-colors hover:text-[#2EE6C9]">How it works</a>
-              <a href="/#engagements" className="transition-colors hover:text-[#2EE6C9]">Engagements</a>
-              <a href="/insights" className="transition-colors hover:text-[#2EE6C9]">Insights</a>
-              <a href="/#about" className="transition-colors hover:text-[#2EE6C9]">About</a>
-              <a href="/#book" className="transition-colors hover:text-[#2EE6C9]">Book a call</a>
+              <a href="/#services" className="transition-colors hover:text-[#7FD9CC]">Services</a>
+              <a href="/fractional-cfo" className="transition-colors hover:text-[#7FD9CC]">Fractional CFO</a>
+              <a href="/fpa" className="transition-colors hover:text-[#7FD9CC]">FP&A</a>
+              <a href="/pe-portfolio-finance" className="transition-colors hover:text-[#7FD9CC]">PE Portfolio</a>
+              <a href="/#how" className="transition-colors hover:text-[#7FD9CC]">How it works</a>
+              <a href="/#engagements" className="transition-colors hover:text-[#7FD9CC]">Engagements</a>
+              <a href="/insights" className="transition-colors hover:text-[#7FD9CC]">Insights</a>
+              <a href="/#about" className="transition-colors hover:text-[#7FD9CC]">About</a>
+              <a href="/#book" className="transition-colors hover:text-[#7FD9CC]">Book a call</a>
             </div>
             <div className="flex flex-col gap-2 md:items-end">
               <a
                 href="mailto:info@vantagerockfinancial.com"
-                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#F0F4F8" }}
               >
                 info@vantagerockfinancial.com
@@ -61,7 +61,7 @@ export default function Footer() {
                 href={FOUNDER_LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#F0F4F8" }}
               >
                 LinkedIn — Stavros
@@ -70,7 +70,7 @@ export default function Footer() {
                 href={COMPANY_LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#F0F4F8" }}
               >
                 LinkedIn — Vantage Rock
@@ -79,7 +79,7 @@ export default function Footer() {
                 href={X_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#2EE6C9]"
+                className="font-mono text-[12px] tracking-[0.04em] transition-colors hover:text-[#7FD9CC]"
                 style={{ color: "#F0F4F8" }}
               >
                 @VantageRock

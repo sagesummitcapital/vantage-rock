@@ -1,10 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "ghost";
+type Variant = "primary" | "ghost" | "light";
 
 interface CTAButtonProps {
   children: ReactNode;
@@ -20,39 +17,21 @@ export default function CTAButton({
   href = "#book",
 }: CTAButtonProps) {
   const base =
-    "group relative inline-flex items-center gap-2 rounded-md text-[13px] font-medium transition-all duration-300 focus-visible:outline-teal";
+    "inline-flex items-center justify-center rounded-md font-medium tracking-[0.01em] transition-colors duration-200";
 
   const styles: Record<Variant, string> = {
-    primary:
-      "bg-navy text-ink-invert px-[20px] py-[12px] hover:bg-teal hover:text-white hover:shadow-[0_8px_24px_-6px_rgba(23,168,154,0.5)]",
+    // On the light page
+    primary: "bg-navy text-ink-invert px-7 py-[15px] text-[14px] hover:bg-teal-deep",
+    // On navy sections
+    light: "bg-ink-invert text-navy px-7 py-[15px] text-[14px] hover:bg-white",
+    // Nav
     ghost:
-      "border border-line-strong text-ink px-[14px] py-[7px] hover:border-teal hover:text-teal hover:bg-teal/5 text-[12px]",
+      "border border-line-strong text-ink px-[16px] py-[9px] text-[12.5px] hover:border-navy hover:bg-navy hover:text-ink-invert",
   };
 
   return (
-    <motion.a
-      href={href}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={cn(base, styles[variant], className)}
-    >
-      <span className="relative z-10">{children}</span>
-      <svg
-        width="12"
-        height="12"
-        viewBox="0 0 12 12"
-        fill="none"
-        aria-hidden
-        className="relative z-10 transition-transform duration-300 group-hover:translate-x-[2px]"
-      >
-        <path
-          d="M3 9L9 3M9 3H4M9 3V8"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </svg>
-    </motion.a>
+    <a href={href} className={cn(base, styles[variant], className)}>
+      {children}
+    </a>
   );
 }
