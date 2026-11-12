@@ -35,7 +35,7 @@ export default function About() {
     <section id="about" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="06"
+          number="07"
           label="Who you're working with"
           heading="You talk to the"
           dim="operator."

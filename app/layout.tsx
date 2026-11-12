@@ -43,6 +43,8 @@ export const metadata: Metadata = {
     "fractional CFO services",
     "outsourced CFO",
     "FP&A consultant",
+    "AI FP&A",
+    "FP&A services",
     "AI implementation for finance",
     "month-end close automation",
     "cash flow forecasting",
@@ -93,7 +95,6 @@ const jsonLd = {
   email: CONTACT_EMAIL,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/logo.png`,
-  priceRange: "$$$",
   areaServed: { "@type": "Country", name: "United States" },
   address: {
     "@type": "PostalAddress",

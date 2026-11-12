@@ -9,6 +9,7 @@ type FormData = {
   title: string;
   company: string;
   revenue: string;
+  interest: string;
   message: string;
   /** Honeypot — real users never fill this. Bots do. */
   website: string;
@@ -22,6 +23,7 @@ const initialData: FormData = {
   title: "",
   company: "",
   revenue: "",
+  interest: "",
   message: "",
   website: "",
 };
@@ -34,6 +36,14 @@ const revenueRanges = [
   "$10M – $25M",
   "$25M – $50M",
   "$50M+",
+];
+
+const interests = [
+  "Fractional CFO",
+  "FP&A",
+  "AI implementation in finance",
+  "PE portfolio finance",
+  "Not sure yet",
 ];
 
 export default function BookingForm() {
@@ -88,8 +98,8 @@ export default function BookingForm() {
           Request received.
         </h3>
         <p className="mt-3 text-[15px] leading-[1.5] text-ink-muted">
-          We&apos;ll review your submission and reply within 24 hours with a
-          calendar link and a short pre-call questionnaire.
+          Thanks. You&apos;ll hear back from Stavros within one business day
+          with a calendar link.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -175,6 +185,21 @@ export default function BookingForm() {
             ))}
           </select>
         </Field>
+
+        <Field label="What do you need help with?">
+          <select
+            value={data.interest}
+            onChange={(e) => update("interest", e.target.value)}
+            className={inputClass}
+          >
+            <option value="">Select one (optional)</option>
+            {interests.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </Field>
       </div>
 
       <div className="mt-5">
@@ -211,7 +236,7 @@ export default function BookingForm() {
 
       <div className="mt-8 flex flex-col-reverse gap-4 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
         <span className="font-mono text-[11px] tracking-[0.05em] text-ink-dim">
-          Direct to founder · no spam · unsubscribe anytime
+          Direct to the founder · no spam · no mailing list
         </span>
 
         <motion.button

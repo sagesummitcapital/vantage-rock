@@ -13,7 +13,7 @@ export default function FAQ() {
     <section id="faq" className="border-b border-line">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="08"
+          number="09"
           label="Before you book"
           heading="The questions that come up"
           dim="every time."

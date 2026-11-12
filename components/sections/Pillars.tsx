@@ -18,6 +18,19 @@ const pillars = [
   },
   {
     n: "02",
+    name: "FP&A",
+    lead: "A forecast leadership can run the business on.",
+    body: "Budgets, rolling forecasts, cash plans, and board packs with the why attached. Built AI-forward, so the variance commentary and the forecast refresh are drafted for review and your team spends its time with the business.",
+    points: [
+      "Rolling forecast and budget vs. actuals",
+      "13-week cash and scenario models",
+      "Variance commentary in the same format every month",
+      "KPI and board packs built to be read",
+    ],
+    href: "/fpa",
+  },
+  {
+    n: "03",
     name: "AI-Enabled Finance",
     lead: "AI is how the work gets delivered, not a separate product.",
     body: "Close, cash, and reporting that keep up. Forecasts that update instead of getting rebuilt once a quarter. Analysis that does not take a week to prepare.",
@@ -30,7 +43,7 @@ const pillars = [
     href: "/ai-enabled-finance",
   },
   {
-    n: "03",
+    n: "04",
     name: "AI-Native Financial Leadership",
     lead: "A CFO that uses AI on the work.",
     body: "We come in as the fractional CFO, then identify where AI should go so the company can report and scale. A person still signs what leaves.",
@@ -64,7 +77,7 @@ export default function Pillars() {
           </p>
         </Reveal>
 
-        <div className="grid gap-px overflow-hidden rounded-xl border border-line bg-line lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-2">
           {pillars.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.08}>
               <div className="flex h-full flex-col bg-bg-raised p-8 md:p-9">

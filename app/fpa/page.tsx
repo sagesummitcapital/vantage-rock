@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "FP&A",
     "FP&A services",
     "FP&A consultant",
+    "AI FP&A",
+    "AI-forward FP&A",
+    "Claude for FP&A",
     "financial planning and analysis",
     "rolling forecast",
     "cash flow forecasting",
@@ -64,6 +67,10 @@ const faqs = [
   {
     q: "Where does AI fit in FP&A?",
     a: "AI drafts flux, pulls expense trends, refreshes cash views, and assembles the first narrative for the pack — under review. A person still owns the assumptions and signs what leaves. See CFO AI agents and AI-enabled finance.",
+  },
+  {
+    q: "What does AI-forward FP&A look like day to day?",
+    a: "The planning context — budget, drivers, KPI definitions, chart of accounts mapping, recent board decks — sits in one project. The variance process is written down as a skill, so commentary comes back in the same format every month. The heavy Excel work is drafted with formulas left in the workbook. Forecast refreshes start from current ERP, budget, and CRM files. And the forecast is pressure-tested before the board sees it. A person reviews every output.",
   },
   {
     q: "How does an engagement start?",
@@ -124,6 +131,29 @@ const jsonLd = [
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
+  },
+];
+
+const practices = [
+  {
+    t: "One project with the planning context.",
+    d: "The budget, driver assumptions, KPI definitions, chart of accounts mapping, and the last few board decks in one place. “Why did gross margin drop in March?” gets answered in your definitions.",
+  },
+  {
+    t: "The variance process, written as a skill.",
+    d: "What gets flagged, how each variance is explained, and in what order: what happened, why, and what it changes in the forecast. Same format every month.",
+  },
+  {
+    t: "The heavy Excel work, drafted.",
+    d: "Why EBITDA moved between two forecast versions, where the hardcoded numbers are, price and volume sensitivities. The formulas stay in the workbook.",
+  },
+  {
+    t: "Connected to the files you already use.",
+    d: "ERP exports, department budgets, and the CRM pipeline. Each forecast refresh starts from current files.",
+  },
+  {
+    t: "A forecast that gets pressure-tested.",
+    d: "Which three assumptions would a lead investor question first? The soft spots surface before the board meeting.",
   },
 ];
 
@@ -272,6 +302,44 @@ export default function FpaPage() {
                 <li>Scenario views for pricing, hiring, and capacity calls</li>
                 <li>AI on repeating analysis; human sign-off on what leaves</li>
               </ul>
+            </section>
+
+            <section className="mt-16">
+              <h2 className="font-display text-[28px] tracking-[-0.02em] text-ink">
+                What AI-forward FP&amp;A looks like
+              </h2>
+              <p className="mt-4 text-[17px] leading-[1.7] text-ink">
+                The forecast, the variance commentary, and the board pack are
+                the same work every month, and most of it is drafting and
+                checking. This is the setup we build so that work runs on your
+                rules and your team spends its time with the business.
+              </p>
+              <ol className="mt-8 space-y-6">
+                {practices.map((p, i) => (
+                  <li key={p.t} className="flex gap-5">
+                    <span className="mt-[5px] font-mono text-[12px] text-teal">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <div className="text-[17px] font-medium text-ink">{p.t}</div>
+                      <p className="mt-1.5 text-[16px] leading-[1.65] text-ink-muted">
+                        {p.d}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-8 text-[17px] leading-[1.7] text-ink">
+                AI takes on more of the drafting and checking. Your team owns
+                the assumptions and signs what leaves. The longer version is in{" "}
+                <a
+                  href="/insights/how-fpa-teams-use-claude"
+                  className={linkClass}
+                >
+                  how top FP&amp;A teams use Claude
+                </a>
+                .
+              </p>
             </section>
 
             <section className="mt-16" aria-labelledby="faq-heading">

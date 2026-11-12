@@ -74,7 +74,7 @@ export default function Engagements() {
     <section id="engagements" className="border-b border-line bg-bg-sunken">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="07"
+          number="08"
           label="Engagements"
           heading="How involved we are."
           dim="Not a product list."

@@ -24,7 +24,7 @@ export default function FinalCTA() {
           {/* Framing */}
           <div>
             <Reveal>
-              <span className="mono-label">09 — Next step</span>
+              <span className="mono-label">10 — Next step</span>
             </Reveal>
 
             <Reveal delay={0.08}>

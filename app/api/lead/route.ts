@@ -9,10 +9,25 @@ type LeadPayload = {
   title: string;
   company: string;
   revenue: string;
+  /** Optional: which service the visitor is asking about. */
+  interest?: string;
   message?: string;
   /** Honeypot — if filled, the submitter is a bot. */
   website?: string;
 };
+
+/** Escape user input before it goes into the notification email's HTML. */
+function esc(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+const DELIVERY_ERROR =
+  "We couldn't send your request. Please email info@vantagerockfinancial.com directly.";
 
 function validate(data: Partial<LeadPayload>): string | null {
   const required: (keyof LeadPayload)[] = [
@@ -85,7 +100,8 @@ export async function POST(req: Request) {
       title: String(body.title).trim(),
       company: String(body.company).trim(),
       revenue: String(body.revenue).trim(),
-      message: body.message ? String(body.message).trim() : "",
+      interest: body.interest ? String(body.interest).trim().slice(0, 80) : "",
+      message: body.message ? String(body.message).trim().slice(0, 4000) : "",
     };
 
     // ── Email delivery via Resend ──────────────────────────────
@@ -113,28 +129,37 @@ export async function POST(req: Request) {
         from,
         to: toEmail,
         replyTo: lead.email,
-        subject: `New Introduction Call request — ${lead.company}`,
+        subject: `New Introduction Call request — ${lead.company}${lead.interest ? ` (${lead.interest})` : ""}`,
         html: `
           <h2 style="margin:0 0 12px">New Introduction Call request</h2>
           <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
-            <tr><td style="padding:4px 12px 4px 0;color:#666">Name</td><td style="padding:4px 0"><b>${lead.name}</b></td></tr>
-            <tr><td style="padding:4px 12px 4px 0;color:#666">Title</td><td style="padding:4px 0">${lead.title}</td></tr>
-            <tr><td style="padding:4px 12px 4px 0;color:#666">Company</td><td style="padding:4px 0"><b>${lead.company}</b></td></tr>
-            <tr><td style="padding:4px 12px 4px 0;color:#666">Email</td><td style="padding:4px 0"><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
-            <tr><td style="padding:4px 12px 4px 0;color:#666">Revenue</td><td style="padding:4px 0">${lead.revenue}</td></tr>
+            <tr><td style="padding:4px 12px 4px 0;color:#666">Name</td><td style="padding:4px 0"><b>${esc(lead.name)}</b></td></tr>
+            <tr><td style="padding:4px 12px 4px 0;color:#666">Title</td><td style="padding:4px 0">${esc(lead.title)}</td></tr>
+            <tr><td style="padding:4px 12px 4px 0;color:#666">Company</td><td style="padding:4px 0"><b>${esc(lead.company)}</b></td></tr>
+            <tr><td style="padding:4px 12px 4px 0;color:#666">Email</td><td style="padding:4px 0"><a href="mailto:${esc(lead.email)}">${esc(lead.email)}</a></td></tr>
+            <tr><td style="padding:4px 12px 4px 0;color:#666">Revenue</td><td style="padding:4px 0">${esc(lead.revenue)}</td></tr>
+            ${lead.interest ? `<tr><td style="padding:4px 12px 4px 0;color:#666">Interest</td><td style="padding:4px 0">${esc(lead.interest)}</td></tr>` : ""}
           </table>
-          ${lead.message ? `<p style="font-family:sans-serif;font-size:14px"><b>#1 finance problem:</b><br>${lead.message.replace(/</g, "&lt;")}</p>` : ""}
-          <p style="font-family:sans-serif;font-size:12px;color:#999">Reply directly to this email to respond to ${lead.name.split(" ")[0]}.</p>
+          ${lead.message ? `<p style="font-family:sans-serif;font-size:14px"><b>#1 finance problem:</b><br>${esc(lead.message).replace(/\n/g, "<br>")}</p>` : ""}
+          <p style="font-family:sans-serif;font-size:12px;color:#999">Reply directly to this email to respond to ${esc(lead.name.split(" ")[0])}.</p>
         `,
       });
 
       if (sendError) {
-        console.error("Resend error:", sendError);
-        // Don't fail the user's submission over a mail hiccup — log it.
+        // The lead is in the server log, but nobody was notified. Tell the
+        // visitor so they can email instead of waiting on a reply that
+        // will never come.
+        console.error("Resend error:", sendError, lead);
+        return NextResponse.json({ error: DELIVERY_ERROR }, { status: 502 });
       }
     } else {
       // No email configured yet — log so submissions aren't lost in dev.
       console.log("[lead] (email not configured — set RESEND_API_KEY + LEAD_TO_EMAIL)", lead);
+      // In production a missing key means the lead reaches nobody. Fail
+      // visibly instead of showing a success message.
+      if (process.env.NODE_ENV === "production") {
+        return NextResponse.json({ error: DELIVERY_ERROR }, { status: 503 });
+      }
     }
 
     return NextResponse.json({ ok: true });

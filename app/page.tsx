@@ -6,6 +6,7 @@ import TheRatio from "@/components/sections/TheRatio";
 import Pillars from "@/components/sections/Pillars";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Agents from "@/components/sections/Agents";
+import Fpa from "@/components/sections/Fpa";
 import Engagements from "@/components/sections/Engagements";
 import Proof from "@/components/sections/Proof";
 import About from "@/components/sections/About";
@@ -121,6 +122,7 @@ export default function Home() {
         <Pillars />
         <HowItWorks />
         <Agents />
+        <Fpa />
         <Proof />
         <About />
         <Engagements />

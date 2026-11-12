@@ -12,7 +12,7 @@ export default function Proof() {
     <section id="proof" className="border-b border-line">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
         <SectionHead
-          number="05"
+          number="06"
           label="One engagement"
           heading="A healthcare and wellness operator,"
           dim="start to finish."
