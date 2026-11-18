@@ -30,6 +30,7 @@ The AI is not the product. It is how the work gets delivered. A human sits betwe
 ## Insights
 
 - [Insights index](https://www.vantagerockfinancial.com/insights): Field reports on AI agents in finance, the problems that lead to a fractional CFO, and the workflows worth rebuilding.
+- [Grok Bot's accounting team: five AI agents in order-to-cash](https://www.vantagerockfinancial.com/insights/grok-bot-accounting-team): What each Bot does, how they were onboarded, the controls, and six questions to ask before handing a process to an agent.
 - [How top FP&A teams use Claude](https://www.vantagerockfinancial.com/insights/how-fpa-teams-use-claude): Five practices that make the difference.
 - [Bookkeeper, controller, or CFO — which job is actually getting done?](https://www.vantagerockfinancial.com/insights/bookkeeper-vs-controller-vs-cfo): Titles get hired. Jobs get done. How to tell which one you actually have.
 - [Why is month-end still late if the books are "done"?](https://www.vantagerockfinancial.com/insights/why-month-end-close-is-late): Close speed is a tell. It is not the product.
