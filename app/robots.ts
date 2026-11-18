@@ -18,12 +18,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/ops", "/ops/"],
+        disallow: ["/api/", "/ops", "/ops/", "/hub", "/hub/", "/sign-in"],
       },
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: ["/api/", "/ops", "/ops/"],
+        disallow: ["/api/", "/ops", "/ops/", "/hub", "/hub/", "/sign-in"],
       })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
