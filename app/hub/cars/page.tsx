@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getVehicles } from "@/lib/hub/data";
-import { addVehicle } from "@/app/hub/actions";
+import { addBooking, addVehicle, updateVehicle } from "@/app/hub/actions";
 import ActionForm from "@/components/hub/ActionForm";
-import { Amount, DoubleRule, Empty, Field, Figure, PageHeader, Panel, Pill, SectionHeading, capsCls, inputCls, linkCls } from "@/components/hub/ui";
-import { dateInPhoenix, day, num } from "@/components/hub/format";
+import { MaintenanceForm, MaintenanceList } from "@/components/hub/Maintenance";
+import { Amount, CheckLine, Disclosure, DoubleRule, Empty, Field, Figure, PageHeader, Panel, Pill, SectionHeading, capsCls, inputCls, linkCls } from "@/components/hub/ui";
+import { dateInPhoenix, num, phoenixToday } from "@/components/hub/format";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: { absolute: "Cars | Private hub" }, robots: { index: false, follow: false } };
@@ -26,11 +27,12 @@ const partyLabel = (party: string | null | undefined) => (isOwn(party) ? "Yours"
 // Vehicle P&L carries no currency column; the Turo book is kept in US dollars.
 const CUR = "USD";
 
-function CarRow({ v, open }: { v: VehicleRow; open: boolean }) {
+function CarRow({ v, open, today }: { v: VehicleRow; open: boolean; today: string }) {
   const st = STATUS[v.status] ?? { label: v.status, tone: "mute" as const };
   const spec = [v.year, v.make, v.model].filter(Boolean).join(" ");
   const upcoming = v.upcoming.slice().sort((a, b) => String(a.start_at).localeCompare(String(b.start_at)));
   const next = upcoming[0];
+  const recent = v.bookings.filter((b) => b.status === "completed").slice(0, 5);
 
   return (
     <article id={`car-${v.id}`} className="scroll-mt-32 border-b border-line-strong py-7">
@@ -103,7 +105,7 @@ function CarRow({ v, open }: { v: VehicleRow; open: boolean }) {
             <div className={capsCls}>Upcoming bookings</div>
             {upcoming.length === 0 ? (
               <p className="mt-2 text-[13.5px] text-ink-muted">
-                None on the calendar. Grok Bot and Claude log Turo bookings through the agent API; nothing to key in here.
+                None on the calendar. Log one below, or let Grok Bot and Claude add them through the agent API.
               </p>
             ) : (
               <ul className="mt-2 border-t border-line">
@@ -121,37 +123,141 @@ function CarRow({ v, open }: { v: VehicleRow; open: boolean }) {
               </ul>
             )}
           </div>
-          <div>
-            <div className={capsCls}>Open maintenance</div>
-            {v.openMaintenance.length === 0 ? (
-              <p className="mt-2 text-[13.5px] text-ink-muted">Nothing open.</p>
-            ) : (
+          <MaintenanceList items={v.openMaintenance} currency={CUR} />
+          {recent.length > 0 ? (
+            <div className="lg:col-span-2">
+              <div className={capsCls}>Latest trips</div>
               <ul className="mt-2 border-t border-line">
-                {v.openMaintenance.map((m) => (
-                  <li key={m.id} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-line py-2.5 text-[13.5px]">
-                    <span className="text-ink">
-                      {m.title}
-                      {m.vendor ? <span className="text-ink-dim"> &middot; {m.vendor}</span> : null}
+                {recent.map((b) => (
+                  <li key={b.id} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-line py-2.5 text-[13.5px]">
+                    <span className="tabular text-ink">
+                      {dateInPhoenix(b.start_at)} <span className="text-ink-dim">to</span> {dateInPhoenix(b.end_at)}
+                      {b.platform_ref ? <span className="text-ink-dim"> &middot; {b.platform_ref}</span> : null}
                     </span>
-                    <span className="flex items-baseline gap-4 text-ink-dim">
-                      <span className="text-[11px] uppercase tracking-[0.1em]">{m.status}</span>
-                      <span className="tabular text-[12.5px]">opened {day(m.opened_on)}</span>
-                      {m.cost != null ? <Amount value={m.cost} currency={m.currency || CUR} cents className="text-ink" /> : null}
+                    <span className="flex items-baseline gap-5 text-ink-dim">
+                      {b.miles != null ? <span className="tabular text-[12.5px]">{num(b.miles).toLocaleString("en-US")} mi</span> : null}
+                      <span>
+                        gross <Amount value={num(b.gross)} currency={CUR} cents />
+                      </span>
+                      <span>
+                        net <Amount value={num(b.net)} currency={CUR} cents className="font-medium text-ink" />
+                      </span>
                     </span>
                   </li>
                 ))}
               </ul>
-            )}
-          </div>
+            </div>
+          ) : null}
         </div>
         {v.notes ? <p className="mt-6 max-w-[720px] border-l border-brass pl-4 text-[13.5px] leading-relaxed text-ink-muted">{v.notes}</p> : null}
       </details>
+
+      <div className="mt-4 flex flex-col gap-3">
+        <Disclosure label="Log a trip" id={`trip-${v.id}`}>
+          <ActionForm action={addBooking} submitLabel="Log trip" pendingLabel="Logging…" successMessage="Trip logged.">
+            <input type="hidden" name="vehicle_id" value={v.id} />
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <Field label="Trip starts">
+                <input name="start_date" type="date" required defaultValue={today} className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Trip ends" hint="blank = same day">
+                <input name="end_date" type="date" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Status">
+                <select name="status" defaultValue="completed" className={inputCls}>
+                  <option value="completed">Completed</option>
+                  <option value="upcoming">Upcoming</option>
+                  <option value="active">Out now</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </Field>
+              <Field label="Turo reference" hint="optional">
+                <input name="platform_ref" autoComplete="off" className={inputCls} />
+              </Field>
+              <Field label="Gross" hint="what the guest paid">
+                <input name="gross" inputMode="decimal" placeholder="0.00" autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Turo fee">
+                <input name="platform_fee" inputMode="decimal" placeholder="0.00" autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Miles" hint="optional">
+                <input name="miles" type="number" min={0} step={1} className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Notes" hint="optional">
+                <input name="notes" className={inputCls} />
+              </Field>
+            </div>
+            <p className="mt-4 text-[12.5px] leading-relaxed text-ink-dim">
+              A completed trip books its net payout (gross less the Turo fee) as Turo income on the day the trip ends. Upcoming and
+              cancelled trips book nothing.
+            </p>
+            <CheckLine name="log_income" value="off" title="Do not book the payout as income" className="mt-4">
+              Tick this if the payout is already in the ledger, so it is not counted twice.
+            </CheckLine>
+          </ActionForm>
+        </Disclosure>
+
+        <Disclosure label="Log maintenance">
+          <MaintenanceForm vehicleId={v.id} currency={CUR} today={today} book="Turo" />
+        </Disclosure>
+
+        <Disclosure label="Edit car">
+          <ActionForm action={updateVehicle} submitLabel="Save changes" successMessage="Saved." resetOnSuccess={false}>
+            <input type="hidden" name="id" value={v.id} />
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <Field label="Name" className="sm:col-span-2">
+                <input name="name" required defaultValue={v.name} className={inputCls} />
+              </Field>
+              <Field label="Year">
+                <input name="year" type="number" min={1980} max={2100} step={1} defaultValue={v.year ?? ""} className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Status">
+                <select name="status" defaultValue={v.status} className={inputCls}>
+                  {STATUS_ORDER.map((s) => (
+                    <option key={s} value={s}>
+                      {STATUS[s].label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Make">
+                <input name="make" defaultValue={v.make ?? ""} className={inputCls} />
+              </Field>
+              <Field label="Model">
+                <input name="model" defaultValue={v.model ?? ""} className={inputCls} />
+              </Field>
+              <Field label="Owned by" hint="owner = you">
+                <input name="owner_party" list="owner-parties" defaultValue={v.owner_party || "owner"} className={inputCls} />
+              </Field>
+              <Field label="Tracker">
+                <input name="tracker_provider" defaultValue={v.tracker_provider ?? ""} placeholder="Bouncie" className={inputCls} />
+              </Field>
+              <Field label="Tracker device ID" hint="optional">
+                <input name="tracker_device_id" defaultValue={v.tracker_device_id ?? ""} autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Acquired on" hint="optional">
+                <input name="acquired_on" type="date" defaultValue={v.acquired_on ? String(v.acquired_on).slice(0, 10) : ""} className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Acquisition cost" hint="USD, optional">
+                <input name="acquisition_cost" inputMode="decimal" defaultValue={v.acquisition_cost ?? ""} autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Listing link" hint="optional">
+                <input name="listing_url" type="url" defaultValue={v.listing_url ?? ""} placeholder="https://turo.com/..." className={inputCls} />
+              </Field>
+              <Field label="Notes" hint="optional" className="sm:col-span-2 lg:col-span-4">
+                <textarea name="notes" rows={2} defaultValue={v.notes ?? ""} className={inputCls} />
+              </Field>
+            </div>
+          </ActionForm>
+        </Disclosure>
+      </div>
     </article>
   );
 }
 
 export default async function CarsPage() {
   const vehicles = await getVehicles();
+  const today = phoenixToday().iso;
   const fleet = vehicles.filter((v) => v.status !== "sold");
   const active = fleet.filter((v) => v.status === "active").length;
   const partnerCars = fleet.filter((v) => !isOwn(v.owner_party)).length;
@@ -234,7 +340,7 @@ export default async function CarsPage() {
         ) : (
           <div className="border-t border-line-strong">
             {vehicles.map((v) => (
-              <CarRow key={v.id} v={v} open={vehicles.length <= 3} />
+              <CarRow key={v.id} v={v} open={vehicles.length <= 3} today={today} />
             ))}
           </div>
         )}

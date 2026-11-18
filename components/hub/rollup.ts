@@ -35,7 +35,6 @@ export function buildSeries(rollup: Rollup): Series[] {
 
   // If the monthly view already carries trading rows, trust it. Otherwise derive the
   // top line from trading_results: payouts in, fees out.
-  const viewHasTrading = rollup.rows.some((r) => r.business === "trading");
 
   const out: Series[] = [];
   BUSINESSES.forEach((b) => {
@@ -54,7 +53,8 @@ export function buildSeries(rollup: Rollup): Series[] {
       .filter((r) => r.business === b.slug)
       .forEach((r) => add(r.currency, r.month, num(r.income), num(r.expenses), num(r.net)));
 
-    if (b.slug === "trading" && !viewHasTrading) {
+    // v_monthly_pnl only reads transactions; Breakout months live in trading_results, so both always add.
+    if (b.slug === "trading") {
       rollup.trading.forEach((t) => add("USD", t.month, num(t.payouts), num(t.fees), num(t.payouts) - num(t.fees)));
     }
 

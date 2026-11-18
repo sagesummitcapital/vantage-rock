@@ -229,3 +229,61 @@ export function Field({
     </label>
   );
 }
+
+/** A quiet "open to do something" row: a chevron label that unfolds a panel. */
+export function Disclosure({
+  label,
+  meta,
+  id,
+  open,
+  panel = true,
+  children,
+}: {
+  label: ReactNode;
+  meta?: ReactNode;
+  id?: string;
+  open?: boolean;
+  /** Wrap the contents in a raised panel (forms). Off for plain lists. */
+  panel?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <details id={id} open={open} className="group/d scroll-mt-36">
+      <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-[13px] font-medium text-teal-deep transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
+        <span aria-hidden className="inline-block transition-transform group-open/d:rotate-90">
+          &rsaquo;
+        </span>
+        {label}
+        {meta ? <span className="tabular font-normal text-ink-dim">{meta}</span> : null}
+      </summary>
+      {panel ? <div className="mb-3 mt-4 rounded-lg border border-line bg-bg-raised p-5 md:p-7">{children}</div> : <div className="mt-5">{children}</div>}
+    </details>
+  );
+}
+
+/** Checkbox with a title and a line of small print, on a brass-ruled strip. */
+export function CheckLine({
+  name,
+  value,
+  defaultChecked,
+  title,
+  children,
+  className,
+}: {
+  name: string;
+  value?: string;
+  defaultChecked?: boolean;
+  title: string;
+  children?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <label className={cn("flex cursor-pointer items-start gap-3 border border-brass/70 bg-bg px-4 py-3", className)}>
+      <input type="checkbox" name={name} value={value} defaultChecked={defaultChecked} className="mt-[3px] h-4 w-4 shrink-0 accent-[#0B1A2A]" />
+      <span>
+        <span className="block text-[13.5px] font-medium text-ink">{title}</span>
+        {children ? <span className="mt-0.5 block text-[12.5px] leading-relaxed text-ink-muted">{children}</span> : null}
+      </span>
+    </label>
+  );
+}

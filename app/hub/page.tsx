@@ -18,6 +18,14 @@ const AREA_HREF: Record<Business, string> = {
   trading: "/hub/money?business=trading",
 };
 
+const ADD_LINKS = [
+  { href: "/hub/properties#add-property", label: "Property" },
+  { href: "/hub/cars#add-car", label: "Car" },
+  { href: "/hub/cars#fleet", label: "Turo trip" },
+  { href: "/hub/monthly#trading", label: "Breakout month" },
+  { href: "/hub/monthly#other", label: "Monthly income or expense" },
+];
+
 const AUTHOR: Record<JournalEntry["author"], string> = { owner: "You", grok: "Grok Bot", claude: "Claude" };
 
 function Statement({ which, label, period, totals }: { which: "month" | "t12"; label: string; period: string; totals: CurrencyTotals[] }) {
@@ -131,6 +139,16 @@ export default async function HubOverview() {
         lede="Every business on one page: what came in, what went out, and what is waiting on you."
       />
 
+      {/* Add: quiet shortcuts to the entry forms */}
+      <nav aria-label="Add to the books" className="-mt-4 mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] md:-mt-6">
+        <span className={capsCls}>Add</span>
+        {ADD_LINKS.map((l) => (
+          <Link key={l.href} href={l.href} className={linkCls}>
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+
       {/* Statement */}
       <section aria-label="Consolidated income, expenses and net">
         <DoubleRule />
@@ -200,8 +218,8 @@ export default async function HubOverview() {
         {!anyActivity ? (
           <p className="mt-4 text-[13.5px] text-ink-muted">
             The books are open but empty. Record the first entry under{" "}
-            <Link href="/hub/money#add" className={linkCls}>
-              Income &amp; Expenses
+            <Link href="/hub/monthly" className={linkCls}>
+              Monthly
             </Link>{" "}
             and these lines fill in. Grok Bot and Claude can also post transactions through the agent API.
           </p>

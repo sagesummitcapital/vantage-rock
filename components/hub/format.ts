@@ -114,3 +114,14 @@ export function phoenixToday(): { iso: string; label: string; long: string } {
 export function one(v: string | string[] | undefined): string | undefined {
   return Array.isArray(v) ? v[0] : v;
 }
+
+/** The month before the current one in Phoenix, as "YYYY-MM" (for <input type="month">). */
+export function phoenixLastMonth(): string {
+  const [y, m] = phoenixToday().iso.split("-").map(Number);
+  const year = m === 1 ? y - 1 : y;
+  const month = m === 1 ? 12 : m - 1;
+  return `${year}-${String(month).padStart(2, "0")}`;
+}
+
+/** The current month in Phoenix, as "YYYY-MM". */
+export const phoenixThisMonth = (): string => phoenixToday().iso.slice(0, 7);

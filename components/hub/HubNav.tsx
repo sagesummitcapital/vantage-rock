@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/hub/properties", label: "Properties" },
   { href: "/hub/cars", label: "Cars" },
   { href: "/hub/money", label: "Income & Expenses" },
+  { href: "/hub/monthly", label: "Monthly" },
   { href: "/hub/journal", label: "Journal" },
 ];
 

@@ -186,7 +186,7 @@ export default async function JournalPage({ searchParams }: { searchParams: { [k
   return (
     <>
       <PageHeader
-        folio="v."
+        folio="vi."
         section="Journal"
         title={
           <>

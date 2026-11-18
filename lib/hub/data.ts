@@ -66,6 +66,8 @@ export type Vehicle = {
   tracker_provider: string | null;
   tracker_device_id: string | null;
   listing_url: string | null;
+  acquired_on: string | null;
+  acquisition_cost: number | null;
   notes: string | null;
 };
 
@@ -239,4 +241,15 @@ export async function getLookups() {
     q<Pick<Vehicle, "id" | "name">>(db().from("vehicles").select("id,name").order("id")),
   ]);
   return { properties, vehicles };
+}
+
+// ---------- Monthly entries ----------
+export async function getTrading(limit = 36) {
+  const rows = await q<TradingMonth>(db().from("trading_results").select("*").order("month", { ascending: false }).limit(limit));
+  return rows.map((t) => ({ ...t, net_pnl: n(t.net_pnl), payouts: n(t.payouts), fees: n(t.fees) }));
+}
+
+/** Recent month-level entries (any business), for the Monthly page. */
+export async function getRecentMonthly(limit = 40) {
+  return getTransactions({ limit });
 }

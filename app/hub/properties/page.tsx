@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getProperties, monthStart } from "@/lib/hub/data";
-import { updateProperty } from "@/app/hub/actions";
+import { addLease, addProperty, endLease, updateProperty } from "@/app/hub/actions";
 import ActionForm from "@/components/hub/ActionForm";
+import { ConfirmAct } from "@/components/hub/ActButtons";
+import { MaintenanceForm, MaintenanceList } from "@/components/hub/Maintenance";
 import SparkBars from "@/components/hub/SparkBars";
-import { Amount, DoubleRule, Empty, Field, Figure, PageHeader, Pill, SectionHeading, capsCls, inputCls, linkCls } from "@/components/hub/ui";
-import { day, money, monthYear, num } from "@/components/hub/format";
+import { Amount, Disclosure, DoubleRule, Empty, Field, Figure, PageHeader, Panel, Pill, SectionHeading, inputCls, linkCls } from "@/components/hub/ui";
+import { day, money, monthYear, num, phoenixToday } from "@/components/hub/format";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: { absolute: "Properties | Private hub" }, robots: { index: false, follow: false } };
@@ -60,7 +62,7 @@ function RentLine({ p }: { p: PropertyRow }) {
       <p className="mt-3 text-[13px] text-ink-muted">
         {gap == null
           ? rent == null
-            ? "Add a lease row in Supabase, or ask Grok Bot to log it, and rent shows against target."
+            ? "No lease on file. Add one below and rent shows against target."
             : "Set a target rent below to see how the lease compares."
           : Math.abs(gap) < 0.5
             ? "At target."
@@ -70,11 +72,16 @@ function RentLine({ p }: { p: PropertyRow }) {
         {lease?.tenant_label ? ` Tenant: ${lease.tenant_label}.` : ""}
         {lease?.end_date ? ` Lease runs to ${day(lease.end_date)}.` : ""}
       </p>
+      {lease ? (
+        <div className="mt-3">
+          <ConfirmAct action={endLease} id={lease.id} label="End lease" confirmLabel="End it" pendingLabel="Ending…" ariaLabel={`active lease on ${p.name}`} />
+        </div>
+      ) : null}
     </div>
   );
 }
 
-function PropertyFolio({ p, months }: { p: PropertyRow; months: string[] }) {
+function PropertyFolio({ p, months, today }: { p: PropertyRow; months: string[]; today: string }) {
   const st = STATUS[p.status] ?? { label: p.status, tone: "mute" as const };
   const location = [p.city, p.country].filter(Boolean).join(", ");
   const values = months.map((m) => p.monthly.find((r) => String(r.month).slice(0, 7) === m.slice(0, 7))?.net ?? 0);
@@ -143,38 +150,60 @@ function PropertyFolio({ p, months }: { p: PropertyRow; months: string[] }) {
       </div>
 
       <div className="mt-8">
-        <div className={capsCls}>Open maintenance</div>
-        {p.openMaintenance.length === 0 ? (
-          <p className="mt-2 text-[13.5px] text-ink-muted">Nothing open.</p>
-        ) : (
-          <ul className="mt-2 border-t border-line">
-            {p.openMaintenance.map((m) => (
-              <li key={m.id} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-line py-2.5 text-[13.5px]">
-                <span className="text-ink">
-                  {m.title}
-                  {m.vendor ? <span className="text-ink-dim"> &middot; {m.vendor}</span> : null}
-                </span>
-                <span className="flex items-baseline gap-4 text-ink-dim">
-                  <span className="text-[11px] uppercase tracking-[0.1em]">{m.status}</span>
-                  <span className="tabular text-[12.5px]">opened {day(m.opened_on)}</span>
-                  {m.cost != null ? <Amount value={m.cost} currency={m.currency || p.currency} cents className="text-ink" /> : null}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
+        <MaintenanceList items={p.openMaintenance} currency={p.currency} />
       </div>
 
       {p.notes ? <p className="mt-6 max-w-[720px] border-l border-brass pl-4 text-[13.5px] leading-relaxed text-ink-muted">{p.notes}</p> : null}
 
-      <details className="group mt-7">
-        <summary className="inline-flex cursor-pointer list-none items-center gap-2 text-[13px] font-medium text-teal-deep transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
-          <span aria-hidden className="inline-block transition-transform group-open:rotate-90">
-            &rsaquo;
-          </span>
-          Edit details
-        </summary>
-        <div className="mt-5 rounded-lg border border-line bg-bg-raised p-5 md:p-7">
+      <div className="mt-7 flex flex-col gap-3">
+        <Disclosure label="Add a lease" meta={p.activeLease ? "replaces the active one" : undefined}>
+          <ActionForm action={addLease} submitLabel="Save lease" successMessage="Lease saved.">
+            <input type="hidden" name="property_id" value={p.id} />
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <Field label="Tenant" hint="a label, not full details" className="sm:col-span-2">
+                <input name="tenant_label" placeholder="e.g. Family of four" className={inputCls} />
+              </Field>
+              <Field label="Monthly rent">
+                <input name="monthly_rent" inputMode="decimal" required placeholder="0.00" autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Currency">
+                <select name="currency" defaultValue={p.currency} className={inputCls}>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                </select>
+              </Field>
+              <Field label="Starts">
+                <input name="start_date" type="date" defaultValue={today} className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Ends" hint="optional">
+                <input name="end_date" type="date" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Deposit" hint="optional">
+                <input name="deposit" inputMode="decimal" placeholder="0.00" autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Status">
+                <select name="status" defaultValue="active" className={inputCls}>
+                  <option value="active">Active now</option>
+                  <option value="upcoming">Upcoming</option>
+                  <option value="ended">Ended (for the record)</option>
+                </select>
+              </Field>
+              <Field label="Notes" hint="optional" className="sm:col-span-2 lg:col-span-4">
+                <input name="notes" className={inputCls} />
+              </Field>
+            </div>
+            <p className="mt-4 text-[12.5px] text-ink-dim">
+              A property has one active lease at a time. Saving a new active lease ends the current one. This records the lease only;
+              rent received is entered under Monthly.
+            </p>
+          </ActionForm>
+        </Disclosure>
+
+        <Disclosure label="Log maintenance">
+          <MaintenanceForm propertyId={p.id} currency={p.currency} today={today} book="Rentals" />
+        </Disclosure>
+
+        <Disclosure label="Edit details">
           <ActionForm action={updateProperty} submitLabel="Save changes" successMessage="Saved." resetOnSuccess={false}>
             <input type="hidden" name="id" value={p.id} />
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -210,8 +239,8 @@ function PropertyFolio({ p, months }: { p: PropertyRow; months: string[] }) {
               </Field>
             </div>
           </ActionForm>
-        </div>
-      </details>
+        </Disclosure>
+      </div>
     </article>
   );
 }
@@ -225,6 +254,7 @@ export default async function PropertiesPage() {
   const openJobs = properties.reduce((s, p) => s + p.openMaintenance.length, 0);
 
   // The same twelve month keys the data layer uses for its trailing window, oldest first.
+  const today = phoenixToday().iso;
   const months = Array.from({ length: 12 }, (_, i) => monthStart(11 - i));
 
   return (
@@ -238,6 +268,11 @@ export default async function PropertiesPage() {
           </>
         }
         lede="Phoenix runs through TurboTenant in dollars. Greece is handled locally in euros. Each property keeps its own account below."
+        aside={
+          <a href="#add-property" className={linkCls}>
+            Add a property
+          </a>
+        }
       />
 
       <section aria-label="Portfolio summary">
@@ -278,17 +313,70 @@ export default async function PropertiesPage() {
         <SectionHeading id="register" title="Property register" note={`${properties.length} on file`} />
         {properties.length === 0 ? (
           <Empty title="No properties on file yet.">
-            The properties are added once, as rows in the <span className="font-medium text-ink">properties</span> table in Supabase.
-            After that, rent targets, platform and status are edited right here, and Grok Bot can read
-            the register through the agent API.
+            Add the first one with the form below: a name, where it is, and the rent you are aiming for. Leases, repairs and the
+            monthly figures attach to it from there, and Grok Bot can read the register through the agent API.
           </Empty>
         ) : (
           <div className="border-t border-line-strong">
             {properties.map((p) => (
-              <PropertyFolio key={p.id} p={p} months={months} />
+              <PropertyFolio key={p.id} p={p} months={months} today={today} />
             ))}
           </div>
         )}
+      </section>
+
+      <section className="mt-16" aria-labelledby="add-property">
+        <SectionHeading id="add-property" title="Add a property" note="One line in the register. Details can be edited later." />
+        <Panel className="p-5 md:p-7">
+          <ActionForm action={addProperty} submitLabel="Add to register" pendingLabel="Adding…" successMessage="Added to the register.">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <Field label="Name" hint="how you refer to it" className="sm:col-span-2">
+                <input name="name" required placeholder="e.g. Camelback house" className={inputCls} />
+              </Field>
+              <Field label="Address" hint="optional" className="sm:col-span-2">
+                <input name="address" className={inputCls} />
+              </Field>
+              <Field label="City">
+                <input name="city" placeholder="Phoenix" className={inputCls} />
+              </Field>
+              <Field label="Country">
+                <select name="country" defaultValue="US" className={inputCls}>
+                  <option value="US">United States</option>
+                  <option value="GR">Greece</option>
+                </select>
+              </Field>
+              <Field label="Currency">
+                <select name="currency" defaultValue="" className={inputCls}>
+                  <option value="">By country (US in USD, otherwise EUR)</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                </select>
+              </Field>
+              <Field label="Status">
+                <select name="status" defaultValue="rented" className={inputCls}>
+                  {STATUS_ORDER.map((st) => (
+                    <option key={st} value={st}>
+                      {STATUS[st].label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Platform" hint="e.g. TurboTenant">
+                <input name="platform" className={inputCls} />
+              </Field>
+              <Field label="Managed by">
+                <input name="managed_by" placeholder="Self, or a local agent" className={inputCls} />
+              </Field>
+              <Field label="Target rent" hint="per month">
+                <input name="target_rent" inputMode="decimal" placeholder="0.00" autoComplete="off" className={`${inputCls} tabular`} />
+              </Field>
+              <Field label="Notes" hint="optional" className="sm:col-span-2 lg:col-span-4">
+                <input name="notes" className={inputCls} />
+              </Field>
+            </div>
+          </ActionForm>
+        </Panel>
+        <p className="mt-3 text-[12.5px] text-ink-dim">Country and currency are fixed once a property is added, so its history stays in one currency.</p>
       </section>
     </>
   );
